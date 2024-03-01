@@ -16,6 +16,9 @@
 
                         {{ __('You are logged in!') }}
                     </div>
+                    <div class="card-body text-center">
+                        <a href="{{ route('game_master.index') }}" class="btn btn-primary">View your profile</a>
+                    </div>
                 </div>
             </div>
         </div>
