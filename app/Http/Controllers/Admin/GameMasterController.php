@@ -26,7 +26,7 @@ class GameMasterController extends Controller
      */
     public function create()
     {
-        //
+        return view('game_masters.create');
     }
 
     /**
