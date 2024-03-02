@@ -12,7 +12,7 @@ class StoreGameMasterRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,19 +23,19 @@ class StoreGameMasterRequest extends FormRequest
     public function rules(): array
     {
         return [
-                'users_id' => 'required|exists:users,id',
-                'location' => 'required|string|max:100',
-                'game_description' => 'required|string|max:1000',
-                'max_players' => 'required|integer|min:1',
-                'profile_picture' => 'nullable|file|mimes:jpeg,png,jpg|max:2048',
-                'is_active' => 'required|boolean',
-                'is_available' => 'required|boolean',
-                'slug' => [
-                    'required',
-                    'string',
-                    'max:150',
-                    Rule::unique('game_masters')->ignore($this->game_master),
-                ],
+            'users_id' => 'required|exists:users,id',
+            'location' => 'required|string|max:100',
+            'game_description' => 'required|string|max:1000',
+            'max_players' => 'required|integer|min:1',
+            'profile_picture' => 'nullable|file|mimes:jpeg,png,jpg|max:2048',
+            'is_active' => 'required|boolean',
+            'is_available' => 'required|boolean',
+            'slug' => [
+                'required',
+                'string',
+                'max:150',
+                Rule::unique('game_masters')->ignore($this->game_master),
+            ],
         ];
     }
 }

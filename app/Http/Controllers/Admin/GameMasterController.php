@@ -22,7 +22,7 @@ class GameMasterController extends Controller
         //give the current user
         $user = Auth::user();
         $game_masters = GameMaster::all();
-        return view('game_masters.index', compact('user','game_masters'));
+        return view('game_masters.index', compact('user', 'game_masters'));
     }
 
     /**
@@ -30,8 +30,9 @@ class GameMasterController extends Controller
      */
     public function create()
     {
-        $game_systems=GameSystem::all();
-        return view('game_masters.create', compact('game_systems'));
+        $game_systems = GameSystem::all();
+        $province = config('italianProvince');
+        return view('game_masters.create', compact('game_systems'), $province);
     }
 
     /**
@@ -39,10 +40,10 @@ class GameMasterController extends Controller
      */
     public function store(StoreGameMasterRequest $request)
     {
-        $data=$request->validated();
+        $data = $request->validated();
 
 
-        $game_master= new GameMaster();
+        $game_master = new GameMaster();
 
         // $game_master->users_id=$data['users_id'];
         // $game_master->location=$data['location'];
@@ -63,6 +64,8 @@ class GameMasterController extends Controller
         if ($request->has('game_systems')) {
             $game_master->gameSystems()->sync($data['game_systems']);
         }
+
+        return redirect()->route('game_master.index')->with('success', 'Profile successfully created');
     }
 
     /**
