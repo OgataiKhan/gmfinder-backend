@@ -78,11 +78,16 @@
 
                                 <div class="col-md-6">
 
-                                    <select class="form-select" name="role" id="role" required>
+                                    <select class="form-select @error('role') is-invalid @enderror" name="role" id="role" required>
                                         <option selected>Choose your role...</option>
                                         <option value="game_master">Game Master</option>
                                     </select>
 
+                                    @error('role')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                             </div>
 
