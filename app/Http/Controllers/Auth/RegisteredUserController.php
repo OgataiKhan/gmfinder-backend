@@ -51,7 +51,7 @@ class RegisteredUserController extends Controller
 
         if ($user->role === 'game_master') {
             // Store user ID in session to use later in game master form
-            session(['game_master_user_id' => $user->id]);
+            // session(['game_master_user_id' => $user->id]);
     
             // Redirect to game master create form
             return redirect(route('game_master.create'));

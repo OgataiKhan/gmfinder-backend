@@ -10,7 +10,7 @@ class GameSystem extends Model
     use HasFactory;
     
     protected $fillable = [
-        'name', 'description', 'image', 'slug'
+        'name', 'description', 'image',
     ];
 
     public function gameMasters()

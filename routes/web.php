@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\GameMasterController;
+use App\Http\Controllers\Admin\GameSystemController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -33,6 +34,7 @@ Route::middleware(['auth', 'verified'])
 
 Route::middleware('auth')->group(function () {
     // Route::resource('game_master', GameMasterController::class);
+    Route::get('/game_systems', [GameSystemController::class, 'index'])->name('game_systems.index');
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');

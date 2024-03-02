@@ -10,6 +10,7 @@ use App\Models\GameSystem;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 
 class GameMasterController extends Controller
 {
@@ -43,15 +44,20 @@ class GameMasterController extends Controller
 
         $game_master= new GameMaster();
 
-        $game_master->users_id=$data['users_id'];
-        $game_master->location=$data['location'];
-        $game_master->game_description=$data['game_description'];
-        $game_master->max_players=$data['max_players'];
-        $game_master->profile_img=$data['profile_img'];
-        $game_master->is_active=$data['is_active'];
-        $game_master->is_available=$data['is_available'];
-        $game_master->slug=$data['slug'];
+        // $game_master->users_id=$data['users_id'];
+        // $game_master->location=$data['location'];
+        // $game_master->game_description=$data['game_description'];
+        // $game_master->max_players=$data['max_players'];
+        // $game_master->profile_img=$data['profile_img'];
+        // $game_master->is_active=$data['is_active'];
+        // $game_master->is_available=$data['is_available'];
+        // $game_master->slug=$data['slug'];
 
+        $game_master->fill($data);
+        $game_master->slug = Str::slug($request->name);
+        $game_master->user_id = auth()->id();
+
+        $game_master->save();
 
         //To be reviewed
         if ($request->has('game_systems')) {
