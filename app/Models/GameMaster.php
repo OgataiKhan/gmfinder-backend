@@ -19,4 +19,10 @@ class GameMaster extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function gameSystems()
+    {
+        return $this->belongsToMany(GameSystem::class, 'game_master_game_system', 'game_master_id', 'game_system_id');
+    }
+
 }
