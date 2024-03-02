@@ -5,14 +5,14 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
-class UpdateGameMasterRequest extends FormRequest
+class StoreGameMasterRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      */
     public function authorize(): bool
     {
-        return true;
+        return false;
     }
 
     /**
@@ -27,7 +27,7 @@ class UpdateGameMasterRequest extends FormRequest
                 'location' => 'required|string|max:100',
                 'game_description' => 'required|string|max:1000',
                 'max_players' => 'required|integer|min:1',
-                'profile_img' => 'nullable|file|mimes:jpeg,png,jpg|max:2048',
+                'profile_picture' => 'nullable|file|mimes:jpeg,png,jpg|max:2048',
                 'is_active' => 'required|boolean',
                 'is_available' => 'required|boolean',
                 'slug' => [
