@@ -30,21 +30,32 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
+
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'role' => ['required', 'string', 'in:game_master'],
         ]);
 
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'role' => $request->role,
         ]);
 
         event(new Registered($user));
 
         Auth::login($user);
+
+        if ($user->role === 'game_master') {
+            // Store user ID in session to use later in game master form
+            session(['game_master_user_id' => $user->id]);
+    
+            // Redirect to game master create form
+            return redirect(route('game_master.create'));
+        }
 
         return redirect(RouteServiceProvider::HOME);
     }
