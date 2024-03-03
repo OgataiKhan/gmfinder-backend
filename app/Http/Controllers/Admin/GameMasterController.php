@@ -31,8 +31,8 @@ class GameMasterController extends Controller
     public function create()
     {
         $game_systems = GameSystem::all();
-        $province = config('italianProvince');
-        return view('game_masters.create', compact('game_systems'), $province);
+        $provinces = config('italian_provinces');
+        return view('game_masters.create', compact('game_systems'), $provinces);
     }
 
     /**
