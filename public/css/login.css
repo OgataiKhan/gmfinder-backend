@@ -6,13 +6,17 @@
     overflow: hidden;
 }
 
+#login-card {
+    box-shadow: 0 0 1px 0 var(--primary-color);
+}
+
 #login-card-header {
-    background-color: var(--light-color);
+    background-color: #fff8ee;
     color: var(--primary-color);
 }
 
 #login-card-body {
-    background-color: var(--light-color);
+    background-color: #fff8ee;
     color: var(--primary-color);
 }
 

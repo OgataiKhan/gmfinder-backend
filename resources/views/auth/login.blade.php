@@ -4,7 +4,7 @@
     <div class="container mt-4">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <div class="card">
+                <div id="login-card" class="card">
                     <div id="login-card-header" class="card-header">{{ __('Login') }}</div>
 
                     <div id="login-card-body" class="card-body">
