@@ -15,12 +15,12 @@
 }
 
 #login-card-header {
-    background-color: #fff8ee;
+    background-color: var(--light-color-card);
     color: var(--primary-color);
 }
 
 #login-card-body {
-    background-color: #fff8ee;
+    background-color: var(--light-color-card);
     color: var(--primary-color);
 }
 

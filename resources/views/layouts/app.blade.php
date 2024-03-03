@@ -18,6 +18,7 @@
     <!-- Usando Vite -->
     @vite(['resources/js/app.js'])
 
+    {{-- use stylesheet in view --}}
     @stack('styles')
 </head>
 
