@@ -20,6 +20,14 @@
     color: var(--primary-color);
 }
 
+/* inputs */
+
+#email:focus,
+#password:focus {
+    border-color: var(--contrast-color);
+    box-shadow: 0 0 0 0.25rem rgba(230, 122, 0, 0.25);
+}
+
 /* login card button */
 
 .login-button {
