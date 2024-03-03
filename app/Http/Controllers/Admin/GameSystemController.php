@@ -10,7 +10,7 @@ class GameSystemController extends Controller
 {
     public function index()
     {
-        $game_systems = GameSystem::all();
+        $game_systems = GameSystem::orderBy('name')->get();
         return view('game_systems.index', ['game_systems' => $game_systems]);
     }
 }

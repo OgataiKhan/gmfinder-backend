@@ -8,7 +8,7 @@
                 <select class="form-select" name="location" id="location">
                     <option selected>Select a province</option>
                     @foreach ($province as $single_province)
-                        <option value="{{ $single_province }}" @if (old('single_province') == $single_province) selected @endif>
+                        <option value="{{ $single_province }}" @if (old('location') == $single_province) selected @endif>
                             {{ $single_province }}</option>
                     @endforeach
                 </select>
@@ -21,6 +21,18 @@
             <div class="mb-3">
                 <label for="game_description" class="form-label">Game description</label>
                 <textarea class="form-control" id="game_description" rows="3">{{ old('game_description') }}</textarea>
+            </div>
+            <div class="mb-3">
+                <p class="form-label">Game systems</p>
+                @foreach ($game_systems as $game_system)
+                    <div class="form-check">
+                        <input name="game_systems[]" class="form-check-input" id="game_system-{{ $game_system->id }}"
+                            type="checkbox" value="{{ $game_system->id }}"
+                            {{ in_array($game_system->id, old('game_systems', [])) ? 'checked' : '' }}>
+                        <label class="form-check-label"
+                            for="game_system-{{ $game_system->id }}">{{ $game_system->name }}</label>
+                    </div>
+                @endforeach
             </div>
             <div class="mb-3 col-12">
                 <label for="profile_img" class="form-label">Choose a profile picture</label>
