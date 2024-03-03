@@ -55,8 +55,11 @@ class GameMasterController extends Controller
         // $game_master->slug=$data['slug'];
 
         $game_master->fill($data);
-        $game_master->slug = Str::slug($request->name);
-        $game_master->user_id = auth()->id();
+
+        $user = Auth::user();
+
+        $game_master->slug = Str::slug($user->name);
+        $game_master->user_id = $user->id;
 
         $game_master->save();
 

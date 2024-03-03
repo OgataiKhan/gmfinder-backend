@@ -1,12 +1,21 @@
 @extends('layouts.admin')
 @section('content')
     <div class="container my-4">
+        @if ($errors->any())
+            <div class="alert alert-danger" role="alert">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <form action={{ route('game_master.store') }} method="POST" enctype="multipart/form-data" class="row">
             @csrf
             <div class="col-6 mb-3">
                 <label for="location" class="form-label">Location</label>
                 <select class="form-select" name="location" id="location">
-                    <option selected>Select a province</option>
+                    <option value="" disabled selected hidden>Select a province</option>
                     @foreach ($province as $single_province)
                         <option value="{{ $single_province }}" @if (old('location') == $single_province) selected @endif>
                             {{ $single_province }}</option>
@@ -20,7 +29,7 @@
             </div>
             <div class="mb-3">
                 <label for="game_description" class="form-label">Game description</label>
-                <textarea class="form-control" id="game_description" rows="3">{{ old('game_description') }}</textarea>
+                <textarea class="form-control" name="game_description" id="game_description" rows="3">{{ old('game_description') }}</textarea>
             </div>
             <div class="mb-3">
                 <p class="form-label">Game systems</p>
