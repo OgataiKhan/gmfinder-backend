@@ -1,6 +1,7 @@
 #login-card-header {
     background-color: var(--contrast-color);
-    color: #fffbf5;
+    color: var(--light-color);
+    font-weight: bold;
 }
 
 #login-card-body {
