@@ -1,1 +1,5 @@
 /* sidebar */
+
+#sidebarMenu {
+    background-color: var(--primary-color);
+}
