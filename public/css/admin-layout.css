@@ -3,3 +3,13 @@
 #sidebarMenu {
     background-color: var(--primary-color);
 }
+
+#sidebarMenu a {
+    color: var(--light-color);
+    transition: background-color 0.3s;
+}
+
+#sidebarMenu a:hover {
+    background-color: var(--contrast-color);
+    color: var(--light-color);
+}
