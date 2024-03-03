@@ -101,6 +101,14 @@ class GameMasterController extends Controller
         $user = Auth::user();
         $data = $request->validated();
         $game_master = $user->game_master;
+
+        if (isset($data['profile_img'])) {
+            $game_master->profile_img = Storage::put('uploads', $data['profile_img']);
+            if($game_master->profile_img){
+                Storage::disk('public')->delete($game_master->profile_img);                
+            }
+        }
+
         $game_master->update($data);
         $game_master->slug = Str::slug($user->name);
         $game_master->save();
