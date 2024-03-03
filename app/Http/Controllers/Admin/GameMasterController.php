@@ -10,6 +10,7 @@ use App\Models\GameSystem;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class GameMasterController extends Controller
@@ -59,6 +60,9 @@ class GameMasterController extends Controller
         $user = Auth::user();
 
         $game_master->slug = Str::slug($user->name);
+        if (isset($data['profile_img'])) {
+            $game_master->profile_img = Storage::put('uploads', $data['profile_img']);
+        }
         $game_master->user_id = $user->id;
 
         $game_master->save();
@@ -84,7 +88,7 @@ class GameMasterController extends Controller
     public function edit(User $user)
     {
         $user = Auth::user();
-        $game_master = $user->gameMaster;
+        $game_master = $user->game_master;
         return view('game_masters.edit', compact('game_master'));
     }
 
@@ -96,10 +100,24 @@ class GameMasterController extends Controller
 
         $user = Auth::user();
         $data = $request->validated();
+        $game_master = $user->game_master;
+        $game_master->update($data);
+        $game_master->slug = Str::slug($user->name);
+        $game_master->save();
 
-        $gameMaster = $user->gameMaster;
-        $gameMaster->max_players = $data['max_players'];
-        $gameMaster->update($data);
+        if ($request->has('game_systems')) {
+            $game_master->gameSystems()->sync($data['game_systems']);
+        }
+        else{
+            $game_master->gameSystems()->sync([]);
+        }
+
+        return redirect()->route('game_master.index')->with('success', 'Profile successfully updated');
+
+
+
+       /*  $game_master->max_players = $data['max_players'];
+        $game_master->update($data); */
     }
 
     /**
