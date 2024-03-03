@@ -1,14 +1,19 @@
+.container {
+    background-color: var(--light-color);
+}
+
+.card {
+    overflow: hidden;
+}
+
 #login-card-header {
-    background-color: var(--contrast-color);
-    color: var(--light-color);
-    font-weight: bold;
+    background-color: var(--light-color);
+    color: var(--primary-color);
 }
 
 #login-card-body {
-    background-color: var(--primary-color);
-    color: #fffbf5;
-    border-bottom-left-radius: 5.92px;
-    border-bottom-right-radius: 5.92px;
+    background-color: var(--light-color);
+    color: var(--primary-color);
 }
 
 /* login card button */

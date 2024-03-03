@@ -7,3 +7,8 @@
     --light-color: #fffbf5;
     --dark-color: #0f0905;
 }
+
+#app {
+    background-color: var(--light-color);
+    min-height: 100vh;
+}
