@@ -15,7 +15,7 @@
         @endif
 
         <form action={{ route('game_master.store') }} method="POST" enctype="multipart/form-data" id="gm-create-form"
-            class="row flex-column col-6 mx-auto">
+            class="row flex-column col-6 mx-auto mt-5">
             @csrf
             <div class="d-flex justify-content-between">
                 <div class="col-6 mb-3">
@@ -54,8 +54,8 @@
                 <label for="profile_img" class="form-label">Choose a profile picture</label>
                 <input class="form-control" type="file" id="profile_img" name="profile_img">
             </div>
-            <div class="col-1 mx-auto">
-                <button type="submit" class="btn btn-primary">Create</button>
+            <div class="d-flex">
+                <button id="create-button" type="submit" class="btn btn-primary mx-auto">Create</button>
             </div>
         </form>
     </div>
