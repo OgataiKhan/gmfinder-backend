@@ -2,7 +2,7 @@
 @section('content')
     <div class="container py-4">
         <h1>My Character</h1>
-        @if ($user->gameMaster->is_active)
+        @if ($user && $user->gameMaster && $user->gameMaster->is_active)
             <div class="card" id="gm-card">
                 {{-- show user info --}}
                 <div class="card-header">
