@@ -57,11 +57,11 @@
                             <a class="link" href="#"><strong>Error</strong></a>
                         </li>
                         <li>
-                            <a class="btn bg-light px-2 py-1 rounded"
+                            <a class="link"
                                 href="{{ env('FRONTEND_URL') }}/advanced-search"><strong>Search</strong></a>
                         </li>
                         <li>
-                            <a class="btn bg-light px-2 py-1 rounded" href="{{ route('logout') }}"
+                            <a class="btn" id="header-button" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}</a>
@@ -122,7 +122,7 @@
                     </div>
                 </nav>
 
-                <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" id="main">
                     @yield('content')
                 </main>
             </div>
@@ -172,8 +172,8 @@
                                         id="exampleFormControlInput1" placeholder="email address" />
                                 </div>
                                 <div class="mt-4 button">
-                                    <button type="submit" class="btn text-uppercase mt-2">
-                                        subscribe
+                                    <button type="submit" class="btn mt-2" id="footer-button">
+                                        Subscribe
                                     </button>
                                 </div>
                             </form>
@@ -197,9 +197,9 @@
                     <div class="logo">
                         <img src="/img/dungeons_and_dragons_logo_by_floodgrunt-d6my4z8.png" alt="" />
                     </div>
-                    <div id="button">
-                        <button type="reset" class="btn btn-primary text-uppercase">
-                            back to top
+                    <div>
+                        <button type="reset" class="btn" id="footer-button">
+                            Back to Top
                         </button>
                     </div>
                 </div>
