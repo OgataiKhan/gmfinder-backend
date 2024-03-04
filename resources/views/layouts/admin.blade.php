@@ -114,6 +114,31 @@
                                     <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i> Dashboard
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('game_master.index') }}">
+                                    <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i> Profile
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('dashboard') }}">
+                                    <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i> Edit Profile
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('dashboard') }}">
+                                    <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i> Inbox
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('dashboard') }}">
+                                    <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i> My Reviews
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('dashboard') }}">
+                                    <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i> My Stats
+                                </a>
+                            </li>
                         </ul>
 
 
