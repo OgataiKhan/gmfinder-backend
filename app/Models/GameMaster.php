@@ -15,28 +15,39 @@ class GameMaster extends Model
         'location', 'game_description', 'max_players', 'profile_img', 'is_active', 'is_available',
     ];
 
+    // Relation with users
     public function user()
     {
         return $this->belongsTo(User::class);
     }
 
+    // Relation with game_systems
     public function gameSystems()
     {
         return $this->belongsToMany(GameSystem::class, 'game_master_game_system', 'game_master_id', 'game_system_id');
     }
 
+    // Relation with messages
     public function messages()
     {
         return $this->hasMany(Message::class);
     }
 
+    // Relation with reviews
     public function reviews()
     {
         return $this->hasMany(Review::class);
     }
 
+    // Relation with promotions
     public function promotions()
     {
         return $this->hasMany(Promotion::class);
+    }
+
+    // Relation with ratings
+    public function ratings()
+    {
+        return $this->belongsToMany(Rating::class, 'game_master_rating');
     }
 }
