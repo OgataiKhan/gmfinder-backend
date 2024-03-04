@@ -38,7 +38,7 @@
                 <label for="max_players" class="form-label required">Max Players</label>
                 <input type="number" class="form-control {{ $errors->has('max_players') ? 'is-invalid' : '' }}"
                     id="max_players" name="max_players" value="{{ old('max_players', $game_master->max_players) }}"
-                    required min="1">
+                    required min="1" max="127">
                 @if ($errors->has('max_players'))
                 <div class="invalid-feedback">
                     {{ $errors->first('max_players') }}
