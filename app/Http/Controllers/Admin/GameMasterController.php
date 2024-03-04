@@ -43,18 +43,7 @@ class GameMasterController extends Controller
     {
         $data = $request->validated();
 
-
         $game_master = new GameMaster();
-
-        // $game_master->users_id=$data['users_id'];
-        // $game_master->location=$data['location'];
-        // $game_master->game_description=$data['game_description'];
-        // $game_master->max_players=$data['max_players'];
-        // $game_master->profile_img=$data['profile_img'];
-        // $game_master->is_active=$data['is_active'];
-        // $game_master->is_available=$data['is_available'];
-        // $game_master->slug=$data['slug'];
-
         $game_master->fill($data);
 
         $user = Auth::user();
@@ -67,8 +56,7 @@ class GameMasterController extends Controller
 
         $game_master->save();
 
-        //To be reviewed
-        if ($request->has('game_systems')) {
+        if (isset($data['game_systems'])) {
             $game_master->gameSystems()->sync($data['game_systems']);
         }
 

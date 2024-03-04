@@ -15,6 +15,6 @@ class GameSystem extends Model
 
     public function gameMasters()
     {
-        return $this->belongsToMany(GameMaster::class, 'game_master_game_system', 'game_system_id', 'game_master_id');
+        return $this->belongsToMany(GameMaster::class);
     }
 }

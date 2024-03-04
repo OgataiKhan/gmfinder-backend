@@ -78,10 +78,9 @@
 
                                 <div class="col-md-6">
 
-                                    <select class="form-select @error('role') is-invalid @enderror" name="role"
-                                        id="role" required>
-                                        <option selected>Choose your role...</option>
-                                        <option value="game_master">Game Master</option>
+                                    <select class="form-select @error('role') is-invalid @enderror" name="role" id="role" required>
+                                        <option value="">Choose your role...</option>
+                                        <option value="game_master" @if (old('role') == 'game_master') selected @endif>Game Master</option>
                                     </select>
 
                                     @error('role')
