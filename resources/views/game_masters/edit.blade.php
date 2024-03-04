@@ -59,7 +59,10 @@
 
             {{-- Game Systems --}}
             <div class="mb-3">
-                <p class="form-label required">Game systems</p>
+                <div class="d-flex">
+                    <p class="form-label required">Game systems</p>
+                    <p class="ms-4 d-none text-danger" id="no-checkboxes">Please select at least one game system</p>
+                </div>
                 @foreach ($game_systems as $game_system)
                     <div class="form-check">
                         @if ($errors->any())
@@ -98,6 +101,7 @@
             </div>
         </form>
     </div>
+    @vite(['resources/js/checkboxValidation.js'])
 @endsection
 
 @push('styles')
