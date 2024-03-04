@@ -16,7 +16,7 @@
 }
 
 /* HEADER */
-#header {
+.header {
     background-color: var(--primary-color);
     width: 100%;
 }

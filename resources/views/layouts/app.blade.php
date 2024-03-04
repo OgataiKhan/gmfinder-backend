@@ -32,7 +32,7 @@
 
 <body>
     <div id="app">
-        <header id="header">
+        <header class="header">
             <div class="container d-flex justify-content-between align-items-center py-2">
                 <!-- logo -->
                 <div class="logo">
@@ -63,12 +63,11 @@
                         </li>
                         @guest
                             <li>
-                                <a class="btn" id="header-button" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="header-button btn" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li>
-                                    <a class="btn" id="header-button"
-                                        href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="btn header-button" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else
@@ -98,7 +97,7 @@
             </div>
         </header>
 
-        <main id="main">
+        <main class="section-main">
             @yield('content')
         </main>
         <footer id="footer">

@@ -31,7 +31,7 @@
 
 <body>
     <div id="app">
-        <header id="header">
+        <header class="header">
             <div class="container d-flex justify-content-between align-items-center py-2">
                 <!-- logo -->
                 <div class="logo">
@@ -66,7 +66,7 @@
                                 href="{{ env('FRONTEND_URL') }}/advanced-search"><strong>Search</strong></a>
                         </li>
                         <li>
-                            <a class="btn" id="header-button" href="{{ route('logout') }}"
+                            <a class="header-button btn" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}</a>
@@ -124,12 +124,10 @@
                                 </a>
                             </li>
                         </ul>
-
-
                     </div>
                 </nav>
 
-                <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" id="main">
+                <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 section-main" id="main">
                     @yield('content')
                 </main>
             </div>
