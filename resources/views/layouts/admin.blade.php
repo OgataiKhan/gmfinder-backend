@@ -75,7 +75,7 @@
                 <!-- /navbar -->
             </div>
         </header>
-        <div class="container-fluid vh-100">
+        <div class="container-fluid">
             <div class="row h-100">
                 <!-- Definire solo parte del menu di navigazione inizialmente per poi
         aggiungere i link necessari giorno per giorno
@@ -171,8 +171,8 @@
                             <form class="d-flex justify-content-center gap-3">
                                 <div id="email">
                                     <label for="exampleFormControlInput1" class="form-label">Newsletter</label>
-                                    <input type="email" class="form-control  me-5 email" id="exampleFormControlInput1"
-                                        placeholder="email address" />
+                                    <input type="email" class="form-control  me-5 email"
+                                        id="exampleFormControlInput1" placeholder="email address" />
                                 </div>
                                 <div class="mt-4 button">
                                     <button type="submit" class="btn text-uppercase mt-2">
