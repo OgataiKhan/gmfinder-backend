@@ -19,27 +19,6 @@
     background-color: var(--light-color-card);
     color: var(--primary-color);
 }
-
-/* login card button */
-
-/* #login-button {
-    background-color: transparent;
-    color: var(--contrast-color);
-    border: 1px solid var(--contrast-color);
-    padding: 5px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-/* login button hover */
-
-/* #login-button:hover {
-    background-color: var(--contrast-color);
-    color: var(--light-color);
-    border-color: var(--contrast-color);
-}  */
-
 /* forgot password link */
 
 #forgot-psw {
