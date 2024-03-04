@@ -1,7 +1,7 @@
 /* sidebar */
 
 #sidebarMenu {
-    background-color: #8e624f;
+    background-color: var(--secondary-color);
 }
 
 #sidebarMenu a {
