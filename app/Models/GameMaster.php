@@ -12,7 +12,7 @@ class GameMaster extends Model
     protected $table = 'game_masters';
 
     protected $fillable = [
-        'location', 'game_description', 'max_players', 'profile_img', 'is_active', 'is_available',
+        'location', 'game_description', 'max_players', 'profile_img', 'is_available',
     ];
 
     // Relation with users
