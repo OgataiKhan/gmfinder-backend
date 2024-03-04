@@ -1,7 +1,7 @@
 /* sidebar */
 
 #sidebarMenu {
-    background-color: var(--primary-color);
+    background-color: #8e624f;
 }
 
 #sidebarMenu a {
@@ -10,7 +10,7 @@
 }
 
 #sidebarMenu a:hover {
-    background-color: var(--contrast-color);
+    background-color: #ea8e26;
     color: var(--light-color);
 }
 
