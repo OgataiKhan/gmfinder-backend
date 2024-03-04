@@ -17,8 +17,8 @@
 
                                 <div class="col-md-6">
                                     <input id="email" type="email"
-                                        class="form-control @error('email') is-invalid @enderror" name="email"
-                                        value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                        class="input-focus-orange form-control @error('email') is-invalid @enderror"
+                                        name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                                     @error('email')
                                         <span class="invalid-feedback" role="alert">
@@ -34,8 +34,8 @@
 
                                 <div class="col-md-6">
                                     <input id="password" type="password"
-                                        class="form-control @error('password') is-invalid @enderror" name="password"
-                                        required autocomplete="current-password">
+                                        class="input-focus-orange form-control @error('password') is-invalid @enderror"
+                                        name="password" required autocomplete="current-password">
 
                                     @error('password')
                                         <span class="invalid-feedback" role="alert">
@@ -48,8 +48,8 @@
                             <div class="mb-4 row">
                                 <div class="col-md-6 offset-md-4">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" name="remember" id="remember"
-                                            {{ old('remember') ? 'checked' : '' }}>
+                                        <input class="form-check-input input-focus-orange checked-orange" type="checkbox"
+                                            name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
                                         <label class="form-check-label" for="remember">
                                             {{ __('Remember Me') }}
@@ -60,7 +60,7 @@
 
                             <div class="mb-4 row mb-0">
                                 <div class="col-md-8 offset-md-4">
-                                    <button id="login-button" type="submit" class="btn btn-primary">
+                                    <button type="submit" class="btn btn-void-orange">
                                         {{ __('Login') }}
                                     </button>
 

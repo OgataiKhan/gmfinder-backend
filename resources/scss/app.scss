@@ -130,3 +130,32 @@ footer hr {
     content: " *";
     color: var(--danger-color);
 }
+
+/* BUTTONS */
+
+.btn-void-orange {
+    background-color: transparent;
+    color: var(--contrast-color);
+    border: 1px solid var(--contrast-color);
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-void-orange:hover {
+    background-color: var(--contrast-color);
+    color: var(--light-color);
+    border-color: var(--contrast-color);
+}
+
+/* INPUTS */
+
+.input-focus-orange:focus {
+    border-color: var(--contrast-color);
+    box-shadow: 0 0 0 0.25rem rgba(230, 122, 0, 0.25);
+}
+
+.checked-orange:checked {
+    background-color: var(--contrast-color);
+}
