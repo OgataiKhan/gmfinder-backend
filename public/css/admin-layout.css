@@ -36,6 +36,15 @@
     padding-left: 0;
 }
 
+.link {
+    text-decoration: none;
+    color: white;
+}
+
+.link:hover {
+    color: var(--contrast-color);
+}
+
 /* FOOTER */
 
 /* FOOTER TOP */
@@ -51,11 +60,18 @@
     color: white;
 }
 
+#footer a:hover {
+    color: var(--contrast-color);
+}
+
 #footer ul {
     list-style: none;
     padding-left: 0;
 }
 
+#email .email {
+    background-color: var(--light-color);
+}
 .button button {
     background-color: var(--contrast-color);
     color: black;
@@ -75,6 +91,10 @@ footer hr {
     background-color: var(--contrast-color);
     border: none;
     color: black;
+}
+
+#button button:hover {
+    color: white;
 }
 
 #button button:hover {

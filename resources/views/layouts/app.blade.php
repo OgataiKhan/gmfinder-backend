@@ -46,18 +46,17 @@
                     <ul class="d-flex align-items-center gap-3 mt-3">
                         <!-- link navbar -->
                         <li>
-                            <a class="text-decoration-none link text-white"
-                                href="{{ env('FRONTEND_URL') }}"><strong>Home</strong></a>
+                            <a class="link" href="{{ env('FRONTEND_URL') }}"><strong>Home</strong></a>
                         </li>
                         <li>
-                            <a class="text-decoration-none link text-white" href="#"><strong>Game
+                            <a class="link" href="#"><strong>Game
                                     Master</strong></a>
                         </li>
                         <li>
-                            <a class="text-decoration-none link text-white" href="#"><strong>Message</strong></a>
+                            <a class="link" href="#"><strong>Message</strong></a>
                         </li>
                         <li>
-                            <a class="text-decoration-none link text-white" href="#"><strong>Error</strong></a>
+                            <a class="link" href="#"><strong>Error</strong></a>
                         </li>
                         <li>
                             <a class="btn bg-light px-2 py-1 rounded"
@@ -188,9 +187,9 @@
                         <div class="d-flex align-items-center">
                             <!-- newsletter e button -->
                             <form class="d-flex justify-content-center gap-3">
-                                <div>
+                                <div id="email">
                                     <label for="exampleFormControlInput1" class="form-label">Newsletter</label>
-                                    <input type="email" class="form-control bg-warning me-5"
+                                    <input type="email" class="form-control  me-5 email"
                                         id="exampleFormControlInput1" placeholder="email address" />
                                 </div>
                                 <div class="mt-4 button">
