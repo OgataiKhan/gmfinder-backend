@@ -31,7 +31,6 @@
 
 <body>
     <div id="app">
-
         <header id="header">
             <div class="container d-flex justify-content-between align-items-center py-2">
                 <!-- logo -->
@@ -77,30 +76,6 @@
                 <!-- /navbar -->
             </div>
         </header>
-
-        {{-- <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-2 shadow">
-            <div class="row justify-content-between">
-                <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="/">BoolPress</a>
-                <button class="navbar-toggler position-absolute d-md-none collapsed" type="button"
-                    data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            </div>
-            <div class="navbar-nav">
-                <div class="nav-item text-nowrap ms-2">
-                    <a class="nav-link" href="{{ route('logout') }}"
-                        onclick="event.preventDefault();
-                    document.getElementById('logout-form').submit();">
-                        {{ __('Logout') }}
-                    </a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                        @csrf
-                    </form>
-                </div>
-            </div>
-        </header> --}}
-
         <div class="container-fluid vh-100">
             <div class="row h-100">
                 <!-- Definire solo parte del menu di navigazione inizialmente per poi
@@ -125,7 +100,84 @@
                 </main>
             </div>
         </div>
+        <footer id="footer">
+            <div class="container py-2">
+                <div class="row align-items-center">
+                    <!-- col di sinistra -->
+                    <div class="col-6 d-flex">
+                        <!-- link -->
+                        <div class="col-4">
+                            <h4 class="text-uppercase mb-3">About</h4>
+                            <ul>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Contact Us</a></li>
+                                <li><a href="#">FAQs</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-4">
+                            <h4 class="text-uppercase mb-3">Community</h4>
+                            <ul>
+                                <li><a href="#">Events</a></li>
+                                <li><a href="#">Forums</a></li>
+                                <li><a href="#">Guides</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-4">
+                            <h4 class="text-uppercase mb-3">Legal</h4>
+                            <ul>
+                                <li><a href="#">Terme of Service</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Accessibility</a></li>
+                            </ul>
+                        </div>
+                        <!-- /link -->
+                    </div>
+                    <!-- /col di sinistra -->
 
+                    <!-- col di destra -->
+                    <div class="col-6 ps-5">
+                        <div class="d-flex align-items-center">
+                            <!-- newsletter e button -->
+                            <form class="d-flex justify-content-center gap-3">
+                                <div>
+                                    <label for="exampleFormControlInput1" class="form-label">Newsletter</label>
+                                    <input type="email" class="form-control bg-warning me-5"
+                                        id="exampleFormControlInput1" placeholder="email address" />
+                                </div>
+                                <div class="mt-4 button">
+                                    <button type="submit" class="btn text-uppercase mt-2">
+                                        subscribe
+                                    </button>
+                                </div>
+                            </form>
+                            <!-- /newsletter e button -->
+                        </div>
+                        <!-- icons -->
+                        <div class="mt-3">
+                            <ul class="d-flex gap-3">
+                                <li><a href="#">icons</a></li>
+                                <li><a href="#">icons</a></li>
+                                <li><a href="#">icons</a></li>
+                                <li><a href="#">icons</a></li>
+                            </ul>
+                        </div>
+                        <!-- /icons -->
+                    </div>
+                    <!-- /col di destra -->
+                </div>
+                <hr />
+                <div class="container d-flex justify-content-between align-items-center px-0 pt-2">
+                    <div class="logo">
+                        <img src="/img/dungeons_and_dragons_logo_by_floodgrunt-d6my4z8.png" alt="" />
+                    </div>
+                    <div id="button">
+                        <button type="reset" class="btn btn-primary text-uppercase">
+                            back to top
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
 </body>
 
