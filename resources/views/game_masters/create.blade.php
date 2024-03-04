@@ -10,7 +10,7 @@
             <div class="d-flex justify-content-between">
                 {{-- Location --}}
                 <div class="col-6 mb-3">
-                    <label for="location" class="form-label">Location</label>
+                    <label for="location" class="form-label required">Location</label>
                     <select class="form-select {{ $errors->has('location') ? 'is-invalid' : '' }}" name="location"
                         id="location" required>
                         <option value="" disabled selected hidden>Select a province</option>
@@ -27,7 +27,7 @@
                 </div>
                 {{-- Max Players --}}
                 <div class="mb-3 col-6 ms-1">
-                    <label for="max_players" class="form-label">Max Players</label>
+                    <label for="max_players" class="form-label required">Max Players</label>
                     <input type="number" class="form-control {{ $errors->has('max_players') ? 'is-invalid' : '' }}"
                         id="max_players" name="max_players" value="{{ old('max_players') }}" required min="1">
                     @if ($errors->has('max_players'))
@@ -39,7 +39,7 @@
             </div>
             {{-- Game Description --}}
             <div class="mb-3">
-                <label for="game_description" class="form-label">Game description</label>
+                <label for="game_description" class="form-label required">Game description</label>
                 <textarea class="form-control {{ $errors->has('game_description') ? 'is-invalid' : '' }}" name="game_description"
                     id="game_description" rows="3" required maxlength="1000">{{ old('game_description') }}</textarea>
                 @if ($errors->has('game_description'))
@@ -50,7 +50,7 @@
             </div>
             {{-- Game Systems --}}
             <div class="mb-3">
-                <p class="form-label">Game systems</p>
+                <p class="form-label required">Game systems</p>
                 @foreach ($game_systems as $game_system)
                     <div class="form-check">
                         <input name="game_systems[]" class="form-check-input" id="game_system-{{ $game_system->id }}"
