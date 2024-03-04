@@ -99,7 +99,7 @@
         <div class="mb-3 col">
             <input type="hidden" name="is_available" value="0"> <!-- Hidden input with value 0 -->
             <input class="{{ $errors->has('is_available') ? 'is-invalid' : '' }}" type="checkbox" id="toggleIsAvailable"
-                name="is_available" value="4" {{ $game_master->is_available ?
+                name="is_available" value="1" {{ $game_master->is_available ?
             'checked'
             : '' }}>
             <label for="toggleIsAvailable">Ready for a new game session ?</label>
