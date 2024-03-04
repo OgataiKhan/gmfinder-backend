@@ -104,7 +104,7 @@
                                 @else
                                     <a class="nav-link text-center text-md-start"
                                         href="{{ route('game_master.create') }}">
-                                        <i class="fa-solid fa-user"></i> Create Profile
+                                        <i class="fa-solid fa-wand-magic-sparkles fa-lg fa-fw"></i> Create Profile
                                     </a>
                                 @endif
                             </li>

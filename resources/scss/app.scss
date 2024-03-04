@@ -127,6 +127,22 @@ footer hr {
     border-color: var(--light-color);
 }
 
+.btn-white {
+    background-color: var(--light-color);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-white:hover {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    border-color: var(--primary-color);
+}
+
 .btn-danger-custom {
     background-color: transparent;
     color: var(--danger-color);
