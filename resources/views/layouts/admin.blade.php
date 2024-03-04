@@ -120,9 +120,15 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('dashboard') }}">
-                                    <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i> Edit Profile
-                                </a>
+                                @if ($user->gameMaster)
+                                    <a class="nav-link" href="{{ route('profile.edit') }}">
+                                        <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i> Edit Profile
+                                    </a>
+                                @else
+                                    <a class="nav-link" href="{{ route('profile.create') }}">
+                                        <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i> Create Profile
+                                    </a>
+                                @endif
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('dashboard') }}">
