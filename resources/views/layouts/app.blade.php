@@ -32,7 +32,6 @@
 
 <body>
     <div id="app">
-
         <header id="header">
             <div class="container d-flex justify-content-between align-items-center py-2">
                 <!-- logo -->
@@ -145,7 +144,7 @@
                 </div>
             </div>
         </nav>
-        <main class="">
+        <main id="main">
             @yield('content')
         </main>
         <footer>
@@ -227,7 +226,6 @@
             </div>
         </footer>
     </div>
-
 </body>
 
 </html>
