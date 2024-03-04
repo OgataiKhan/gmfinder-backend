@@ -39,6 +39,11 @@
                         <img src="/img/dungeons_and_dragons_logo_by_floodgrunt-d6my4z8.png" alt="" /></a>
                 </div>
                 <!-- /logo -->
+                <button class="navbar-toggler position-absolute d-md-none collapsed text-white" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
                 <!-- navbar -->
                 <nav class="navbar-link">
                     <ul class="d-flex align-items-center gap-3 mt-3">
@@ -81,38 +86,40 @@
                     <div class="position-sticky pt-3">
                         <ul class="nav flex-column">
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('dashboard') }}">
+                                <a class="nav-link text-center text-md-start" href="{{ route('dashboard') }}">
                                     <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i> Dashboard
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('game_master.index') }}">
+                                <a class="nav-link text-center text-md-start" href="{{ route('game_master.index') }}">
                                     <i class="fa-solid fa-user fa-lg fa-fw"></i></i> Profile
                                 </a>
                             </li>
                             <li class="nav-item">
                                 @if (auth()->user() && auth()->user()->gameMaster()->exists())
-                                    <a class="nav-link" href="{{ route('game_master.edit', 'game_master') }}">
+                                    <a class="nav-link text-center text-md-start"
+                                        href="{{ route('game_master.edit', 'game_master') }}">
                                         <i class="fa-solid fa-pen-to-square fa-lg fa-fw"></i> Edit Profile
                                     </a>
                                 @else
-                                    <a class="nav-link" href="{{ route('game_master.create') }}">
+                                    <a class="nav-link text-center text-md-start"
+                                        href="{{ route('game_master.create') }}">
                                         <i class="fa-solid fa-user"></i> Create Profile
                                     </a>
                                 @endif
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('dashboard') }}">
+                                <a class="nav-link text-center text-md-start" href="{{ route('dashboard') }}">
                                     <i class="fa-solid fa-inbox fa-lg fa-fw"></i></i> Inbox
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('dashboard') }}">
+                                <a class="nav-link text-center text-md-start" href="{{ route('dashboard') }}">
                                     <i class="fa-solid fa-star fa-lg fa-fw"></i> My Reviews
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('dashboard') }}">
+                                <a class="nav-link text-center text-md-start" href="{{ route('dashboard') }}">
                                     <i class="fa-solid fa-square-poll-vertical fa-lg fa-fw"></i> My Stats
                                 </a>
                             </li>
