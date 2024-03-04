@@ -188,7 +188,7 @@
                         </div>
                         <!-- icons -->
                         <div class="mt-3 ">
-                            <ul class="d-flex gap-3 justify-content-center">
+                            <ul class="d-flex gap-3 justify-content-end">
                                 <li><a href="#">icons</a></li>
                                 <li><a href="#">icons</a></li>
                                 <li><a href="#">icons</a></li>
