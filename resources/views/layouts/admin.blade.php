@@ -32,7 +32,50 @@
 <body>
     <div id="app">
 
-        <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-2 shadow">
+        <header id="header">
+            <div class="container d-flex justify-content-between align-items-center py-2">
+                <!-- logo -->
+                <div class="logo">
+                    <a class="text-decoration-none">
+                        <img src="/img/dungeons_and_dragons_logo_by_floodgrunt-d6my4z8.png" alt="" /></a>
+                </div>
+                <!-- /logo -->
+                <!-- navbar -->
+                <nav class="navbar-link">
+                    <ul class="d-flex align-items-center gap-3 mt-3">
+                        <!-- link navbar -->
+                        <li>
+                            <a class="text-decoration-none link text-white"><strong>Home</strong></a>
+                        </li>
+                        <li>
+                            <a class="text-decoration-none link text-white"><strong>Game Master</strong></a>
+                        </li>
+                        <li>
+                            <a class="text-decoration-none link text-white"><strong>Message</strong></a>
+                        </li>
+                        <li>
+                            <a class="text-decoration-none link text-white"><strong>Error</strong></a>
+                        </li>
+                        <li>
+                            <a class="btn bg-light px-2 py-1 rounded"><strong>Search</strong></a>
+                        </li>
+                        <li>
+                            <a class="btn bg-light px-2 py-1 rounded" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}</a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        </li>
+                        <!-- /link navbar -->
+                    </ul>
+                </nav>
+                <!-- /navbar -->
+            </div>
+        </header>
+
+        {{-- <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-2 shadow">
             <div class="row justify-content-between">
                 <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="/">BoolPress</a>
                 <button class="navbar-toggler position-absolute d-md-none collapsed" type="button"
@@ -53,7 +96,7 @@
                     </form>
                 </div>
             </div>
-        </header>
+        </header> --}}
 
         <div class="container-fluid vh-100">
             <div class="row h-100">
