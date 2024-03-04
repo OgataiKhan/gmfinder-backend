@@ -29,6 +29,7 @@ class UpdateGameMasterRequest extends FormRequest
             'profile_img' => 'nullable|file|mimes:jpeg,png,jpg|max:2048',
             'game_systems' => 'required|array|min:1',
             'game_systems.*' => 'exists:game_systems,id',
+            'is_available'=>'required|boolean'
         ];
     }
 
@@ -38,6 +39,7 @@ class UpdateGameMasterRequest extends FormRequest
             'game_systems.required' => 'Please select at least one game system.',
             'game_systems.min' => 'Please select at least one game system.',
             'game_systems.*.exists' => 'The selected game system is invalid.',
+            'is_available.boolean'=>'I see you, but you shall not change the value',
         ];
     }
 }
