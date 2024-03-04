@@ -170,9 +170,9 @@
 
                     <!-- right col -->
                     <div class="col-6 ps-5">
-                        <div class="d-flex align-items-center">
+                        <div class="d-flex align-items-center justify-content-end">
                             <!-- newsletter & button -->
-                            <form class="d-flex justify-content-center gap-3" id="newsletter">
+                            <form class="d-flex justify-content-center gap-3">
                                 <div id="email">
                                     <label for="exampleFormControlInput1" class="form-label">Newsletter</label>
                                     <input type="email" class="form-control  me-5 email"
@@ -187,8 +187,8 @@
                             <!-- /newsletter & button -->
                         </div>
                         <!-- icons -->
-                        <div class="mt-3" id="newsletter">
-                            <ul class="d-flex gap-3">
+                        <div class="mt-3 ">
+                            <ul class="d-flex gap-3 justify-content-center">
                                 <li><a href="#">icons</a></li>
                                 <li><a href="#">icons</a></li>
                                 <li><a href="#">icons</a></li>
