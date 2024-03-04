@@ -61,31 +61,7 @@ footer ul {
     background-color: var(--light-color);
 }
 
-.button button {
-    background-color: var(--contrast-color);
-    color: black;
-}
-
-.button button:hover {
-    background-color: var(--contrast-color);
-}
-
 footer hr {
     border: 1px solid white;
     margin-top: 0;
-}
-
-/* FOOTER BOTTOM */
-#button button {
-    background-color: var(--contrast-color);
-    border: none;
-    color: black;
-}
-
-#button button:hover {
-    color: white;
-}
-
-#button button:hover {
-    background-color: var(--contrast-color);
 }

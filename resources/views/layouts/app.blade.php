@@ -146,8 +146,8 @@
                                         placeholder="email address" />
                                 </div>
                                 <div class="mt-4 button">
-                                    <button type="submit" class="btn text-uppercase mt-2">
-                                        subscribe
+                                    <button type="submit" class="btn mt-2" id="footer-button">
+                                        Subscribe
                                     </button>
                                 </div>
                             </form>
@@ -171,9 +171,9 @@
                     <div class="logo">
                         <img src="/img/dungeons_and_dragons_logo_by_floodgrunt-d6my4z8.png" alt="" />
                     </div>
-                    <div id="button">
-                        <button type="reset" class="btn btn-primary text-uppercase">
-                            back to top
+                    <div>
+                        <button type="reset" class="btn" id="footer-button">
+                            Back to Top
                         </button>
                     </div>
                 </div>
