@@ -104,8 +104,8 @@ class GameMasterController extends Controller
 
         if (isset($data['profile_img'])) {
             $game_master->profile_img = Storage::put('uploads', $data['profile_img']);
-            if($game_master->profile_img){
-                Storage::disk('public')->delete($game_master->profile_img);                
+            if ($game_master->profile_img) {
+                Storage::disk('public')->delete($game_master->profile_img);
             }
         }
 
@@ -115,8 +115,7 @@ class GameMasterController extends Controller
 
         if ($request->has('game_systems')) {
             $game_master->gameSystems()->sync($data['game_systems']);
-        }
-        else{
+        } else {
             $game_master->gameSystems()->sync([]);
         }
 
@@ -124,15 +123,18 @@ class GameMasterController extends Controller
 
 
 
-       /*  $game_master->max_players = $data['max_players'];
+        /*  $game_master->max_players = $data['max_players'];
         $game_master->update($data); */
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(User $user)
     {
-        //
+        $user = Auth::user();
+        $user->gameMaster->is_active = 0;
+        $user->gameMaster->save();
+        return redirect()->route('game_master.index')->with('delete', 'Profile deleted successfully');
     }
 }
