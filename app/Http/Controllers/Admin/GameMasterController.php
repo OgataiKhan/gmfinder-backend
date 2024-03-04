@@ -96,7 +96,7 @@ class GameMasterController extends Controller
         $game_master = $user->gameMaster;
         $game_master->update($data);
 
-        if ($data['profile_img']) {
+        if ($request->hasFile('profile_img')) {
             if (isset($game_master->profile_img)){
                 Storage::disk('public')->delete($game_master->profile_img);                
             }
