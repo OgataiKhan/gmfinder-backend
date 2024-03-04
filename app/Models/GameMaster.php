@@ -25,4 +25,8 @@ class GameMaster extends Model
         return $this->belongsToMany(GameSystem::class, 'game_master_game_system', 'game_master_id', 'game_system_id');
     }
 
+    public function messages()
+    {
+        return $this->hasMany(Message::class);
+    }
 }

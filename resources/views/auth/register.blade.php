@@ -66,8 +66,7 @@
                                     class="col-md-4 col-form-label text-md-right mt-4">{{ __('Confirm Password') }}</label>
 
                                 <div class="col-md-6">
-                                    <p class="text-danger m-0 d-none" id="password-check">The password confirmation does not
-                                        match</p>
+                                    <p class="text-danger m-0 d-none" id="password-check">The passwords do not match</p>
                                     <input id="password-confirm" type="password" class="form-control mt-4"
                                         name="password_confirmation" required autocomplete="new-password">
                                 </div>
