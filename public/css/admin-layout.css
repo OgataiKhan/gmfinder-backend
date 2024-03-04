@@ -1,17 +1,18 @@
 /* sidebar */
 
 #sidebarMenu {
-    background-color: #8e624f;
+    background-color: #fff3e2;
+    border-right: 1px solid #ccc;
 }
 
 #sidebarMenu a {
-    color: var(--light-color);
+    color: var(--primary-color);
     transition: background-color 0.3s;
 }
 
 #sidebarMenu a:hover {
-    background-color: #ea8e26;
-    color: var(--light-color);
+    background-color: #ffeacf;
+    color: var(--contrast-color);
 }
 
 /* HEADER */
