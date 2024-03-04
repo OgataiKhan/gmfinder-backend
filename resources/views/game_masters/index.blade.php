@@ -26,17 +26,17 @@
                 @if ($user->gameMaster)
                     <div class="card-body" id="gm-card-body">
                         Here's my game master info
+                        @if ($user->gameMaster->profile_img)
+                            <div>
+                                {{-- show image --}}
 
-                        <div>
-
-                            {{-- show image --}}
-                            @if ($user->gameMaster->profile_img)
                                 <img src="{{ asset('storage/' . $user->gameMaster->profile_img) }}" alt="Game Master Pic">
                             @else
                                 <img src="https://icons.veryicon.com/png/o/miscellaneous/xdh-font-graphics-library/anonymous-user.png"
                                     alt="Game Master Pic">
-                            @endif
-                        </div>
+
+                            </div>
+                        @endif
                 @endif
             </div>
     </div>
