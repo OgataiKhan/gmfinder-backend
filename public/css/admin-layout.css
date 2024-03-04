@@ -11,8 +11,8 @@
 }
 
 #sidebarMenu a:hover {
-    background-color: #ea8e26;
-    color: var(--light-color);
+    background-color: #ffeacf;
+    color: var(--contrast-color);
 }
 
 #header {
