@@ -2,11 +2,10 @@
 @section('content')
 <div class="container">
 
-    <h2 class="text-center">Edit Your Character</h2>
+        {{-- <h2 class="text-center">Edit Your Info</h2> --}}
 
-
-    <form id="gm-create-form" action={{ route('game_master.update', 'game_master' ) }} method="POST"
-        class="d-flex row p-4 mb-5 col-8 mx-auto" enctype="multipart/form-data">
+        <form id="gm-create-form" action={{ route('game_master.update', 'game_master') }} method="POST"
+            class="d-flex row p-4 my-5 col-8 mx-auto" enctype="multipart/form-data">
 
         @csrf
         @method('PUT')
@@ -86,37 +85,22 @@
             @endif
         </div>
 
-        {{-- Profile Picture --}}
-        <div class="mb-3 col-12">
-            <label for="profile_img" class="form-label">Choose a profile picture</label>
-            <input class="form-control {{ $errors->has('profile_img') ? 'is-invalid' : '' }}" type="file"
-                id="profile_img" name="profile_img" maxlength="2048">
-            @if ($errors->has('profile_img'))
-            <div class="invalid-feedback">
-                {{ $errors->first('profile_img') }}
+            {{-- Profile Picture --}}
+            <div class="mb-3 col-12">
+                <label for="profile_img" class="form-label">Choose a profile picture</label>
+                <input class="form-control {{ $errors->has('profile_img') ? 'is-invalid' : '' }}" type="file"
+                    id="profile_img" name="profile_img" maxlength="2048">
+                @if ($errors->has('profile_img'))
+                    <div class="invalid-feedback">
+                        {{ $errors->first('profile_img') }}
+                    </div>
+                @endif
             </div>
-            @endif
-        </div>
-        <div class="mb-3 col">
-            <input class="{{ $errors->has('is_available') ? 'is-invalid' : '' }}" type="hidden" name="is_available"
-                value="0">
-            {{--Hidden input with value 0--}}
-            <input class="{{ $errors->has('is_available') ? 'is-invalid' : '' }}" type="checkbox" id="toggleIsAvailable"
-                name="is_available" value="1" {{ $game_master->is_available ?
-            'checked'
-            : '' }}>
-            <label for="toggleIsAvailable">Ready for a new game session ?</label>
-            @if ($errors->has('is_available'))
-            <div class="invalid-feedback">
-                {{ $errors->first('is_available') }}
+            <div class="d-flex">
+                <button id="create-button" type="submit" class="btn btn-primary mx-auto">Seems good!</button>
             </div>
-            @endif
-        </div>
-        <div class="d-flex">
-            <button id="create-button" type="submit" class="btn btn-primary mx-auto">Edit</button>
-        </div>
-    </form>
-</div>
+        </form>
+    </div>
 @endsection
 
 @push('styles')

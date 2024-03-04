@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('content')
     <div class="container py-4">
-        <h1>My Character</h1>
+        {{-- <h1>My Character</h1> --}}
         @if ($user && $user->gameMaster && $user->gameMaster->is_active)
             <div class="card" id="gm-card">
                 {{-- show user info --}}
@@ -17,8 +17,8 @@
                 {{-- show game master info --}}
                 @if ($user->gameMaster)
                     <div class="card-body" id="gm-card-body">
-                        <h5>Your Info</h5>
-                        <hr>
+                        {{-- <h5>Your Lore:</h5> --}}
+                        {{-- <hr> --}}
                         <div class="d-flex justify-content-between">
                             <div class="gm-info">
                                 <p> <strong>Game Description: </strong> {{ $user->gameMaster->game_description }}</p>

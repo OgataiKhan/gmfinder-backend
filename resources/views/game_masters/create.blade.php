@@ -78,7 +78,7 @@
                 @endif
             </div>
             <div class="d-flex">
-                <button id="create-button" type="submit" class="btn btn-primary mx-auto">Create</button>
+                <button id="create-button" type="submit" class="btn btn-primary mx-auto">Seems good!</button>
             </div>
         </form>
     </div>
