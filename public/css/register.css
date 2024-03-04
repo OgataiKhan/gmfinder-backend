@@ -2,39 +2,38 @@
 
 .card {
     overflow: hidden;
+    background-color: red;
 }
 
-#login-card {
+#register-card {
     box-shadow: 0 0 1px 0 var(--primary-color);
 }
 
-#login-card-header {
+#register-card-header {
     background-color: var(--light-color-card);
     color: var(--primary-color);
 }
 
-#login-card-body {
+#register-card-body {
     background-color: var(--light-color-card);
     color: var(--primary-color);
 }
 
 /* inputs */
 
+#name:focus,
 #email:focus,
 #password:focus,
-#remember:focus {
+#password-confirm:focus,
+#role:focus {
     border-color: var(--contrast-color);
     box-shadow: 0 0 0 0.25rem rgba(230, 122, 0, 0.25);
 }
 
-#remember:checked {
-    background-color: var(--contrast-color);
-}
-
 /* login card button */
 
-#login-button {
-    background-color: transparent;
+#register-button {
+    background-color: var(--light-color);
     color: var(--contrast-color);
     border: 1px solid var(--contrast-color);
     padding: 5px 15px;
@@ -45,7 +44,7 @@
 
 /* login button hover */
 
-#login-button:hover {
+#register-button:hover {
     background-color: var(--contrast-color);
     color: var(--light-color);
     border-color: var(--contrast-color);
