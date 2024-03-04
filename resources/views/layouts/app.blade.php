@@ -139,7 +139,7 @@
                     <div class="col-6 ps-5">
                         <div class="d-flex align-items-center">
                             <!-- newsletter e button -->
-                            <form class="d-flex justify-content-center gap-3">
+                            <form class="d-flex justify-content-center gap-3" id="newsletter">
                                 <div id="email">
                                     <label for="exampleFormControlInput1" class="form-label">Newsletter</label>
                                     <input type="email" class="form-control  me-5 email" id="exampleFormControlInput1"
@@ -154,7 +154,7 @@
                             <!-- /newsletter e button -->
                         </div>
                         <!-- icons -->
-                        <div class="mt-3">
+                        <div class="mt-3" id="newsletter">
                             <ul class="d-flex gap-3">
                                 <li><a href="#">icons</a></li>
                                 <li><a href="#">icons</a></li>
