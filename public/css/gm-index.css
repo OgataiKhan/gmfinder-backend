@@ -1,5 +1,6 @@
 #gm-card {
     background-color: var(--light-color-card);
+    margin-bottom: 200px;
 }
 
 #gm-card-body {
