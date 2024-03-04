@@ -10,6 +10,14 @@
 
     <title>{{ config('app.name', 'GM Finder') }}</title>
 
+    <!-- Fontawesome 6 cdn -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css'
+        integrity='sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=='
+        crossorigin='anonymous' referrerpolicy='no-referrer' />
+
+    {{-- my CSS --}}
+    <link rel="stylesheet" href="{{ asset('css/app-layout.css') }}">
+
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -24,6 +32,52 @@
 
 <body>
     <div id="app">
+
+        <header id="header">
+            <div class="container d-flex justify-content-between align-items-center py-2">
+                <!-- logo -->
+                <div class="logo">
+                    <a class="text-decoration-none" href="{{ env('FRONTEND_URL') }}">
+                        <img src="/img/dungeons_and_dragons_logo_by_floodgrunt-d6my4z8.png" alt="" /></a>
+                </div>
+                <!-- /logo -->
+                <!-- navbar -->
+                <nav class="navbar-link">
+                    <ul class="d-flex align-items-center gap-3 mt-3">
+                        <!-- link navbar -->
+                        <li>
+                            <a class="text-decoration-none link text-white"
+                                href="{{ env('FRONTEND_URL') }}"><strong>Home</strong></a>
+                        </li>
+                        <li>
+                            <a class="text-decoration-none link text-white" href="#"><strong>Game
+                                    Master</strong></a>
+                        </li>
+                        <li>
+                            <a class="text-decoration-none link text-white" href="#"><strong>Message</strong></a>
+                        </li>
+                        <li>
+                            <a class="text-decoration-none link text-white" href="#"><strong>Error</strong></a>
+                        </li>
+                        <li>
+                            <a class="btn bg-light px-2 py-1 rounded"
+                                href="{{ env('FRONTEND_URL') }}/advanced-search"><strong>Search</strong></a>
+                        </li>
+                        <li>
+                            <a class="btn bg-light px-2 py-1 rounded" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}</a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        </li>
+                        <!-- /link navbar -->
+                    </ul>
+                </nav>
+                <!-- /navbar -->
+            </div>
+        </header>
 
 
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
@@ -92,11 +146,11 @@
                 </div>
             </div>
         </nav>
-
         <main class="">
             @yield('content')
         </main>
     </div>
+
 </body>
 
 </html>

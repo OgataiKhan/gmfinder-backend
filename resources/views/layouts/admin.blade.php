@@ -36,7 +36,7 @@
             <div class="container d-flex justify-content-between align-items-center py-2">
                 <!-- logo -->
                 <div class="logo">
-                    <a class="text-decoration-none">
+                    <a class="text-decoration-none" href="{{ env('FRONTEND_URL') }}">
                         <img src="/img/dungeons_and_dragons_logo_by_floodgrunt-d6my4z8.png" alt="" /></a>
                 </div>
                 <!-- /logo -->
