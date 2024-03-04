@@ -11,7 +11,8 @@
 #location:focus,
 #max_players:focus,
 #game_description:focus,
-#profile_img:focus {
+#profile_img:focus,
+input[type="checkbox"]:focus {
     border-color: var(--contrast-color);
     box-shadow: 0 0 0 0.25rem rgba(230, 122, 0, 0.25);
 }
@@ -21,6 +22,11 @@
 #profile_img,
 #max_players {
     background-color: var(--light-color);
+}
+
+input[type="checkbox"]:checked {
+    background-color: var(--contrast-color);
+    border-color: var(--contrast-color);
 }
 
 /* create button */

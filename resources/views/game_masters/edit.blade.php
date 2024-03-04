@@ -2,7 +2,7 @@
 @section('content')
     <div class="container">
 
-        <h2 class="text-center">Edit Your Character</h2>
+        <h2 class="text-center p-3">Edit Your Character</h2>
 
         <form id="gm-create-form" action={{ route('game_master.update', 'game_master') }} method="POST"
             class="d-flex row p-4 mb-5 col-8 mx-auto">
