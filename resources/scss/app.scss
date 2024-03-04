@@ -20,6 +20,10 @@
 
 // HEADER STYLES
 
+#header {
+    height: 85px;
+}
+
 #header-button {
     background-color: var(--light-color);
     color: var(--primary-color);
@@ -43,6 +47,10 @@
     flex-grow: 1;
 }
 
+#dashboard-container {
+    height: calc(100vh - 85px - 260px);
+}
+
 /* FOOTER */
 
 /* FOOTER TOP */
@@ -51,6 +59,8 @@
     padding: 10px 0;
     width: 100%;
     color: var(--light-color);
+    margin-top: auto;
+    height: 260px;
 }
 
 #footer a {

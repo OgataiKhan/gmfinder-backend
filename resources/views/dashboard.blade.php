@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-    <div class="container">
+    <div class="container" id="dashboard-container">
         <div class="row justify-content-center">
             <div class="col-md-8 mt-4">
                 <div class="card">
@@ -17,7 +17,7 @@
                         {{ __('You are logged in!') }}
                     </div>
                     <div class="card-body text-center">
-                        <a href="{{ route('game_master.index') }}" class="btn btn-primary">View your profile</a>
+                        <a href="{{ route('game_master.index') }}" class="btn" id="footer-button">View your profile</a>
                     </div>
                 </div>
             </div>
