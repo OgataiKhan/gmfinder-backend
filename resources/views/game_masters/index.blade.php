@@ -54,6 +54,7 @@
                                     </form>
                                 </div>
                             </div>
+                            {{-- profile picture --}}
                             <div id="gm-pic">
                                 @if ($user->gameMaster->profile_img)
                                     {{-- show image --}}
