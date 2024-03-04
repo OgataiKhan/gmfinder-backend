@@ -34,4 +34,9 @@ class GameMaster extends Model
     {
         return $this->hasMany(Review::class);
     }
+
+    public function promotions()
+    {
+        return $this->hasMany(Promotion::class);
+    }
 }
