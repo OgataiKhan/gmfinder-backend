@@ -48,7 +48,7 @@
 }
 
 #dashboard-container {
-    height: calc(100vh - 85px - 260px);
+    min-height: calc(100vh - 85px);
 }
 
 /* FOOTER */
