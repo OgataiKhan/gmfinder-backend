@@ -20,8 +20,8 @@
         <div>
 
             {{-- show image --}}
-            @if(isset($user->gameMaster->profile_picture))
-            <img src="{{ asset('storage/' . $user->$gameMaster->profile_picture) }}" alt="Game Master Pic">
+            @if($user->gameMaster->profile_img)
+            <img src="{{ asset('storage/' . $user->gameMaster->profile_img) }}" alt="Game Master Pic">
             @else
             <img src="https://icons.veryicon.com/png/o/miscellaneous/xdh-font-graphics-library/anonymous-user.png"
                 alt="Game Master Pic">
