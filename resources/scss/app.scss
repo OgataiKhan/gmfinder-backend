@@ -149,6 +149,21 @@ footer hr {
     border-color: var(--contrast-color);
 }
 
+.btn-danger-custom {
+    background-color: transparent;
+    color: var(--danger-color);
+    border: 1px solid var(--danger-color);
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-danger-custom:hover {
+    background-color: var(--danger-color);
+    color: var(--light-color);
+}
+
 /* INPUTS */
 
 .input-focus-orange:focus {

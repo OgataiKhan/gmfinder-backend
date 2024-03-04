@@ -9,7 +9,7 @@
                     <div class="d-flex justify-content-between">
                         <h3>{{ $user->name }}</h3>
                         <div>
-                            <a href="{{ route('game_master.show', $user) }}" class="btn" id="show-profile-button">Show
+                            <a href="{{ route('game_master.show', $user) }}" class="btn btn-void-orange">Show
                                 Profile</a>
                         </div>
                     </div>
@@ -43,14 +43,13 @@
                                 {{-- button to show profile, edit and delete --}}
                                 <div class="d-flex">
                                     {{-- edit profile --}}
-                                    <a href="{{ route('game_master.edit', $user) }}" class="btn align-self-center me-2"
-                                        id="gm-edit-button">Edit</a>
+                                    <a href="{{ route('game_master.edit', $user) }}"
+                                        class="btn btn-void-orange align-self-center me-2">Edit</a>
                                     {{-- delete profile --}}
                                     <form action="{{ route('game_master.destroy', $user) }}" method="POST" class="d-flex">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn align-self-center"
-                                            id="gm-delete-button">Delete</button>
+                                        <button type="submit" class="btn btn-danger-custom">Delete</button>
                                     </form>
                                 </div>
                             </div>
@@ -75,7 +74,7 @@
                 <p>Your account has been deleted.</p>
                 <form action="{{ route('logout') }}" method="POST">
                     @csrf
-                    <button class="btn btn-primary btn-sm">Home Page</button>
+                    <button class="btn btn-void-orange">Home Page</button>
                 </form>
             </div>
         @endif
