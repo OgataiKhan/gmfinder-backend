@@ -25,7 +25,7 @@
     {{-- use stylesheet in view --}}
     @stack('styles')
 
-    <!-- Usando Vite -->
+    <!-- Vite -->
     @vite(['resources/js/app.js'])
 </head>
 
@@ -77,9 +77,6 @@
         </header>
         <div class="container-fluid">
             <div class="row h-100">
-                <!-- Definire solo parte del menu di navigazione inizialmente per poi
-        aggiungere i link necessari giorno per giorno
-        -->
                 <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block navbar-dark sidebar collapse">
                     <div class="position-sticky pt-3">
                         <ul class="nav flex-column">
@@ -133,7 +130,7 @@
         <footer id="footer">
             <div class="container py-2">
                 <div class="row align-items-center">
-                    <!-- col di sinistra -->
+                    <!-- left col -->
                     <div class="col-6 d-flex">
                         <!-- link -->
                         <div class="col-4">
@@ -162,12 +159,12 @@
                         </div>
                         <!-- /link -->
                     </div>
-                    <!-- /col di sinistra -->
+                    <!-- /left col -->
 
-                    <!-- col di destra -->
+                    <!-- right col -->
                     <div class="col-6 ps-5">
                         <div class="d-flex align-items-center">
-                            <!-- newsletter e button -->
+                            <!-- newsletter & button -->
                             <form class="d-flex justify-content-center gap-3">
                                 <div id="email">
                                     <label for="exampleFormControlInput1" class="form-label">Newsletter</label>
@@ -180,7 +177,7 @@
                                     </button>
                                 </div>
                             </form>
-                            <!-- /newsletter e button -->
+                            <!-- /newsletter & button -->
                         </div>
                         <!-- icons -->
                         <div class="mt-3">
@@ -193,7 +190,7 @@
                         </div>
                         <!-- /icons -->
                     </div>
-                    <!-- /col di destra -->
+                    <!-- /right col -->
                 </div>
                 <hr />
                 <div class="container d-flex justify-content-between align-items-center px-0 pt-2">
