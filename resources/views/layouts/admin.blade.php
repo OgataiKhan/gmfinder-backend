@@ -92,7 +92,7 @@
                             </li>
                             <li class="nav-item">
                                 @if (auth()->user() && auth()->user()->gameMaster()->exists())
-                                    <a class="nav-link" href="{{ route('profile.edit') }}">
+                                    <a class="nav-link" href="{{ route('game_master.edit', 'game_master') }}">
                                         <i class="fa-solid fa-pen-to-square fa-lg fa-fw"></i> Edit Profile
                                     </a>
                                 @else
