@@ -1,3 +1,7 @@
 #gm-card {
     background-color: var(--light-color-card);
 }
+
+#gm-card-body {
+    background-color: var(--light-color-card-hover);
+}

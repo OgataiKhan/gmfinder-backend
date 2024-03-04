@@ -25,11 +25,21 @@
                 {{-- show game master info --}}
                 @if ($user->gameMaster)
                     <div class="card-body" id="gm-card-body">
-                        Here's my game master info
+                        <div class="gm-info">
+                            <h5>Your Info</h5>
+                            <hr>
+                            <p> <strong>Game Description: </strong> {{ $user->gameMaster->game_description }}</p>
+                            <p> <strong>Location: </strong> {{ $user->gameMaster->location }}</p>
+                            <p>
+                                <strong>Availability: </strong>
+                                {!! $user->gameMaster->is_available
+                                    ? 'Available <span style="color:green;">●</span>'
+                                    : 'Not Available <span style="color:red;">●</span>' !!}
+                            </p>
+                        </div>
                         @if ($user->gameMaster->profile_img)
                             <div>
                                 {{-- show image --}}
-
                                 <img src="{{ asset('storage/' . $user->gameMaster->profile_img) }}" alt="Game Master Pic">
                             @else
                                 <img src="https://icons.veryicon.com/png/o/miscellaneous/xdh-font-graphics-library/anonymous-user.png"
@@ -37,19 +47,19 @@
 
                             </div>
                         @endif
+                    </div>
                 @endif
             </div>
-    </div>
-@else
-    {{-- account deleted --}}
-    <div class="alert p-3 d-flex flex-column align-items-center border border-2">
-        <p>Your account has been deleted.</p>
-        <form action="{{ route('logout') }}" method="POST">
-            @csrf
-            <button class="btn btn-primary btn-sm">Home Page</button>
-        </form>
-    </div>
-    @endif
+        @else
+            {{-- account deleted --}}
+            <div class="alert p-3 d-flex flex-column align-items-center border border-2">
+                <p>Your account has been deleted.</p>
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <button class="btn btn-primary btn-sm">Home Page</button>
+                </form>
+            </div>
+        @endif
     </div>
 @endsection
 
