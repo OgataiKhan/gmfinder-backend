@@ -43,23 +43,12 @@ class GameMasterController extends Controller
     {
         $data = $request->validated();
 
-
         $game_master = new GameMaster();
-
-        // $game_master->users_id=$data['users_id'];
-        // $game_master->location=$data['location'];
-        // $game_master->game_description=$data['game_description'];
-        // $game_master->max_players=$data['max_players'];
-        // $game_master->profile_img=$data['profile_img'];
-        // $game_master->is_active=$data['is_active'];
-        // $game_master->is_available=$data['is_available'];
-        // $game_master->slug=$data['slug'];
-
         $game_master->fill($data);
 
         $user = Auth::user();
 
-        $game_master->slug = Str::slug($user->name);
+        $game_master->slug = Str::slug($user->name) . Str::random(10);
         if (isset($data['profile_img'])) {
             $game_master->profile_img = Storage::put('uploads', $data['profile_img']);
         }
@@ -67,8 +56,7 @@ class GameMasterController extends Controller
 
         $game_master->save();
 
-        //To be reviewed
-        if ($request->has('game_systems')) {
+        if (isset($data['game_systems'])) {
             $game_master->gameSystems()->sync($data['game_systems']);
         }
 
@@ -88,8 +76,13 @@ class GameMasterController extends Controller
     public function edit(User $user)
     {
         $user = Auth::user();
-        $game_master = $user->game_master;
-        return view('game_masters.edit', compact('game_master'));
+        $game_master = $user->gameMaster;
+        $game_systems = GameSystem::orderBy('name')->get();
+        $provinces = config('italian_provinces');
+
+        
+
+        return view('game_masters.edit',compact('game_master','game_systems'), $provinces);
     }
 
     /**
@@ -100,16 +93,16 @@ class GameMasterController extends Controller
 
         $user = Auth::user();
         $data = $request->validated();
-        $game_master = $user->game_master;
+        $game_master = $user->gameMaster;
+        $game_master->update($data);
 
-        if (isset($data['profile_img'])) {
-            $game_master->profile_img = Storage::put('uploads', $data['profile_img']);
-            if ($game_master->profile_img) {
-                Storage::disk('public')->delete($game_master->profile_img);
+        if ($data['profile_img']) {
+            if (isset($game_master->profile_img)){
+                Storage::disk('public')->delete($game_master->profile_img);                
             }
+            $game_master->profile_img = $request->file('profile_img')->store('uploads', 'public');
         }
 
-        $game_master->update($data);
         $game_master->slug = Str::slug($user->name);
         $game_master->save();
 

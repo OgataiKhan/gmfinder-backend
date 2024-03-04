@@ -1,3 +1,4 @@
+/* HEADER */
 #header {
     background-color: var(--primary-color);
     width: 100%;
@@ -16,4 +17,70 @@
 .navbar-link ul {
     list-style: none;
     padding-left: 0;
+}
+
+.link {
+    text-decoration: none;
+    color: white;
+}
+
+.link:hover {
+    color: var(--contrast-color);
+}
+
+/* FOOTER */
+
+/* FOOTER TOP */
+footer {
+    background-color: var(--primary-color);
+    padding: 10px 0;
+    width: 100%;
+    color: var(--light-color);
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
+}
+
+footer a:hover {
+    color: var(--contrast-color);
+}
+
+footer ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+#email .email {
+    background-color: var(--light-color);
+}
+
+.button button {
+    background-color: var(--contrast-color);
+    color: black;
+}
+
+.button button:hover {
+    background-color: var(--contrast-color);
+}
+
+footer hr {
+    border: 1px solid white;
+    margin-top: 0;
+}
+
+/* FOOTER BOTTOM */
+#button button {
+    background-color: var(--contrast-color);
+    border: none;
+    color: black;
+}
+
+#button button:hover {
+    color: white;
+}
+
+#button button:hover {
+    background-color: var(--contrast-color);
 }

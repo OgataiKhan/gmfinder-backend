@@ -78,10 +78,9 @@
 
                                 <div class="col-md-6">
 
-                                    <select class="form-select @error('role') is-invalid @enderror" name="role"
-                                        id="role" required>
-                                        <option selected>Choose your role...</option>
-                                        <option value="game_master">Game Master</option>
+                                    <select class="form-select @error('role') is-invalid @enderror" name="role" id="role" required>
+                                        <option value="">Choose your role...</option>
+                                        <option value="game_master" @if (old('role') == 'game_master') selected @endif>Game Master</option>
                                     </select>
 
                                     @error('role')
@@ -94,7 +93,7 @@
 
                             <div class="mb-4 row mb-0">
                                 <div class="col-md-6 offset-md-4">
-                                    <button type="submit" class="btn btn-primary">
+                                    <button type="submit" class="btn btn-primary" id="register-button">
                                         {{ __('Register') }}
                                     </button>
                                 </div>
