@@ -16,8 +16,8 @@
                 {{-- Location --}}
                 <div class="col-6 mb-3">
                     <label for="location" class="form-label required">Location</label>
-                    <select class="form-select {{ $errors->has('location') ? 'is-invalid' : '' }}" name="location"
-                        id="location" required>
+                    <select class="input-focus-orange form-select {{ $errors->has('location') ? 'is-invalid' : '' }}"
+                        name="location" id="location" required>
                         <option value="" disabled selected hidden>Select a province</option>
                         @foreach ($province as $single_province)
                             <option value="{{ $single_province }}" @if (old('location') == $single_province || ($game_master && $game_master->location == $single_province)) selected @endif>
@@ -35,7 +35,8 @@
                 {{-- Max Players --}}
                 <div class="mb-3 col-6 ms-1">
                     <label for="max_players" class="form-label required">Max Players</label>
-                    <input type="number" class="form-control {{ $errors->has('max_players') ? 'is-invalid' : '' }}"
+                    <input type="number"
+                        class="input-focus-orange form-control {{ $errors->has('max_players') ? 'is-invalid' : '' }}"
                         id="max_players" name="max_players" value="{{ old('max_players', $game_master->max_players) }}"
                         required min="1" max="127">
                     @if ($errors->has('max_players'))
@@ -49,8 +50,8 @@
             {{-- Game Description --}}
             <div class="mb-3">
                 <label for="game_description required" class="form-label">Game description</label>
-                <textarea class="form-control {{ $errors->has('game_description') ? 'is-invalid' : '' }}" name="game_description"
-                    id="game_description" rows="3" required maxlength="1000">{{ old('game_description', $game_master->game_description) }}</textarea>
+                <textarea class="input-focus-orange form-control {{ $errors->has('game_description') ? 'is-invalid' : '' }}"
+                    name="game_description" id="game_description" rows="3" required maxlength="1000">{{ old('game_description', $game_master->game_description) }}</textarea>
                 @if ($errors->has('game_description'))
                     <div class="invalid-feedback">
                         {{ $errors->first('game_description') }}
@@ -67,12 +68,12 @@
                 @foreach ($game_systems as $game_system)
                     <div class="form-check">
                         @if ($errors->any())
-                            <input name="game_systems[]" class="form-check-input" id="game_system-{{ $game_system->id }}"
-                                type="checkbox" value="{{ $game_system->id }}"
+                            <input name="game_systems[]" class="input-focus-orange form-check-input checked-orange"
+                                id="game_system-{{ $game_system->id }}" type="checkbox" value="{{ $game_system->id }}"
                                 {{ in_array($game_system->id, old('game_systems', [])) ? 'checked' : '' }}>
                         @else
-                            <input name="game_systems[]" class="form-check-input" id="game_system-{{ $game_system->id }}"
-                                type="checkbox" value="{{ $game_system->id }}"
+                            <input name="game_systems[]" class="input-focus-orange form-check-input checked-orange"
+                                id="game_system-{{ $game_system->id }}" type="checkbox" value="{{ $game_system->id }}"
                                 {{ $game_master->gameSystems->contains($game_system->id) ? 'checked' : '' }}>
                         @endif
                         <label class="form-check-label"
@@ -99,8 +100,9 @@
             </div>
             <div class="mb-3 col">
                 <input type="hidden" name="is_available" value="0"> <!-- Hidden input with value 0 -->
-                <input class="{{ $errors->has('is_available') ? 'is-invalid' : '' }}" type="checkbox"
-                    id="toggleIsAvailable" name="is_available" value="1"
+                <input
+                    class="{{ $errors->has('is_available') ? 'is-invalid' : '' }} input-focus-orange form-check-input checked-orange"
+                    type="checkbox" id="toggleIsAvailable" name="is_available" value="1"
                     {{ $game_master->is_available ? 'checked' : '' }}>
                 <label for="toggleIsAvailable">Ready for a new game session ?</label>
                 <div class="invalid-feedback">
@@ -108,7 +110,7 @@
                 </div>
             </div>
             <div class="d-flex">
-                <button id="create-button" type="submit" class="btn btn-primary mx-auto">Seems good!</button>
+                <button id="create-button" type="submit" class="btn btn-void-orange mx-auto">Seems good!</button>
             </div>
         </form>
     </div>
