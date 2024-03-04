@@ -4,10 +4,8 @@
 
         <h2 class="text-center">Edit Your Character</h2>
 
-        <form action={{ route('game_master.update', 'game_master') }} method="POST" class="d-flex row p-4
-
-        "
-            enctype="multipart/form-data">
+        <form id="gm-create-form" action={{ route('game_master.update', 'game_master') }} method="POST"
+            class="d-flex row p-4 mb-5 col-8 mx-auto">
             @csrf
             @method('PUT')
 
@@ -102,5 +100,5 @@
 @endsection
 
 @push('styles')
-    <link href="{{ asset('css/gm-create.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/gm-edit.css') }}" rel="stylesheet">
 @endpush
