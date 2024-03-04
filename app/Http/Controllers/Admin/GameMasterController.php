@@ -48,7 +48,7 @@ class GameMasterController extends Controller
 
         $user = Auth::user();
 
-        $game_master->slug = Str::slug($user->name);
+        $game_master->slug = Str::slug($user->name) . Str::random(10);
         if (isset($data['profile_img'])) {
             $game_master->profile_img = Storage::put('uploads', $data['profile_img']);
         }
