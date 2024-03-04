@@ -28,6 +28,10 @@
     color: var(--contrast-color);
 }
 
+#main {
+    flex-grow: 1;
+}
+
 /* FOOTER */
 
 /* FOOTER TOP */
@@ -36,6 +40,7 @@ footer {
     padding: 10px 0;
     width: 100%;
     color: var(--light-color);
+    margin-top: auto;
 }
 
 footer a {

@@ -1,0 +1,58 @@
+/* card styles */
+
+.card {
+    overflow: hidden;
+    background-color: red;
+}
+
+#register-card {
+    box-shadow: 0 0 1px 0 var(--primary-color);
+}
+
+#register-card-header {
+    background-color: var(--light-color-card);
+    color: var(--primary-color);
+}
+
+#register-card-body {
+    background-color: var(--light-color-card);
+    color: var(--primary-color);
+}
+
+/* inputs */
+
+#name:focus,
+#email:focus,
+#password:focus,
+#password-confirm:focus,
+#role:focus {
+    border-color: var(--contrast-color);
+    box-shadow: 0 0 0 0.25rem rgba(230, 122, 0, 0.25);
+}
+
+/* login card button */
+
+#register-button {
+    background-color: var(--light-color);
+    color: var(--contrast-color);
+    border: 1px solid var(--contrast-color);
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* login button hover */
+
+#register-button:hover {
+    background-color: var(--contrast-color);
+    color: var(--light-color);
+    border-color: var(--contrast-color);
+}
+
+/* forgot password link */
+
+#forgot-psw {
+    color: var(--contrast-color);
+    transition: color 0.3s;
+}

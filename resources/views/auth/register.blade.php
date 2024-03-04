@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container mt-4">
+    <div class="container my-5">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">{{ __('Register') }}</div>
+                <div class="card" id="register-card">
+                    <div class="card-header" id="register-card-header">{{ __('Register') }}</div>
 
-                    <div class="card-body">
+                    <div class="card-body" id="register-card-body">
                         <form method="POST" action="{{ route('register') }}">
                             @csrf
 
@@ -78,9 +78,11 @@
 
                                 <div class="col-md-6">
 
-                                    <select class="form-select @error('role') is-invalid @enderror" name="role" id="role" required>
+                                    <select class="form-select @error('role') is-invalid @enderror" name="role"
+                                        id="role" required>
                                         <option value="">Choose your role...</option>
-                                        <option value="game_master" @if (old('role') == 'game_master') selected @endif>Game Master</option>
+                                        <option value="game_master" @if (old('role') == 'game_master') selected @endif>Game
+                                            Master</option>
                                     </select>
 
                                     @error('role')
@@ -106,3 +108,8 @@
     </div>
     @vite(['resources/js/confirmPassword.js'])
 @endsection
+
+{{-- css --}}
+@push('styles')
+    <link href="{{ asset('css/register.css') }}" rel="stylesheet">
+@endpush
