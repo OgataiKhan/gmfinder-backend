@@ -45,19 +45,22 @@
                     <ul class="d-flex align-items-center gap-3 mt-3">
                         <!-- link navbar -->
                         <li>
-                            <a class="text-decoration-none link text-white"><strong>Home</strong></a>
+                            <a class="text-decoration-none link text-white"
+                                href="{{ env('FRONTEND_URL') }}"><strong>Home</strong></a>
                         </li>
                         <li>
-                            <a class="text-decoration-none link text-white"><strong>Game Master</strong></a>
+                            <a class="text-decoration-none link text-white" href="#"><strong>Game
+                                    Master</strong></a>
                         </li>
                         <li>
-                            <a class="text-decoration-none link text-white"><strong>Message</strong></a>
+                            <a class="text-decoration-none link text-white" href="#"><strong>Message</strong></a>
                         </li>
                         <li>
-                            <a class="text-decoration-none link text-white"><strong>Error</strong></a>
+                            <a class="text-decoration-none link text-white" href="#"><strong>Error</strong></a>
                         </li>
                         <li>
-                            <a class="btn bg-light px-2 py-1 rounded"><strong>Search</strong></a>
+                            <a class="btn bg-light px-2 py-1 rounded"
+                                href="{{ env('FRONTEND_URL') }}/advanced-search"><strong>Search</strong></a>
                         </li>
                         <li>
                             <a class="btn bg-light px-2 py-1 rounded" href="{{ route('logout') }}"
