@@ -90,33 +90,33 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('game_master.index') }}">
-                                    <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i> Profile
+                                    <i class="fa-solid fa-user fa-lg fa-fw"></i></i> Profile
                                 </a>
                             </li>
                             <li class="nav-item">
                                 @if ($user->gameMaster)
                                     <a class="nav-link" href="{{ route('profile.edit') }}">
-                                        <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i> Edit Profile
+                                        <i class="fa-solid fa-pen-to-square fa-lg fa-fw"></i> Edit Profile
                                     </a>
                                 @else
                                     <a class="nav-link" href="{{ route('profile.create') }}">
-                                        <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i> Create Profile
+                                        <i class="fa-solid fa-user"></i></i> Create Profile
                                     </a>
                                 @endif
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('dashboard') }}">
-                                    <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i> Inbox
+                                    <i class="fa-solid fa-inbox fa-lg fa-fw"></i></i> Inbox
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('dashboard') }}">
-                                    <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i> My Reviews
+                                    <i class="fa-solid fa-star fa-lg fa-fw"></i> My Reviews
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('dashboard') }}">
-                                    <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i> My Stats
+                                    <i class="fa-solid fa-square-poll-vertical fa-lg fa-fw"></i> My Stats
                                 </a>
                             </li>
                         </ul>
