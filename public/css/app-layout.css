@@ -28,40 +28,8 @@
     color: var(--contrast-color);
 }
 
-#main {
-    flex-grow: 1;
-}
-
 /* FOOTER */
-
-/* FOOTER TOP */
-footer {
-    background-color: var(--primary-color);
-    padding: 10px 0;
-    width: 100%;
-    color: var(--light-color);
-    margin-top: auto;
-}
-
-footer a {
-    text-decoration: none;
-    color: white;
-}
-
-footer a:hover {
-    color: var(--contrast-color);
-}
-
-footer ul {
-    list-style: none;
-    padding-left: 0;
-}
 
 #email .email {
     background-color: var(--light-color);
-}
-
-footer hr {
-    border: 1px solid white;
-    margin-top: 0;
 }

@@ -101,7 +101,7 @@
         <main id="main">
             @yield('content')
         </main>
-        <footer>
+        <footer id="footer">
             <div class="container py-2">
                 <div class="row align-items-center">
                     <!-- col di sinistra -->
