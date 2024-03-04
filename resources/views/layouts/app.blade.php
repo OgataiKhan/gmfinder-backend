@@ -137,20 +137,22 @@
                     <!-- col di destra -->
                     <div class="col-6 ps-5">
                         <div class="d-flex align-items-center justify-content-end">
-                            <!-- newsletter e button -->
-                            <form class="d-flex justify-content-center gap-3">
-                                <div id="email">
-                                    <label for="exampleFormControlInput1" class="form-label">Newsletter</label>
-                                    <input type="email" class="form-control  me-5 email" id="exampleFormControlInput1"
-                                        placeholder="email address" />
+                            <!-- newsletter & button -->
+                            <form class="row g-3">
+                                <div class="col-auto">
+                                    <h3>Newsletter</h3>
                                 </div>
-                                <div class="mt-4 button">
-                                    <button type="submit" class="btn mt-2" id="footer-button">
-                                        Subscribe
-                                    </button>
+                                <div class="col-auto">
+                                    <label for="inputEmail" class="visually-hidden">Password</label>
+                                    <input type="email" class="form-control" id="inputEmail"
+                                        placeholder="Your Email Address">
+                                </div>
+                                <div class="col-auto">
+                                    <button type="submit" class="btn btn-orange mb-3">Subscribe</button>
                                 </div>
                             </form>
-                            <!-- /newsletter e button -->
+                            {{-- </form> --}}
+                            <!-- /newsletter & button -->
                         </div>
                         <!-- icons -->
                         <div class="mt-3">

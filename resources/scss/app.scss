@@ -82,50 +82,12 @@
     background-color: var(--light-color);
 }
 
-.button button {
-    background-color: var(--contrast-color);
-    color: black;
-}
-
-.button button:hover {
-    background-color: var(--contrast-color);
-}
-
 footer hr {
     border: 1px solid white;
     margin-top: 0;
 }
 
 /* FOOTER BOTTOM */
-#button button {
-    background-color: var(--contrast-color);
-    border: none;
-    color: black;
-}
-
-#button button:hover {
-    color: white;
-}
-
-#button button:hover {
-    background-color: var(--contrast-color);
-}
-
-#footer-button {
-    background-color: var(--contrast-color);
-    color: var(--light-color);
-    border: 1px solid var(--contrast-color);
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-#footer-button:hover {
-    background-color: var(--light-color);
-    color: var(--contrast-color);
-    border-color: var(--contrast-color);
-}
-
 .required::after {
     content: " *";
     color: var(--danger-color);
@@ -147,6 +109,22 @@ footer hr {
     background-color: var(--contrast-color);
     color: var(--light-color);
     border-color: var(--contrast-color);
+}
+
+.btn-orange {
+    background-color: var(--contrast-color);
+    color: var(--light-color);
+    border: 1px solid var(--contrast-color);
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-orange:hover {
+    background-color: var(--light-color);
+    color: var(--contrast-color);
+    border-color: var(--light-color);
 }
 
 .btn-danger-custom {
