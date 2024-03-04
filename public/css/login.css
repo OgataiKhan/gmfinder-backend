@@ -6,6 +6,7 @@
 
 #login-card {
     box-shadow: 0 0 1px 0 var(--primary-color);
+    margin-bottom: 200px;
 }
 
 #login-card-header {
