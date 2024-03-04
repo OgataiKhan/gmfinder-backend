@@ -1,1 +1,19 @@
+#header {
+    background-color: var(--primary-color);
+    width: 100%;
+}
 
+/* logo */
+.logo {
+    width: 65px;
+    height: 65px;
+}
+
+.logo img {
+    width: 100%;
+}
+/* navbar */
+.navbar-link ul {
+    list-style: none;
+    padding-left: 0;
+}
