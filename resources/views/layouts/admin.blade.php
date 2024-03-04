@@ -94,12 +94,12 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                @if ($user->gameMaster)
+                                @if (auth()->user() && auth()->user()->gameMaster()->exists())
                                     <a class="nav-link" href="{{ route('profile.edit') }}">
                                         <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i> Edit Profile
                                     </a>
                                 @else
-                                    <a class="nav-link" href="{{ route('profile.create') }}">
+                                    <a class="nav-link" href="{{ route('game_master.create') }}">
                                         <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i> Create Profile
                                     </a>
                                 @endif
