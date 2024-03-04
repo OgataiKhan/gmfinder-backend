@@ -2,7 +2,7 @@
 @section('content')
     <div class="container">
 
-        <form action={{ route('game_master.update', $game_master) }} method="POST" class="d-flex row p-4 text-light"
+        <form action={{ route('game_master.update', 'game_master') }} method="POST" class="d-flex row p-4 text-light"
             enctype="multipart/form-data">
             @csrf
             @method('PUT')

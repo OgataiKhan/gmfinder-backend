@@ -1,11 +1,12 @@
 /* sidebar */
 
 #sidebarMenu {
-    background-color: var(--secondary-color);
+    background-color: #fff3e2;
+    border-right: 1px solid #ccc;
 }
 
 #sidebarMenu a {
-    color: var(--light-color);
+    color: var(--primary-color);
     transition: background-color 0.3s;
 }
 

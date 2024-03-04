@@ -8,45 +8,63 @@
                 <div class="card-header">
                     <div class="d-flex justify-content-between">
                         <h3>{{ $user->name }}</h3>
-                        <div class="d-flex">
-                            {{-- edit profile --}}
-                            <a href="{{ route('game_master.edit', $user) }}"
-                                class="btn btn-success btn-sm align-self-center">Edit</a>
-                            {{-- delete profile --}}
-                            <form action="{{ route('game_master.destroy', $user) }}" method="POST" class="d-flex">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger btn-sm align-self-center">Delete</button>
-                            </form>
+                        <div>
+                            <a href="{{ route('game_master.show', $user) }}" class="btn" id="show-profile-button">Show
+                                Profile</a>
                         </div>
                     </div>
-                    <p>{{ $user->email }}</p>
                 </div>
                 {{-- show game master info --}}
                 @if ($user->gameMaster)
                     <div class="card-body" id="gm-card-body">
-                        <div class="gm-info">
-                            <h5>Your Info</h5>
-                            <hr>
-                            <p> <strong>Game Description: </strong> {{ $user->gameMaster->game_description }}</p>
-                            <p> <strong>Location: </strong> {{ $user->gameMaster->location }}</p>
-                            <p>
-                                <strong>Availability: </strong>
-                                {!! $user->gameMaster->is_available
-                                    ? 'Available <span style="color:green;">●</span>'
-                                    : 'Not Available <span style="color:red;">●</span>' !!}
-                            </p>
-                        </div>
-                        @if ($user->gameMaster->profile_img)
-                            <div>
-                                {{-- show image --}}
-                                <img src="{{ asset('storage/' . $user->gameMaster->profile_img) }}" alt="Game Master Pic">
-                            @else
-                                <img src="https://icons.veryicon.com/png/o/miscellaneous/xdh-font-graphics-library/anonymous-user.png"
-                                    alt="Game Master Pic">
+                        <h5>Your Info</h5>
+                        <hr>
+                        <div class="d-flex justify-content-between">
+                            <div class="gm-info">
+                                <p> <strong>Game Description: </strong> {{ $user->gameMaster->game_description }}</p>
 
+                                <p> <strong>Games: </strong>
+                                    @foreach ($user->gameMaster->gameSystems as $game_system)
+                                        <li>{{ $game_system->name }}</li>
+                                    @endforeach
+                                </p>
+                                <p> <strong>Game Length: </strong> {{ $user->gameMaster->game_length }}</p>
+                                <p> <strong>Max Players: </strong> {{ $user->gameMaster->max_players }}</p>
+                                <p> <strong>Email: </strong> {{ $user->email }}</p>
+                                <p>
+                                <p> <strong>Location: </strong> {{ $user->gameMaster->location }}</p>
+                                <p>
+                                    <strong>Availability: </strong>
+                                    {!! $user->gameMaster->is_available
+                                        ? 'Available <span style="color:green;">●</span>'
+                                        : 'Not Available <span style="color:red;">●</span>' !!}
+                                </p>
+
+                                {{-- button to show profile, edit and delete --}}
+                                <div class="d-flex">
+                                    {{-- edit profile --}}
+                                    <a href="{{ route('game_master.edit', $user) }}" class="btn align-self-center me-2"
+                                        id="gm-edit-button">Edit</a>
+                                    {{-- delete profile --}}
+                                    <form action="{{ route('game_master.destroy', $user) }}" method="POST" class="d-flex">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn align-self-center"
+                                            id="gm-delete-button">Delete</button>
+                                    </form>
+                                </div>
                             </div>
-                        @endif
+                            <div id="gm-pic">
+                                @if ($user->gameMaster->profile_img)
+                                    {{-- show image --}}
+                                    <img src="{{ asset('storage/' . $user->gameMaster->profile_img) }}"
+                                        alt="Game Master Pic">
+                                @else
+                                    <img src="https://icons.veryicon.com/png/o/miscellaneous/xdh-font-graphics-library/anonymous-user.png"
+                                        alt="Game Master Pic">
+                                @endif
+                            </div>
+                        </div>
                     </div>
                 @endif
             </div>
