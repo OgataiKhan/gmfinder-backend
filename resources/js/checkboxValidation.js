@@ -3,7 +3,8 @@ const checkboxError = document.getElementById('no-checkboxes');
 
 //check if a checkbox is selected or not
 function checkboxChecked() {
-    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    const checkboxes = document.querySelectorAll("input.game-system-check");
+    console.log(checkboxes)
     for (let i = 0; i < checkboxes.length; i++) {
         if (checkboxes[i].checked) {
             return true;
@@ -12,15 +13,7 @@ function checkboxChecked() {
     return false;
 }
 
-//prevent the form submit if no checkbox is checked
-// function noChecked() {
-//     if (!checkboxChecked()) {
-//         event.preventDefault;
-//         alert('Select at least one game system')
-//     }
-// }
-
-
+//show error messages if no checkbox is selected
 form.addEventListener('submit', function (event) {
     if (!checkboxChecked()) {
         event.preventDefault();
