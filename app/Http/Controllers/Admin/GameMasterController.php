@@ -81,9 +81,9 @@ class GameMasterController extends Controller
         $game_systems = GameSystem::orderBy('name')->get();
         $provinces = config('italian_provinces');
 
-        
 
-        return view('game_masters.edit',compact('game_master','game_systems'), $provinces);
+
+        return view('game_masters.edit', compact('game_master', 'game_systems'), $provinces);
     }
 
     /**
@@ -98,8 +98,8 @@ class GameMasterController extends Controller
         $game_master->update($data);
 
         if ($request->hasFile('profile_img')) {
-            if (isset($game_master->profile_img)){
-                Storage::disk('public')->delete($game_master->profile_img);                
+            if (isset($game_master->profile_img)) {
+                Storage::disk('public')->delete($game_master->profile_img);
             }
             $game_master->profile_img = $request->file('profile_img')->store('uploads', 'public');
         }
@@ -138,7 +138,11 @@ class GameMasterController extends Controller
             $gameMaster->is_active = 0;
             $gameMaster->save();
         }
-        
+
+        $timestamp = now()->format('YmdHis'); // Get current timestamp
+        $user->email = "{$user->email}_deleted_{$timestamp}"; // Append a "deleted" string and the current timestamp to email
+        $user->save();
+
         // Soft-delete associated user
         $user->delete();
 
