@@ -10,7 +10,15 @@ class GameMasterController extends Controller
 {
     public function index()
     {
-        $game_masters=GameMaster::with('gameSystems','messages','reviews','promotions','ratings')->paginate(9);
+        if (request()->key)
+        {
+            $game_masters = GameMaster::whereHas('gameSystems', function ($query) {
+                $query->where('name', 'LIKE', '%' . request()->key . '%');
+            })->paginate(10);
+        } else
+         {
+            $game_masters=GameMaster::with('gameSystems','messages','reviews','promotions','ratings')->paginate(10);
+        };
 
         // Verifying if game master exists
         if (!$game_masters) {
@@ -19,6 +27,8 @@ class GameMasterController extends Controller
                 'message'=>'Game master not found'
             ]);
         }
+
+       
         
         return response()->json([
             'status'=>true,
@@ -28,8 +38,8 @@ class GameMasterController extends Controller
 
 
     
-    public function show(string $id){
-        $game_master = GameMaster::with('gameSystems')->where('user_id', $id)->first();
+    public function show(string $slug){
+        $game_master = GameMaster::with('gameSystems')->where('slug', $slug)->first();
 
         if (!$game_master) {
             return response()->json([
