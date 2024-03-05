@@ -173,7 +173,7 @@
                         <img src="/img/dungeons_and_dragons_logo_by_floodgrunt-d6my4z8.png" alt="" />
                     </div>
                     <div>
-                        <button type="reset" class="btn" id="footer-button">
+                        <button type="reset" class="btn btn-orange">
                             Back to Top
                         </button>
                     </div>
