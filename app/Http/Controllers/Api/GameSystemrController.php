@@ -12,6 +12,13 @@ class GameSystemrController extends Controller
     {
         $game_systems=GameSystem::with('gameMasters')->paginate(9);
 
+        if (!$game_systems){
+            return response()->json([
+                'status'=>false,
+                'message'=>'Game system not found'
+            ]);
+        }
+
         
         return response()->json([
             'status'=>true,
