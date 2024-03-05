@@ -10,6 +10,7 @@ use App\Models\GameSystem;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
@@ -126,8 +127,25 @@ class GameMasterController extends Controller
     public function destroy(User $user)
     {
         $user = Auth::user();
-        $user->gameMaster->is_active = 0;
-        $user->gameMaster->save();
-        return redirect()->route('game_master.index')->with('delete', 'Profile deleted successfully');
+
+        $gameMaster = $user->gameMaster;
+
+        if ($gameMaster) {
+            $gameMaster->is_active = 0;
+            $gameMaster->save();
+        }
+        
+        Log::info("Deleting user: " . $user->id);
+
+        // Soft-delete associated user
+        $user->delete();
+
+        Log::info("User deleted: " . $user->id);
+
+        // Log user out after soft-deleting
+        Auth::logout();
+
+        // return redirect()->route('game_master.index')->with('delete', 'Profile deleted successfully');
+        return redirect()->route('dashboard')->with('status', 'Profile deleted successfully');
     }
 }
