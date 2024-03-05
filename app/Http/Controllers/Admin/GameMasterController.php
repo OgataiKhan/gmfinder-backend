@@ -74,14 +74,18 @@ class GameMasterController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(User $user)
+    public function edit($id)
     {
         $user = Auth::user();
+
+        if ($user->gameMaster->id != $id) {
+            return redirect()->route('game_master.edit', ['game_master' => $user->gameMaster->id])
+                ->with('error', 'You are not authorized to edit this information.');
+        }
+
         $game_master = $user->gameMaster;
         $game_systems = GameSystem::orderBy('name')->get();
         $provinces = config('italian_provinces');
-
-
 
         return view('game_masters.edit', compact('game_master', 'game_systems'), $provinces);
     }
