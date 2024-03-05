@@ -13,7 +13,7 @@
 
                             <div class="mb-4 row">
                                 <label for="name"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+                                    class="col-md-4 col-form-label text-md-right required">{{ __('Name') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="name" type="text"
@@ -30,7 +30,7 @@
 
                             <div class="mb-4 row">
                                 <label for="email"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                                    class="col-md-4 col-form-label text-md-right required">{{ __('E-Mail Address') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="email" type="email"
@@ -47,7 +47,7 @@
 
                             <div class=" row">
                                 <label for="password"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                                    class="col-md-4 col-form-label text-md-right required">{{ __('Password') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="password" type="password"
@@ -63,7 +63,7 @@
                             </div>
                             <div class="mb-4 row">
                                 <label for="password-confirm"
-                                    class="col-md-4 col-form-label text-md-right mt-4">{{ __('Confirm Password') }}</label>
+                                    class="col-md-4 col-form-label text-md-right mt-4 required">{{ __('Confirm Password') }}</label>
 
                                 <div class="col-md-6">
                                     <p class="text-danger m-0 d-none" id="password-check">The passwords do not match</p>
@@ -72,8 +72,9 @@
                                         autocomplete="new-password">
                                 </div>
                             </div>
+                            {{-- role selector --}}
 
-                            <div class="mb-4 row">
+                            {{-- <div class="mb-4 row">
                                 <label for="role"
                                     class="col-md-4 col-form-label text-md-right">{{ __('Role') }}</label>
 
@@ -92,7 +93,9 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>
+                            </div> --}}
+
+                            <input type="hidden" id="role" name="role" value="game_master">
 
                             <div class="mb-4 row mb-0">
                                 <div class="col-md-6 offset-md-4">
@@ -107,7 +110,7 @@
             </div>
         </div>
     </div>
-    @vite(['resources/js/confirmPassword.js'])
+    @vite(['resources/js/confirmPassword.js', 'resources/scss/app.scss'])
 @endsection
 
 {{-- css --}}

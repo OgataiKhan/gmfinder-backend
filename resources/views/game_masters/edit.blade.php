@@ -72,7 +72,8 @@
                                 id="game_system-{{ $game_system->id }}" type="checkbox" value="{{ $game_system->id }}"
                                 {{ in_array($game_system->id, old('game_systems', [])) ? 'checked' : '' }}>
                         @else
-                            <input name="game_systems[]" class="input-focus-orange form-check-input checked-orange"
+                            <input name="game_systems[]"
+                                class="input-focus-orange form-check-input checked-orange game-system-check"
                                 id="game_system-{{ $game_system->id }}" type="checkbox" value="{{ $game_system->id }}"
                                 {{ $game_master->gameSystems->contains($game_system->id) ? 'checked' : '' }}>
                         @endif
