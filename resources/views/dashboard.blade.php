@@ -15,10 +15,11 @@
                         @endif
 
                         {{-- {{ __('You are logged in!') }} --}}
-                        <p class="text-center mt-4">Welcome back, <span class="fw-bold">{{ Auth::user()->name }}</span>. New adventures await!</p>
+                        <p class="text-center mt-4">Welcome back, <span class="fw-bold">{{ Auth::user()->name }}</span>. New
+                            adventures await!</p>
                     </div>
                     <div class="card-body mb-2 text-center">
-                        <a href="{{ route('game_master.index') }}" class="btn" id="footer-button">View your profile</a>
+                        <a href="{{ route('game_master.index') }}" class="btn btn-orange">View your profile</a>
                     </div>
                 </div>
             </div>
