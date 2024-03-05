@@ -19,7 +19,7 @@
                             adventures await!</p>
                     </div>
                     <div class="card-body mb-2 text-center">
-                        <a href="{{ route('game_master.index') }}" class="btn btn-orange">View your profile</a>
+                        <a href="{{ route('game_master.index') }}" class="btn btn-void-orange">View your profile</a>
                     </div>
                 </div>
             </div>
