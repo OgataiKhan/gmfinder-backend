@@ -23,12 +23,12 @@
                             <div class="gm-info">
                                 <p> <strong>Game Description: </strong> {{ $user->gameMaster->game_description }}</p>
 
-                                <p> <strong>Games: </strong>
+                                <p> <strong>Game Systems: </strong>
                                     @foreach ($user->gameMaster->gameSystems as $game_system)
                                         <li>{{ $game_system->name }}</li>
                                     @endforeach
                                 </p>
-                                <p> <strong>Game Length: </strong> {{ $user->gameMaster->game_length }}</p>
+                                {{-- <p> <strong>Game Length: </strong> {{ $user->gameMaster->game_length }}</p> --}}
                                 <p> <strong>Max Players: </strong> {{ $user->gameMaster->max_players }}</p>
                                 <p> <strong>Email: </strong> {{ $user->email }}</p>
                                 <p>
@@ -71,11 +71,12 @@
         @else
             {{-- account deleted --}}
             <div class="alert p-3 d-flex flex-column align-items-center border border-2">
-                <p>Your account has been deleted.</p>
-                <form action="{{ route('logout') }}" method="POST">
+                <p>Create a Game Master profile to begin your adventure!</p>
+                {{-- <form action="{{ route('logout') }}" method="POST">
                     @csrf
                     <button class="btn btn-void-orange">Home Page</button>
-                </form>
+                </form> --}}
+                <a href="{{ route('game_master.create') }}" class="btn btn-void-orange">Create Profile</a>
             </div>
         @endif
     </div>
