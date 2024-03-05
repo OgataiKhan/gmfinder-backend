@@ -139,12 +139,8 @@ class GameMasterController extends Controller
             $gameMaster->save();
         }
         
-        Log::info("Deleting user: " . $user->id);
-
         // Soft-delete associated user
         $user->delete();
-
-        Log::info("User deleted: " . $user->id);
 
         // Log user out after soft-deleting
         Auth::logout();
