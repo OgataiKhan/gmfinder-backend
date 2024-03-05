@@ -21,5 +21,5 @@ use Illuminate\Support\Facades\Route;
 }); */
 
 Route::get('game_masters', [GameMasterController::class, 'index']);
-Route::get('/game_masters/{id}',[GameMasterController::class,'show']);
+Route::get('/game_masters/{slug}',[GameMasterController::class,'show']);
 Route::get('game_systems', [GameSystemrController::class, 'index']);
