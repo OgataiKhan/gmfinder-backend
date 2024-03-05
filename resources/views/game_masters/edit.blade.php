@@ -92,7 +92,7 @@
             <div class="mb-3 col-12">
                 <label for="profile_img" class="form-label">Choose a profile picture</label>
                 <input class="form-control {{ $errors->has('profile_img') ? 'is-invalid' : '' }}" type="file"
-                    id="profile_img" name="profile_img" maxlength="2048">
+                    accept="image/*" id="profile_img" name="profile_img" maxlength="2048">
                 @if ($errors->has('profile_img'))
                     <div class="invalid-feedback">
                         {{ $errors->first('profile_img') }}
@@ -105,7 +105,7 @@
                     class="{{ $errors->has('is_available') ? 'is-invalid' : '' }} input-focus-orange form-check-input checked-orange"
                     type="checkbox" id="toggleIsAvailable" name="is_available" value="1"
                     {{ $game_master->is_available ? 'checked' : '' }}>
-                <label for="toggleIsAvailable">Ready for a new game session ?</label>
+                <label for="toggleIsAvailable">Ready for a new campaign?</label>
                 <div class="invalid-feedback">
                     {{ $errors->first('is_available') }}
                 </div>

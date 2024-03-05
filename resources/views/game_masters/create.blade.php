@@ -76,7 +76,7 @@
             <div class="mb-3 col-12">
                 <label for="profile_img" class="form-label">Choose a profile picture</label>
                 <input class="input-focus-orange form-control {{ $errors->has('profile_img') ? 'is-invalid' : '' }}"
-                    type="file" maxlength="2048" id="profile_img" name="profile_img">
+                    type="file" accept="image/*" maxlength="2048" id="profile_img" name="profile_img">
                 @if ($errors->has('profile_img'))
                     <div class="invalid-feedback">
                         {{ $errors->first('profile_img') }}

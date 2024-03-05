@@ -130,9 +130,9 @@ class GameMasterController extends Controller
 
         $gameMaster = $user->gameMaster;
 
-        // if ($gameMaster->profile_img) {
-        //     Storage::delete($gameMaster->profile_img);
-        // }
+        if ($gameMaster->profile_img) {
+            Storage::delete($gameMaster->profile_img);
+        }
 
         if ($gameMaster) {
             $gameMaster->is_active = 0;
