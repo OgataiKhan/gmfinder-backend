@@ -60,8 +60,8 @@
                                     <img src="{{ asset('storage/' . $user->gameMaster->profile_img) }}"
                                         alt="Game Master Pic">
                                 @else
-                                    <img src="https://icons.veryicon.com/png/o/miscellaneous/xdh-font-graphics-library/anonymous-user.png"
-                                        alt="Game Master Pic">
+                                    <img src="/img/generic-avatar.webp"
+                                        alt="Generic GM Avatar"/></a>
                                 @endif
                             </div>
                         </div>
