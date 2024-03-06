@@ -10,7 +10,7 @@ class GameSystemController extends Controller
 {
     public function index()
     {
-        $game_systems=GameSystem::with('gameMasters')->orderBy('name', 'asc')->get();
+        $game_systems=GameSystem::with('gameMasters', 'gameMasters.user')->orderBy('name', 'asc')->get();
 
         if (!$game_systems){
             return response()->json([
