@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\GameMasterController;
 use App\Http\Controllers\Api\GameSystemrController;
+use App\Http\Controllers\Api\MessageController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -21,5 +22,7 @@ use Illuminate\Support\Facades\Route;
 }); */
 
 Route::get('game_masters', [GameMasterController::class, 'index']);
-Route::get('/game_masters/{slug}',[GameMasterController::class,'show']);
+Route::get('/game_masters/{slug}', [GameMasterController::class, 'show']);
 Route::get('game_systems', [GameSystemrController::class, 'index']);
+
+Route::post('messages', [MessageController::class, 'store']);
