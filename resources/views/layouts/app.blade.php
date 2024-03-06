@@ -32,72 +32,8 @@
 
 <body>
     <div id="app">
-        {{-- <header class="header">
-            <div class="container d-flex justify-content-between align-items-center py-2">
-                <!-- logo -->
-                <div class="logo">
-                    <a class="text-decoration-none" href="{{ env('FRONTEND_URL') }}">
-                        <img src="/img/dungeons_and_dragons_logo_by_floodgrunt-d6my4z8.png" alt="" /></a>
-                </div>
-                <!-- /logo -->
-                <!-- navbar -->
-                <nav class="navbar-link">
-                    <ul class="d-flex align-items-center gap-3 mt-3">
-                        <!-- link navbar -->
-                        <li>
-                            <a class="link" href="{{ env('FRONTEND_URL') }}"><strong>Home</strong></a>
-                        </li>
-                        <li>
-                            <a class="link" href="#"><strong>Game
-                                    Master</strong></a>
-                        </li>
-                        <li>
-                            <a class="link" href="#"><strong>Message</strong></a>
-                        </li>
-                        <li>
-                            <a class="link" href="#"><strong>Error</strong></a>
-                        </li>
-                        <li>
-                            <a class="link"
-                                href="{{ env('FRONTEND_URL') }}/advanced-search"><strong>Search</strong></a>
-                        </li>
-                        @guest
-                            <li>
-                                <a class="header-button btn" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
-                            @if (Route::has('register'))
-                                <li>
-                                    <a class="btn header-button" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ url('dashboard') }}">{{ __('Dashboard') }}</a>
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                        onclick="event.preventDefault();
-                                                 document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
-                </nav>
-                <!-- /navbar -->
-            </div>
-        </header> --}}
         <header>
-            <div class="container-fluid d-flex justify-content-between align-items-center py-2">
+            <div class="container d-flex justify-content-between align-items-center py-2">
                 <!-- navbar -->
                 <nav class="navbar navbar-expand-md text-center flex-grow-1">
                     <div class="container-fluid">
