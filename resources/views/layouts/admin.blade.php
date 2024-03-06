@@ -119,7 +119,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-center text-md-start" href="{{ route('dashboard') }}">
+                                <a class="nav-link text-center text-md-start" href="{{ route('promotions.create') }}">
                                     <i class="fa-solid fa-rocket fa-lg fa-fw"></i> Promotions
                                 </a>
                             </li>
