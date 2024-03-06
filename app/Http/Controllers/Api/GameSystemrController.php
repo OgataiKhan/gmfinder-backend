@@ -10,7 +10,7 @@ class GameSystemrController extends Controller
 {
     public function index()
     {
-        $game_systems=GameSystem::with('gameMasters')->paginate(9);
+        $game_systems=GameSystem::with('gameMasters')->get();
 
         if (!$game_systems){
             return response()->json([
