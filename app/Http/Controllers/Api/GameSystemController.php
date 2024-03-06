@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\GameSystem;
 use Illuminate\Http\Request;
 
-class GameSystemrController extends Controller
+class GameSystemController extends Controller
 {
     public function index()
     {
