@@ -13,7 +13,7 @@ class GameMasterController extends Controller
         if (request()->key)
         {
             $game_masters = GameMaster::whereHas('gameSystems', function ($query) {
-                $query->where('name', 'LIKE', '%' . request()->key . '%');
+                $query->where('game_systems.id', request()->key);
             })->paginate(10);
         } else
          {
