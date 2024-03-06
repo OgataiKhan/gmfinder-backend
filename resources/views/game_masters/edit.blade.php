@@ -6,10 +6,8 @@
 
         <form id="gm-create-form" action={{ route('game_master.update', 'game_master') }} method="POST"
             class="d-flex row p-4 my-5 col-8 mx-auto" enctype="multipart/form-data">
-
             @csrf
             @method('PUT')
-
 
             <div class="d-flex justify-content-between">
 
@@ -49,7 +47,7 @@
 
             {{-- Game Description --}}
             <div class="mb-3">
-                <label for="game_description required" class="form-label">Game description</label>
+                <label for="game_description" required class="form-label required">Game description</label>
                 <textarea class="input-focus-orange form-control {{ $errors->has('game_description') ? 'is-invalid' : '' }}"
                     name="game_description" id="game_description" rows="3" required maxlength="1000">{{ old('game_description', $game_master->game_description) }}</textarea>
                 @if ($errors->has('game_description'))
@@ -98,7 +96,19 @@
                         {{ $errors->first('profile_img') }}
                     </div>
                 @endif
+                @if ($game_master->profile_img)
+                    {{-- show image --}}
+                    <div class="mt-3">
+                        <p>Current image</p>
+                        <div class="edit-old-img-container">
+                            <img class="edit-old-img" src="{{ asset('storage/' . $game_master->profile_img) }}"
+                                alt="Current Game Master Pic">
+                        </div>
+                    </div>
+                @endif
             </div>
+
+            {{-- Availability --}}
             <div class="mb-3 col">
                 <input type="hidden" name="is_available" value="0"> <!-- Hidden input with value 0 -->
                 <input
@@ -110,6 +120,8 @@
                     {{ $errors->first('is_available') }}
                 </div>
             </div>
+
+            {{-- Submit --}}
             <div class="d-flex">
                 <button id="create-button" type="submit" class="btn btn-void-orange mx-auto">Seems good!</button>
             </div>
