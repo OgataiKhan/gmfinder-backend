@@ -35,6 +35,8 @@ class PromotionController extends Controller
             $baseTime = $latestPromotion->end_time;
         }
 
+        // $promotionTiers = config('promotion_tiers');
+
         // Adjust end_time calculation based on the tier
         switch ($data['tier']) {
             case 'bronze':
