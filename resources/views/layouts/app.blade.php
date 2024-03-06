@@ -32,7 +32,7 @@
 
 <body>
     <div id="app">
-        <header class="header">
+        {{-- <header class="header">
             <div class="container d-flex justify-content-between align-items-center py-2">
                 <!-- logo -->
                 <div class="logo">
@@ -95,8 +95,83 @@
                 </nav>
                 <!-- /navbar -->
             </div>
-        </header>
+        </header> --}}
+        <header>
+            <div class="container-fluid d-flex justify-content-between align-items-center py-2">
+                <!-- navbar -->
+                <nav class="navbar navbar-expand-md text-center flex-grow-1">
+                    <div class="container-fluid">
+                        <!-- logo -->
+                        <div class="logo">
+                            <router-link :to="{ name: 'home' }" class="text-decoration-none">
+                                <img src="/img/dungeons_and_dragons_logo_by_floodgrunt-d6my4z8.png"
+                                    alt="" /></router-link>
+                        </div>
+                        <!-- /logo -->
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" id="header-button"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ms-auto mb-2 mb-md-0 gap-3">
+                                <li class="nav-item">
+                                    <router-link :to="{ name: 'home' }" class="nav-link">Home</router-link>
+                                </li>
+                                <li class="nav-item">
+                                    <router-link :to="{ name: 'home' }" class="nav-link">Games</router-link>
+                                </li>
+                                <li class="nav-item">
+                                    <router-link :to="{ name: 'home' }" class="nav-link">FAQ</router-link>
+                                </li>
+                                <li class="nav-item">
+                                    <router-link :to="{ name: 'home' }" class="nav-link">Contact</router-link>
+                                </li>
+                                <li class="nav-item">
+                                    <router-link :to="{ name: 'advanced-search' }" class="nav-link">Search</router-link>
+                                </li>
+                                @guest
+                                    <li>
+                                        <a class="header-button btn w-100"
+                                            href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    </li>
+                                    @if (Route::has('register'))
+                                        <li>
+                                            <a class="btn header-button w-100"
+                                                href="{{ route('register') }}">{{ __('Register') }}</a>
+                                        </li>
+                                    @endif
+                                @else
+                                    <li class="nav-item dropdown">
+                                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#"
+                                            role="button" data-bs-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false" v-pre>
+                                            {{ Auth::user()->name }}
+                                        </a>
 
+                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                            <a class="dropdown-item"
+                                                href="{{ url('dashboard') }}">{{ __('Dashboard') }}</a>
+                                            <a class="dropdown-item" href="{{ route('logout') }}"
+                                                onclick="event.preventDefault();
+                                                 document.getElementById('logout-form').submit();">
+                                                {{ __('Logout') }}
+                                            </a>
+
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                                class="d-none">
+                                                @csrf
+                                            </form>
+                                        </div>
+                                    </li>
+                                @endguest
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <!-- /navbar -->
+            </div>
+        </header>
         <main class="section-main">
             @yield('content')
         </main>

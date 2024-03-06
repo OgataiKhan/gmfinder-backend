@@ -28,13 +28,21 @@
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
-    font-weight: bold;
 }
 
 .header-button:hover {
     background-color: var(--contrast-color);
     color: var(--light-color);
     border-color: var(--contrast-color);
+}
+
+// media queries for header buttons
+@media (max-width: 767px) {
+    .header-button {
+        background-color: transparent;
+        color: var(--light-color);
+        border: none;
+    }
 }
 
 /* MAIN */
