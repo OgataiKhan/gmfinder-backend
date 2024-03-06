@@ -21,3 +21,31 @@ class MessageController extends Controller
         $message->save();
     }
 }
+
+
+/*  
+data taken from form trough v-model
+
+cost formData = {
+    text: null,
+    name: null,
+    email: null,
+}
+
+axios call
+
+function postMessage(){
+    const data = {
+        game_master_id : game_master.id,
+        text : fromData.text,
+        name : formData.name,
+        email : formData.email
+    }
+
+    axios.post('route/messages', data).then=>(response=>{
+        return a success message
+    }).catch(error=>{
+        return a error message
+    })
+}
+*/
