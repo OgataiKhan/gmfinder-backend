@@ -108,7 +108,7 @@ class GameMasterController extends Controller
             $game_master->profile_img = $request->file('profile_img')->store('uploads', 'public');
         }
 
-        $game_master->slug = Str::slug($user->name);
+        // $game_master->slug = Str::slug($user->name);
         $game_master->save();
 
         if ($request->has('game_systems')) {
