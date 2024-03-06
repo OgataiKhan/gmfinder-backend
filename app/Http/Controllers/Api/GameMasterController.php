@@ -10,36 +10,32 @@ class GameMasterController extends Controller
 {
     public function index()
     {
-        if (request()->key)
-        {
+        if (request()->key) {
             $game_masters = GameMaster::whereHas('gameSystems', function ($query) {
                 $query->where('game_systems.id', request()->key);
-            })->paginate(10);
-        } else
-         {
-            $game_masters=GameMaster::with('gameSystems','messages','reviews','promotions','ratings')->paginate(10);
+            })->with('user', 'gameSystems', 'messages', 'reviews', 'promotions', 'ratings')->paginate(10);
+        } else {
+            $game_masters = GameMaster::with('user', 'gameSystems', 'messages', 'reviews', 'promotions', 'ratings')->paginate(10);
         };
 
+        // Not necessary because paginate() will always return a paginator instance, so you'll never enter this case
         // Verifying if game master exists
-        if (!$game_masters) {
-            return response()->json([
-                'status'=>false,
-                'message'=>'Game master not found'
-            ]);
-        }
+        // if (!$game_masters) {
+        //     return response()->json([
+        //         'status'=>false,
+        //         'message'=>'Game master not found'
+        //     ]);
+        // }
 
-       
-        
         return response()->json([
-            'status'=>true,
+            'status' => true,
             'results' => $game_masters,
         ]);
     }
 
-
-    
-    public function show(string $slug){
-        $game_master = GameMaster::with('gameSystems')->where('slug', $slug)->first();
+    public function show(string $slug)
+    {
+        $game_master = GameMaster::with('user', 'gameSystems')->where('slug', $slug)->first();
 
         if (!$game_master) {
             return response()->json([
