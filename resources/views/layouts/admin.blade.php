@@ -120,6 +120,11 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-center text-md-start" href="{{ route('dashboard') }}">
+                                    <i class="fa-solid fa-rocket fa-lg fa-fw"></i> Promotions
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-center text-md-start" href="{{ route('dashboard') }}">
                                     <i class="fa-solid fa-square-poll-vertical fa-lg fa-fw"></i> My Stats
                                 </a>
                             </li>
