@@ -181,7 +181,7 @@
                 <hr />
                 <div class="container d-flex justify-content-between align-items-center px-0 pt-2">
                     <div class="logo">
-                        <img src="/img/dungeons_and_dragons_logo_by_floodgrunt-d6my4z8.png" alt="" />
+                        <img src="/img/logo.png" alt="logo" />
                     </div>
                     <div>
                         <button type="reset" class="btn btn-orange">
