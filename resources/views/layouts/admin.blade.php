@@ -35,7 +35,7 @@
         <header class="header">
             <div class="container d-flex justify-content-between align-items-center py-2">
                 <!-- logo -->
-                <div class="logo">
+                <div class="logo pt-2">
                     <a class="text-decoration-none" href="{{ env('FRONTEND_URL') }}">
                         <img src="/img/logo.png" alt="logo" /></a>
                 </div>

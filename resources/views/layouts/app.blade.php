@@ -39,10 +39,9 @@
                 <nav class="navbar navbar-expand-md text-center flex-grow-1">
                     <div class="container-fluid">
                         <!-- logo -->
-                        <div class="logo">
+                        <div class="logo pt-2">
                             <router-link :to="{ name: 'home' }" class="text-decoration-none">
-                                <img src="/img/logo.png"
-                                    alt="logo" /></router-link>
+                                <img src="/img/logo.png" alt="logo" /></router-link>
                         </div>
                         <!-- /logo -->
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" id="header-button"
