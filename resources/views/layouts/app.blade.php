@@ -9,6 +9,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'GM Finder') }}</title>
+    <link rel="icon" href="{{ asset('img/favicon.png') }}">
 
     <!-- Fontawesome 6 cdn -->
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css'
@@ -23,7 +24,7 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
-    <!-- Usando Vite -->
+    <!-- Vite -->
     @vite(['resources/js/app.js'])
 
     {{-- use stylesheet in view --}}
