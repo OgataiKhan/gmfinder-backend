@@ -41,8 +41,8 @@
                         <!-- logo -->
                         <div class="logo">
                             <router-link :to="{ name: 'home' }" class="text-decoration-none">
-                                <img src="/img/dungeons_and_dragons_logo_by_floodgrunt-d6my4z8.png"
-                                    alt="" /></router-link>
+                                <img src="/img/logo.png"
+                                    alt="logo" /></router-link>
                         </div>
                         <!-- /logo -->
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" id="header-button"

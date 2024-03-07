@@ -37,7 +37,7 @@
                 <!-- logo -->
                 <div class="logo">
                     <a class="text-decoration-none" href="{{ env('FRONTEND_URL') }}">
-                        <img src="/img/dungeons_and_dragons_logo_by_floodgrunt-d6my4z8.png" alt="" /></a>
+                        <img src="/img/logo.png" alt="logo" /></a>
                 </div>
                 <!-- /logo -->
                 <button class="navbar-toggler position-absolute d-md-none collapsed text-white" type="button"
@@ -203,7 +203,7 @@
                 <hr />
                 <div class="container d-flex justify-content-between align-items-center px-0 pt-2">
                     <div class="logo">
-                        <img src="/img/dungeons_and_dragons_logo_by_floodgrunt-d6my4z8.png" alt="" />
+                        <img src="/img/logo.png" alt="logo" />
                     </div>
                     <div>
                         <button type="reset" class="btn btn-orange">
