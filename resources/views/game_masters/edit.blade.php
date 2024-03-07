@@ -114,8 +114,8 @@
         <div class="mb-3 col">
             <input type="hidden" name="is_available" value="0"> <!-- Hidden input with value 0 -->
             <div class="form-check form-switch">
-                <input class="form-check-input " type="checkbox" id="toggleIsAvailable" name="is_available" value="1" {{
-                    $game_master->is_available ? 'checked' : '' }}>
+                <input class="form-check-input orange-input " type="checkbox" id="toggleIsAvailable" name="is_available"
+                    value="1" {{ $game_master->is_available ? 'checked' : '' }}>
                 <label class="form-check-label" for="toggleIsAvailable">Ready for a new campaign?</label>
             </div>
             <div class="invalid-feedback">
