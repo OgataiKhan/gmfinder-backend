@@ -180,5 +180,275 @@ return [
     "location" => "Roma",
     "game_description" => "A city’s dreams become reality, unleashing nightmares. Heroes must find and close the rift to the Dreamlands.",
     "max_players" => 4,
+  ],  
+  [
+    "name" => "MoonBlessed",
+    "email" => "moonblessed@yahoo.com",
+    "password" => "mAOOR1_E7QLqY9MT",
+    "role" => "game_master",
+    "location" => "Catania",
+    "game_description" => "Two kingdoms on the brink of war, a hidden peace treaty, and a group of unlikely diplomats are the realm's last hope.",
+    "max_players" => 3
   ],
+  [
+    "name" => "FireStarter",
+    "email" => "firestarter@hotmail.com",
+    "password" => "xTCnuUz3Nz6cI2yA",
+    "role" => "game_master",
+    "location" => "Firenze",
+    "game_description" => "The seas rage with an ancient curse, sinking ships and claiming lives. Sailors and mages ally to find the source and calm the storm.",
+    "max_players" => 3
+  ],
+  [
+    "name" => "IceWarden",
+    "email" => "icewarden@hotmail.com",
+    "password" => "Sxt7dzNfv_8LxQud",
+    "role" => "game_master",
+    "location" => "Genova",
+    "game_description" => "A city floating in the sky, powered by a dying magical core, and a team of adventurers tasked with finding the lost artifact to save it from plummeting into the sea below.",
+    "max_players" => 5
+  ],
+  [
+    "name" => "StormCaller",
+    "email" => "stormcaller@hotmail.com",
+    "password" => "T7diHIKIdqMuoqnH",
+    "role" => "game_master",
+    "location" => "Torino",
+    "game_description" => "A forbidden library offers knowledge and power, but at a great cost. Seekers of truth must navigate its trials and guardians.",
+    "max_players" => 4
+  ],
+  [
+    "name" => "EarthShaker",
+    "email" => "earthshaker@protonmail.com",
+    "password" => "u2o14dZqeR8oRRRB",
+    "role" => "game_master",
+    "location" => "Firenze",
+    "game_description" => "A legendary pirate ship resurfaces after centuries, laden with treasure and a curse. Adventurers must navigate the treacherous waters and rival pirates to claim the riches and break the curse.",
+    "max_players" => 5
+  ],
+  [
+    "name" => "LightBringer",
+    "email" => "lightbringer@hotmail.com",
+    "password" => "7slMkNcNKtm2PyQr",
+    "role" => "game_master",
+    "location" => "Venezia",
+    "game_description" => "In a realm where dreams and reality blur, a nightmare king threatens to engulf the world in eternal darkness. A group of dreamwalkers must traverse both realms to stop him.",
+    "max_players" => 4
+  ],
+  [
+    "name" => "DarkSayer",
+    "email" => "darksayer@outlook.com",
+    "password" => "YGBDBe6eC1V-wEg4",
+    "role" => "game_master",
+    "location" => "Roma",
+    "game_description" => "An arcane plague spreads, corrupting magic and minds alike. Only those immune can hope to find a cure and save the magical world.",
+    "max_players" => 4
+  ],
+  [
+    "name" => "SkyWatcher",
+    "email" => "skywatcher@gmail.com",
+    "password" => "ohwUSas0aKqas35U",
+    "role" => "game_master",
+    "location" => "Palermo",
+    "game_description" => "A hidden continent, unveiled by a cataclysmic event, teeming with ancient dangers and lost technologies. Explorers race to uncover its secrets while facing the wrath of the land's guardians.",
+    "max_players" => 3
+  ],
+  [
+    "name" => "StarGazer",
+    "email" => "stargazer@hotmail.com",
+    "password" => "_IJIBmQIbLaR7hwb",
+    "role" => "game_master",
+    "location" => "Venezia",
+    "game_description" => "The return of a comet prophesied to bring about the end of days has the world in panic. A party of chosen ones is tasked with preventing the apocalypse by solving celestial puzzles and facing cosmic beings.",
+    "max_players" => 4
+  ],
+  [
+    "name" => "AbyssWatcher",
+    "email" => "abysswatcher.outlook.com",
+    "password" => "ir_kWpAZ6Tau6n42",
+    "role" => "game_master",
+    "location" => "Bologna",
+    "game_description" => "A subterranean city, cut off from the surface for generations, has its survival threatened by dwindling resources. Adventurers must venture into the unknown depths to find salvation for its people.",
+    "max_players" => 5
+  ],
+  [
+    "name" => "FlameKeeper",
+    "email" => "flamekeeper.outlook.com",
+    "password" => "w6qn2QDJUkaQqYdW",
+    "role" => "game_master",
+    "location" => "Palermo",
+    "game_description" => "Ancient ruins of a fallen empire hold secrets and dangers. Heroes are called to uncover truths and protect the realm from awakening evils.",
+    "max_players" => 4
+  ],
+  [
+    "name" => "VoidWalker",
+    "email" => "voidwalker.protonmail.com",
+    "password" => "BaTVvywNTyZr4NTP",
+    "role" => "game_master",
+    "location" => "Roma",
+    "game_description" => "A grand tournament of magical and martial prowess, hosted in a realm where the outcome influences the balance of power in the multiverse. Competitors must fight for glory, survival, and the fate of their homeworlds.",
+    "max_players" => 5
+  ],
+  [
+    "name" => "CelestialSage",
+    "email" => "celestialsage.outlook.com",
+    "password" => "BTsL2gJCHuqYGYBe",
+    "role" => "game_master",
+    "location" => "Torino",
+    "game_description" => "An immortal emperor's tomb, filled with traps, treasures, and the secret to his power, has been discovered. Raiders must navigate the dangers within and among themselves to seize the ultimate prize.",
+    "max_players" => 4
+  ],
+  [
+    "name" => "FrostBinder",
+    "email" => "frostbinder.yahoo.com",
+    "password" => "zu3zjxEEHNnJb0VR",
+    "role" => "game_master",
+    "location" => "Firenze",
+    "game_description" => "A mystical island appears once every hundred years, filled with untold treasures and perilous monsters. A quest for glory and riches.",
+    "max_players" => 4
+  ],
+  [
+    "name" => "ThunderReign",
+    "email" => "thunderreign.protonmail.com",
+    "password" => "L57zW1P_IjxN9D0R",
+    "role" => "game_master",
+    "location" => "Firenze",
+    "game_description" => "Deep within the mountains, a dormant dragon awakens, threatening the land. A band of heroes must forge alliances to face this menace.",
+    "max_players" => 4
+  ],
+  [
+    "name" => "EclipseSeer",
+    "email" => "eclipseseer.hotmail.com",
+    "password" => "qOPkLL9Cbxy9Ru2U",
+    "role" => "game_master",
+    "location" => "Bologna",
+    "game_description" => "The seas rage with an ancient curse, sinking ships and claiming lives. Sailors and mages ally to find the source and calm the storm.",
+    "max_players" => 3
+  ],
+  [
+    "name" => "NetherWhisper",
+    "email" => "netherwhisper.outlook.com",
+    "password" => "IjoRxP1sGFk3mxH0",
+    "role" => "game_master",
+    "location" => "Venezia",
+    "game_description" => "A world-spanning library, containing knowledge lost to time, is under threat by those who wish to control information. Guardians of lore must protect the library's secrets and ensure the free flow of knowledge.",
+    "max_players" => 5
+  ],
+  [
+    "name" => "SolarFlare",
+    "email" => "solarflare.outlook.com",
+    "password" => "eHo3aKY_bKwUrJLP",
+    "role" => "game_master",
+    "location" => "Firenze",
+    "game_description" => "A once-in-a-millennium celestial alignment opens gates to other worlds, unleashing unknown creatures. Heroes must navigate these new connections to safeguard their home and explore the mysteries beyond.",
+    "max_players" => 5
+  ],
+  [
+    "name" => "MysticWarden",
+    "email" => "mysticwarden.outlook.com",
+    "password" => "lyxg5VdW3ppoD3Uf",
+    "role" => "game_master",
+    "location" => "Roma",
+    "game_description" => "A vast desert, rumored to be the sleeping place of an ancient god, begins to stir. Caravans of faith and fortune seekers converge, hoping to harness divine power or prevent its awakening.",
+    "max_players" => 5
+  ],
+  [
+    "name" => "ArcaneMaster",
+    "email" => "arcanemaster.outlook.com",
+    "password" => "wjyHvsEoOdMsxvXQ",
+    "role" => "game_master",
+    "location" => "Bologna",
+    "game_description" => "An archipelago of islands, each governed by different elemental spirits, faces an imbalance threatening to sink them into the sea. Adventurers must broker peace or strength among the spirits to save the islands.",
+    "max_players" => 5
+  ],  
+  [
+    "name" => "DawnRider",
+    "email" => "dawnrider@hotmail.com",
+    "password" => "1qw60Ca20dwvPMcc",
+    "role" => "game_master",
+    "location" => "Firenze",
+    "game_description" => "In a realm where time flows backward, heroes must navigate the complexities of past events reshaping the future.",
+    "max_players" => 4
+  ],
+  [
+    "name" => "NightWhisper",
+    "email" => "nightwhisper.protonmail.com",
+    "password" => "we2EdvnU9TypgleZ",
+    "role" => "game_master",
+    "location" => "Palermo",
+    "game_description" => "A city beneath the sea, hidden for centuries, is now revealed. Explorers must unlock its secrets while surviving its guardians.",
+    "max_players" => 4
+  ],
+  [
+    "name" => "SilverVeil",
+    "email" => "silverveil@hotmail.com",
+    "password" => "TZ8gxcjrT4T8ONJ9",
+    "role" => "game_master",
+    "location" => "Napoli",
+    "game_description" => "In the sky islands, a celestial dragon guards the pathway to enlightenment. Seekers must prove their worth to gain ancient wisdom.",
+    "max_players" => 5
+  ],
+  [
+    "name" => "CrimsonBlade",
+    "email" => "crimsonblade@hotmail.com",
+    "password" => "7W7W7-7MtNQ4VWpf",
+    "role" => "game_master",
+    "location" => "Catania",
+    "game_description" => "A necromancer seeks to usurp the throne of the living. Heroes must unite the kingdoms against the rising tide of the undead.",
+    "max_players" => 5
+  ],
+  [
+    "name" => "ShadowMeld",
+    "email" => "shadowmeld.protonmail.com",
+    "password" => "XxSvJ_J_j2IfSnK0",
+    "role" => "game_master",
+    "location" => "Genova",
+    "game_description" => "The world tree is dying, its magic fading. Only by finding the lost seeds can the adventurers hope to restore balance.",
+    "max_players" => 5
+  ],
+  [
+    "name" => "DragonHeart",
+    "email" => "dragonheart.outlook.com",
+    "password" => "wd-MQl-0NVbmnL9s",
+    "role" => "game_master",
+    "location" => "Catania",
+    "game_description" => "A labyrinth of endless night, filled with illusions and nightmares. Those who enter must find the light or be lost forever.",
+    "max_players" => 4
+  ],
+  [
+    "name" => "PhoenixRise",
+    "email" => "phoenixrise@yahoo.com",
+    "password" => "oWMnnp7lvJszAhCI",
+    "role" => "game_master",
+    "location" => "Milano",
+    "game_description" => "An uprising in the elemental plane threatens the world's balance. Heroes are called to traverse realms and quell the chaos.",
+    "max_players" => 3
+  ],
+  [
+    "name" => "GaleForce",
+    "email" => "galeforce@yahoo.com",
+    "password" => "qjpQGGA-0YGPwOhx",
+    "role" => "game_master",
+    "location" => "Napoli",
+    "game_description" => "In a land where shadows hold power, a dark monarch rises. A band of rebels seeks the dawn to end his reign of night.",
+    "max_players" => 5
+  ],
+  [
+    "name" => "TideCaller",
+    "email" => "tidecaller@gmail.com",
+    "password" => "HiMOn-9PnYsawOvt",
+    "role" => "game_master",
+    "location" => "Palermo",
+    "game_description" => "Ancient beasts, long thought extinct, reawaken to roam the lands. Hunters and scholars unite to uncover the truth behind their return.",
+    "max_players" => 4
+  ],
+  [
+    "name" => "LunarMystic",
+    "email" => "lunarmystic@hotmail.com",
+    "password" => "UO5eaywBgfmwL_nv",
+    "role" => "game_master",
+    "location" => "Catania",
+    "game_description" => "A tournament of magic and might, where the prize is a wish. Competitors from across the realms gather to test their limits.",
+    "max_players" => 3
+  ],  
 ];
