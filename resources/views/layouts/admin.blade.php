@@ -181,7 +181,8 @@
                                         placeholder="Your Email Address">
                                 </div>
                                 <div class="col-auto">
-                                    <button type="submit" class="btn btn-orange mb-3">Subscribe</button>
+                                    <button type="submit"
+                                        class="btn btn-orange mb-3"><strong>Subscribe</strong></button>
                                 </div>
                             </form>
                             {{-- </form> --}}
@@ -207,7 +208,7 @@
                     </div>
                     <div>
                         <button type="reset" class="btn btn-orange">
-                            Back to Top
+                            <strong>Back to Top</strong>
                         </button>
                     </div>
                 </div>
