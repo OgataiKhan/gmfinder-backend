@@ -13,7 +13,7 @@ class GameMasterController extends Controller
         if (request()->key) {
             $game_masters = GameMaster::whereHas('gameSystems', function ($query) {
                 $query->where('game_systems.id', request()->key);
-            })->with('user', 'gameSystems', 'messages', 'reviews', 'promotions', 'ratings')->paginate(10);
+            })->where('is_available', true)->where('is_active', true)->with('user', 'gameSystems', 'messages', 'reviews', 'promotions', 'ratings')->paginate(10);
         } else {
             $game_masters = GameMaster::with('user', 'gameSystems', 'messages', 'reviews', 'promotions', 'ratings')->paginate(10);
         };
@@ -35,7 +35,7 @@ class GameMasterController extends Controller
 
     public function show(string $slug)
     {
-        $game_master = GameMaster::with('user', 'gameSystems')->where('slug', $slug)->first();
+        $game_master = GameMaster::with('user', 'gameSystems')->where('slug', $slug)->where('is_active', true)->first();
 
         if (!$game_master) {
             return response()->json([
