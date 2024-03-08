@@ -4,6 +4,7 @@ use App\Http\Controllers\Api\GameMasterController;
 use App\Http\Controllers\Api\GameSystemController;
 use App\Http\Controllers\Api\MessageController;
 use App\Http\Controllers\Api\RatingController;
+use App\Http\Controllers\Api\ReviewController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -28,3 +29,4 @@ Route::get('game_systems', [GameSystemController::class, 'index']);
 
 Route::post('messages', [MessageController::class, 'store']);
 Route::post('ratings', [RatingController::class, 'store']);
+Route::post('reviews', [ReviewController::class, 'store']);
