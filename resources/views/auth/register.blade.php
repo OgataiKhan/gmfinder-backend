@@ -100,7 +100,7 @@
                             <div class="mb-4 row mb-0">
                                 <div class="col-md-6 offset-md-4">
                                     <button type="submit" class="btn btn-void-orange" id="register-button">
-                                        {{ __('Register') }}
+                                        {{ __('Sign Up') }}
                                     </button>
                                 </div>
                             </div>

@@ -69,12 +69,12 @@
                                 @guest
                                     <li>
                                         <a class="header-button btn w-100"
-                                            href="{{ route('login') }}">{{ __('Login') }}</a>
+                                            href="{{ route('login') }}">{{ __('Sign In') }}</a>
                                     </li>
                                     @if (Route::has('register'))
                                         <li>
                                             <a class="btn header-button w-100"
-                                                href="{{ route('register') }}">{{ __('Register') }}</a>
+                                                href="{{ route('register') }}">{{ __('Sign Up') }}</a>
                                         </li>
                                     @endif
                                 @else
@@ -91,7 +91,7 @@
                                             <a class="dropdown-item" href="{{ route('logout') }}"
                                                 onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
-                                                {{ __('Logout') }}
+                                                {{ __('Sign Out') }}
                                             </a>
 
                                             <form id="logout-form" action="{{ route('logout') }}" method="POST"
