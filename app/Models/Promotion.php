@@ -9,7 +9,11 @@ class Promotion extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['content', 'game_master_id'];
+    protected $fillable = [];
+
+    protected $casts = [
+        'end_time' => 'datetime',
+    ];
 
     public function gameMaster()
     {
