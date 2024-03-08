@@ -86,11 +86,14 @@
                 <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block navbar-dark sidebar collapse">
                     <div class="position-sticky pt-3">
                         <ul class="nav flex-column">
-                            <li class="nav-item">
-                                <a class="nav-link text-center text-md-start" href="{{ route('game_master.index') }}">
-                                    <i class="fa-solid fa-user fa-lg fa-fw"></i></i> Profile
-                                </a>
-                            </li>
+                            @if (Auth::user() && Auth::user()->gameMaster && Auth::user()->gameMaster->is_active)
+                                <li class="nav-item">
+                                    <a class="nav-link text-center text-md-start"
+                                        href="{{ route('game_master.index') }}">
+                                        <i class="fa-solid fa-user fa-lg fa-fw"></i></i> Profile
+                                    </a>
+                                </li>
+                            @endif
                             <li class="nav-item">
                                 @if (auth()->user() && auth()->user()->gameMaster()->exists())
                                     <a class="nav-link text-center text-md-start"
@@ -104,26 +107,29 @@
                                     </a>
                                 @endif
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-center text-md-start" href="{{ route('dashboard') }}">
-                                    <i class="fa-solid fa-inbox fa-lg fa-fw"></i></i> Inbox
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-center text-md-start" href="{{ route('dashboard') }}">
-                                    <i class="fa-solid fa-star fa-lg fa-fw"></i> My Reviews
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-center text-md-start" href="{{ route('promotions.create') }}">
-                                    <i class="fa-solid fa-rocket fa-lg fa-fw"></i> Promotions
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-center text-md-start" href="{{ route('dashboard') }}">
-                                    <i class="fa-solid fa-square-poll-vertical fa-lg fa-fw"></i> My Stats
-                                </a>
-                            </li>
+                            @if (Auth::user() && Auth::user()->gameMaster && Auth::user()->gameMaster->is_active)
+                                <li class="nav-item">
+                                    <a class="nav-link text-center text-md-start" href="{{ route('dashboard') }}">
+                                        <i class="fa-solid fa-inbox fa-lg fa-fw"></i></i> Inbox
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-center text-md-start" href="{{ route('dashboard') }}">
+                                        <i class="fa-solid fa-star fa-lg fa-fw"></i> My Reviews
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-center text-md-start"
+                                        href="{{ route('promotions.create') }}">
+                                        <i class="fa-solid fa-rocket fa-lg fa-fw"></i> Promotions
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-center text-md-start" href="{{ route('dashboard') }}">
+                                        <i class="fa-solid fa-square-poll-vertical fa-lg fa-fw"></i> My Stats
+                                    </a>
+                                </li>
+                            @endif
                         </ul>
                     </div>
                 </nav>

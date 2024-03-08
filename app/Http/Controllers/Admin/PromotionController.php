@@ -16,9 +16,9 @@ class PromotionController extends Controller
         $promotionTiers = config('promotion_tiers');
 
         $user = Auth::user();
-        // $gameMasterId = optional($user->gameMaster)->id;
-        $gameMasterId = $user->gameMaster->id;
-        if (!$gameMasterId) {
+        if ($user->gameMaster) {
+            $gameMasterId = $user->gameMaster->id;
+        } else {
             // Handle no associated game master record case
             return redirect()->route('game_master.create')->with('error', 'You must be a Game Master to access this.');
         }
@@ -33,8 +33,8 @@ class PromotionController extends Controller
 
         // Find the latest promotion for this game master
         $latestPromotion = Promotion::where('game_master_id', $data['game_master_id'])
-                                ->orderBy('end_time', 'desc')
-                                ->first();
+            ->orderBy('end_time', 'desc')
+            ->first();
 
         $currentTime = Carbon::now();
         $baseTime = $currentTime;
