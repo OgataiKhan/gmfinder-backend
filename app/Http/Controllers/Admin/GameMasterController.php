@@ -135,6 +135,8 @@ class GameMasterController extends Controller
 
         if ($gameMaster->profile_img) {
             Storage::delete($gameMaster->profile_img);
+            $gameMaster->profile_img = null;
+            $gameMaster->save();
         }
 
         if ($gameMaster) {
