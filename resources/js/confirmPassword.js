@@ -3,6 +3,7 @@ const password = document.getElementById('password');
 const secondPassword = document.getElementById('password-confirm');
 const passwordCheck = document.getElementById('password-check');
 const registerButton = document.getElementById('register-button');
+const divPassword = document.getElementById('div-confirm-password')
 let passwordValue = "";
 let confirmPasswordValue = "";
 
@@ -29,13 +30,13 @@ function secondValue() {
     confirmPasswordValue = secondPassword.value;
     if (passwordValue !== confirmPasswordValue) {
         secondPassword.classList.add('border', 'border-danger', 'border-3');
-        secondPassword.classList.remove('mt-4');
+        divPassword.classList.replace("mb-4", "mb-2");
         passwordCheck.classList.remove('d-none');
         //disable register button
         registerButton.setAttribute('disabled', "");
     } else {
         secondPassword.classList.remove('border', 'border-danger', 'border-3');
-        secondPassword.classList.add('mt-4');
+        divPassword.classList.replace("mb-2", "mb-4");
         passwordCheck.classList.add('d-none');
         registerButton.removeAttribute('disabled', "");
     }

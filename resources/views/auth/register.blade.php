@@ -61,15 +61,15 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="mb-4 row">
+                            <div class="mb-4 row" id="div-confirm-password">
                                 <label for="password-confirm"
                                     class="col-md-4 col-form-label text-md-right mt-4 required">{{ __('Confirm Password') }}</label>
 
                                 <div class="col-md-6">
-                                    <p class="text-danger m-0 d-none" id="password-check">The passwords do not match</p>
                                     <input id="password-confirm" type="password"
                                         class="input-focus-orange form-control mt-4" name="password_confirmation" required
                                         autocomplete="new-password">
+                                    <p class="text-danger m-0 d-none" id="password-check">The passwords do not match</p>
                                 </div>
                             </div>
                             {{-- role selector --}}
