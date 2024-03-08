@@ -1,10 +1,10 @@
-const form = document.getElementById('gm-create-form');
-const checkboxError = document.getElementById('no-checkboxes');
+const form = document.getElementById("gm-create-form");
+const checkboxError = document.getElementById("no-checkboxes");
 
 //check if a checkbox is selected or not
 function checkboxChecked() {
     const checkboxes = document.querySelectorAll("input.game-system-check");
-    console.log(checkboxes)
+    console.log(checkboxes);
     for (let i = 0; i < checkboxes.length; i++) {
         if (checkboxes[i].checked) {
             return true;
@@ -14,11 +14,11 @@ function checkboxChecked() {
 }
 
 //show error messages if no checkbox is selected
-form.addEventListener('submit', function (event) {
+form.addEventListener("submit", function (event) {
     if (!checkboxChecked()) {
         event.preventDefault();
-        checkboxError.classList.remove('d-none');
+        checkboxError.classList.remove("d-none");
     } else {
-        checkboxError.classList.add('d-none');
+        checkboxError.classList.add("d-none");
     }
-})
+});
