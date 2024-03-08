@@ -4,18 +4,20 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\GameMaster;
+use App\Models\Rating;
 use Illuminate\Http\Request;
 
 class GameMasterController extends Controller
 {
     public function index()
     {
+        $rating = Rating::all();
         if (request()->key) {
             $game_masters = GameMaster::whereHas('gameSystems', function ($query) {
                 $query->where('game_systems.id', request()->key);
             })->where('is_available', true)->where('is_active', true)->with('user', 'gameSystems', 'promotions')->paginate(10);
         } else {
-            $game_masters = GameMaster::with('user', 'gameSystems','promotions')->paginate(10);
+            $game_masters = GameMaster::with('user', 'gameSystems', 'promotions')->paginate(10);
         };
 
         // Not necessary because paginate() will always return a paginator instance, so you'll never enter this case
@@ -29,7 +31,9 @@ class GameMasterController extends Controller
 
         return response()->json([
             'status' => true,
+            'rating' => $rating,
             'results' => $game_masters,
+            // 'reviews_value' => $reviews,
         ]);
     }
 
