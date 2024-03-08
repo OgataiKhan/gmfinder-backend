@@ -6,8 +6,8 @@
 
         <form action={{ route('game_master.store') }} method="POST" enctype="multipart/form-data" id="gm-create-form"
             class="row flex-column col col-md-8 mx-auto mt-5">
-            <p class="required-field "><span class="text-danger">*</span> Required field</p>
             @csrf
+            <p class="required-field "><span class="text-danger">*</span> Required field</p>
             <div class="d-flex justify-content-between">
                 {{-- Location --}}
                 <div class="col-6 mb-3">

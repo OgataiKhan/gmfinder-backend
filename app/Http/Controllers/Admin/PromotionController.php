@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StorePromotionRequest;
 use App\Models\Promotion;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 
 class PromotionController extends Controller
 {
@@ -14,7 +15,15 @@ class PromotionController extends Controller
     {
         $promotionTiers = config('promotion_tiers');
 
-        return view('game_masters.promotions', compact('promotionTiers'));
+        $user = Auth::user();
+        // $gameMasterId = optional($user->gameMaster)->id;
+        $gameMasterId = $user->gameMaster->id;
+        if (!$gameMasterId) {
+            // Handle no associated game master record case
+            return redirect()->route('game_master.create')->with('error', 'You must be a Game Master to access this.');
+        }
+
+        return view('game_masters.promotions', compact('promotionTiers', 'gameMasterId'));
     }
 
 
@@ -59,9 +68,10 @@ class PromotionController extends Controller
         $promotion->end_time = $baseTime->addHours($hoursToAdd);
         $promotion->save();
 
-        return response()->json([
-            'message' => 'Promotion added successfully',
-            'promotion' => $promotion,
-        ]);
+        // return response()->json([
+        //     'message' => 'Promotion added successfully',
+        //     'promotion' => $promotion,
+        // ]);
+        return redirect()->route('game_master.index')->with('success', 'Promotion successfully purchased');
     }
 }
