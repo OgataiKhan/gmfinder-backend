@@ -3,16 +3,16 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreMessageRequest;
-use App\Models\Message;
+use App\Http\Requests\StoreReviewRequest;
+use App\Models\Review;
 use Illuminate\Http\Request;
 
-class MessageController extends Controller
+class ReviewController extends Controller
 {
-    public function store(StoreMessageRequest $request)
+    public function store(StoreReviewRequest $request)
     {
         $data = $request->validated();
-        $message = new Message();
+        $message = new Review();
 
         $message->game_master_id = $data['game_master_id'];
         $message->text = $data['text'];
