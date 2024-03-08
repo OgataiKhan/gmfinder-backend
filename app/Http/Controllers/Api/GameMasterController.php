@@ -39,6 +39,36 @@ class GameMasterController extends Controller
             'results' => $game_masters,
         ]);
     }
+
+    public function show(string $slug)
+    {
+        $game_master = GameMaster::with('user', 'gameSystems', 'messages', 'reviews', 'promotions', 'ratings')
+            ->where('slug', $slug)
+            ->where('is_active', true)
+            ->first();
+
+        if (!$game_master) {
+            return response()->json([
+                'status' => false,
+                'message' => 'Game master not found'
+            ]);
+        }
+
+        // Check for future promotions
+        $has_future_promotion = $game_master->promotions()->where('end_time', '>', Carbon::now())->exists();
+
+        // Calculate the average rating
+        $average_rating = $game_master->ratings()->avg('value') ?? 0;
+
+        // Add values to the GameMaster object for the response
+        $game_master->has_future_promotion = $has_future_promotion;
+        $game_master->average_rating = $average_rating;
+
+        return response()->json([
+            'status' => true,
+            'result' => $game_master
+        ]);
+    }
 }
 
 
