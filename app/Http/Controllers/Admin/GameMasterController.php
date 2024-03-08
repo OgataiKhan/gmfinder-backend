@@ -155,6 +155,6 @@ class GameMasterController extends Controller
         Auth::logout();
 
         // return redirect()->route('game_master.index')->with('delete', 'Profile deleted successfully');
-        return redirect()->route('dashboard')->with('status', 'Profile deleted successfully');
+        return redirect()->route(env('FRONTEND_URL'))->with('status', 'Profile deleted successfully');
     }
 }
