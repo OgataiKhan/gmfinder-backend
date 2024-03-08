@@ -23,7 +23,7 @@ class PromotionController extends Controller
             return redirect()->route('game_master.create')->with('error', 'You must be a Game Master to access this.');
         }
 
-        return view('game_masters.promotions', compact('promotionTiers', 'gameMasterId'));
+        return view('game_masters.promotions', compact('promotionTiers', 'user', 'gameMasterId'));
     }
 
 
