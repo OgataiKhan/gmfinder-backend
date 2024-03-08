@@ -10,8 +10,8 @@
                     <div class="card-body" id="register-card-body">
                         <form method="POST" action="{{ route('register') }}">
                             @csrf
-
                             <div class="mb-4 row">
+                                <p class="required-field "><span class="text-danger">*</span> Required field</p>
                                 <label for="name"
                                     class="col-md-4 col-form-label text-md-right required">{{ __('Name') }}</label>
 
