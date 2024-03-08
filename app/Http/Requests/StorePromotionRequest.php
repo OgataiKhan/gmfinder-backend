@@ -22,10 +22,8 @@ class StorePromotionRequest extends FormRequest
     public function rules(): array
     {
         return [
-            // 'game_master_id' => 'required|exists:game_masters,id',
-            // 'tier' => 'required|in:bronze,silver,gold',
-            'game_master_id' => 'required',
-            'tier' => 'required',
+            'game_master_id' => 'required|exists:game_masters,id',
+            'tier' => 'required|in:bronze,silver,gold',
         ];
     }
 }
