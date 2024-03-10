@@ -39,9 +39,9 @@ class GameMasterController extends Controller
     }
 
 
-    public function show(string $slug)
+    public function show(Request $request, string $slug)
     {
-        $game_master = GameMaster::with('user', 'gameSystems', 'reviews', 'promotions')
+        $game_master = GameMaster::with(['user', 'gameSystems', 'promotions'])
             ->where('slug', $slug)
             ->where('is_active', true)
             ->first();
@@ -67,9 +67,14 @@ class GameMasterController extends Controller
         $game_master->average_rating = $average_rating;
         $game_master->ratings_count = $ratings_count;
 
+        // Paginate reviews
+        $perPage = $request->get('per_page', 10); // Default to 10 items per page if not specified
+        $reviews = $game_master->reviews()->paginate($perPage);
+
         return response()->json([
             'status' => true,
-            'result' => $game_master
+            'result' => $game_master,
+            'reviews' => $reviews
         ]);
     }
 
