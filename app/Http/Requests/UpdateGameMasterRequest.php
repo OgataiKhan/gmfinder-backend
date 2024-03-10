@@ -26,7 +26,7 @@ class UpdateGameMasterRequest extends FormRequest
             'location' => 'required|string|max:100',
             'game_description' => 'required|string|max:1000',
             'max_players' => 'required|integer|min:1|max:127',
-            'profile_img' => 'nullable|file|mimes:jpeg,png,jpg|max:2048',
+            'profile_img' => 'nullable|file|mimes:jpeg,png,jpg,webp|max:2048',
             'game_systems' => 'required|array|min:1',
             'game_systems.*' => 'exists:game_systems,id',
             'is_available'=>'required|boolean'
