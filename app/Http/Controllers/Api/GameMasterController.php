@@ -19,30 +19,29 @@ class GameMasterController extends Controller
             ->leftJoin('ratings', 'ratings.id', '=', 'game_master_rating.rating_id')
             ->groupBy('game_masters.id')
             ->selectRaw('game_masters.*, COALESCE(AVG(ratings.value), 0) as average_rating')
-            ->selectRaw('(SELECT COUNT(*) > 0 FROM promotions WHERE promotions.game_master_id = game_masters.id AND promotions.end_time > ?) as has_future_promotion', [Carbon::now()])
+            ->selectRaw('COUNT(ratings.id) as ratings_count')
+            ->selectRaw('(SELECT COUNT(*) FROM promotions WHERE promotions.game_master_id = game_masters.id AND promotions.end_time > ?) as has_future_promotion', [Carbon::now()])
             ->orderByDesc('has_future_promotion')
             ->orderBy('average_rating', 'desc');
-
 
         if (request()->key) {
             $query->whereHas('gameSystems', function ($subQuery) {
                 $subQuery->where('game_systems.id', request()->key);
-            })->where('is_available', true)->where('is_active', true);
+            })->where('is_active', true)->where('is_available', true);
         }
 
         $game_masters = $query->paginate(10);
-        $rating = Rating::all();
 
         return response()->json([
             'status' => true,
-            'rating' => $rating,
             'results' => $game_masters,
         ]);
     }
 
+
     public function show(string $slug)
     {
-        $game_master = GameMaster::with('user', 'gameSystems', 'messages', 'reviews', 'promotions', 'ratings')
+        $game_master = GameMaster::with('user', 'gameSystems', 'reviews', 'promotions')
             ->where('slug', $slug)
             ->where('is_active', true)
             ->first();
@@ -60,13 +59,40 @@ class GameMasterController extends Controller
         // Calculate the average rating
         $average_rating = $game_master->ratings()->avg('value') ?? 0;
 
-        // Add values to the GameMaster object for the response
+        // Calculate the number of ratings
+        $ratings_count = $game_master->ratings()->count();
+
+        // Add calculated values to the GameMaster object
         $game_master->has_future_promotion = $has_future_promotion;
         $game_master->average_rating = $average_rating;
+        $game_master->ratings_count = $ratings_count;
 
         return response()->json([
             'status' => true,
             'result' => $game_master
+        ]);
+    }
+
+    public function featuredGameMasters()
+    {
+        $featured_game_masters = GameMaster::query()
+            ->with('user', 'gameSystems', 'promotions')
+            ->whereHas('promotions', function ($query) {
+                $query->where('end_time', '>', Carbon::now());
+            })
+            ->where('is_active', true)
+            ->where('is_available', true)
+            ->select('game_masters.*')
+            ->leftJoin('game_master_rating', 'game_masters.id', '=', 'game_master_rating.game_master_id')
+            ->leftJoin('ratings', 'ratings.id', '=', 'game_master_rating.rating_id')
+            ->groupBy('game_masters.id')
+            ->selectRaw('COALESCE(AVG(ratings.value), 0) as average_rating')
+            ->orderBy('average_rating', 'desc')
+            ->paginate(4);
+
+        return response()->json([
+            'status' => true,
+            'results' => $featured_game_masters,
         ]);
     }
 }
