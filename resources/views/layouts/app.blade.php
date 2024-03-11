@@ -169,10 +169,10 @@
                         <!-- icons -->
                         <div class="mt-3">
                             <ul class="d-flex gap-3 justify-content-end">
-                                <li><a href="#">icons</a></li>
-                                <li><a href="#">icons</a></li>
-                                <li><a href="#">icons</a></li>
-                                <li><a href="#">icons</a></li>
+                                <li><a href="#"><i class="bi bi-instagram fs-3"></i></a></li>
+                                <li><a href="#"><i class="bi bi-twitter-x fs-3"></i></a></li>
+                                <li><a href="#"><i class="bi bi-facebook fs-3"></i></a></li>
+                                <li><a href="#"><i class="bi bi-tiktok fs-3"></i></a></li>
                             </ul>
                         </div>
                         <!-- /icons -->
