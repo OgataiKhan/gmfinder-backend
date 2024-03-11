@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\GameSystemController;
 use App\Http\Controllers\Admin\MessageController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\PromotionController;
+use App\Http\Controllers\Admin\ReviewsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,6 +35,8 @@ Route::middleware(['auth', 'verified'])
         Route::resource('game_master', GameMasterController::class);
         // Messages
         Route::get('/messages', [MessageController::class, 'index'])->name('messages');
+        //Reviews
+        Route::get('/reviews', [ReviewsController::class, 'index'])->name('reviews');
 
         // Promotions
         Route::get('/promotions/new', [PromotionController::class, 'create'])->name('promotions.create');
