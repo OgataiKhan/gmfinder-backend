@@ -114,7 +114,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-center text-md-start" href="{{ route('dashboard') }}">
+                                    <a class="nav-link text-center text-md-start" href="{{ route('reviews') }}">
                                         <i class="fa-solid fa-star fa-lg fa-fw"></i> My Reviews
                                     </a>
                                 </li>
