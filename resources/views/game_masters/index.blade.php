@@ -7,7 +7,10 @@
                 {{-- show user info --}}
                 <div class="card-header">
                     <div class="d-flex justify-content-between">
-                        <h3>{{ $user->name }}</h3>
+                        <h3>{{ $user->name }} @if ($user->gameMaster->has_active_promotion)
+                                <i class="bi bi-stars"></i>
+                            @endif
+                        </h3>
                         <div>
                             <a href="{{ route('game_master.show', $user) }}" class="btn btn-void-orange">Show
                                 Profile</a>
@@ -39,6 +42,11 @@
                                         ? 'Available <span style="color:green;">●</span>'
                                         : 'Not Available <span style="color:red;">●</span>' !!}
                                 </p>
+                                @if ($user->gameMaster->has_active_promotion)
+                                    <p><strong>Promotion Ends On:
+                                        </strong>{{ \Carbon\Carbon::parse($user->gameMaster->latest_promotion_end_time)->format('d M Y') }}
+                                    </p>
+                                @endif
 
                                 {{-- button to show profile, edit and delete --}}
                                 <div class="d-flex">

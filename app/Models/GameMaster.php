@@ -45,6 +45,19 @@ class GameMaster extends Model
         return $this->hasMany(Promotion::class);
     }
 
+    // Check if there's at least one active promotion
+    public function getHasActivePromotionAttribute()
+    {
+        return $this->promotions()->where('end_time', '>', now())->exists();
+    }
+
+    // Get the latest promotion's end time
+    public function getLatestPromotionEndTimeAttribute()
+    {
+        $latestPromotion = $this->promotions()->latest('end_time')->first();
+        return $latestPromotion ? $latestPromotion->end_time : null;
+    }
+
     // Relation with ratings
     public function ratings()
     {

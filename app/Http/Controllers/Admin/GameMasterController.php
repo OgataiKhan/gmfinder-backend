@@ -22,7 +22,8 @@ class GameMasterController extends Controller
     {
         //give the current user
         $user = Auth::user();
-        $game_masters = GameMaster::all();
+        // $game_masters = GameMaster::all();
+        $game_masters = GameMaster::with('promotions')->get();
         return view('game_masters.index', compact('user', 'game_masters'));
     }
 
