@@ -12,6 +12,6 @@ class MessageController extends Controller
     {
         $user = Auth::user();
         $messages = $user->gameMaster->messages()->paginate(5);
-        return view('messages.index', compact('messages'));
+        return view('game_masters.messages', compact('messages'));
     }
 }
