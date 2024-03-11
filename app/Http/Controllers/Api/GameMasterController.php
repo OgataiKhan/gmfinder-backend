@@ -17,11 +17,11 @@ class GameMasterController extends Controller
         $query->with('user', 'gameSystems', 'promotions')
             ->leftJoin('game_master_rating', 'game_masters.id', '=', 'game_master_rating.game_master_id')
             ->leftJoin('ratings', 'ratings.id', '=', 'game_master_rating.rating_id')
-            ->leftJoin('reviews', 'game_masters.id', '=', 'reviews.game_master_id') // Join the reviews table
+            ->leftJoin('reviews', 'game_masters.id', '=', 'reviews.game_master_id')
             ->groupBy('game_masters.id')
             ->selectRaw('game_masters.*, COALESCE(AVG(ratings.value), 0) as average_rating')
-            ->selectRaw('COUNT(DISTINCT reviews.id) as reviews_count') // Count reviews correctly
-            ->selectRaw('COUNT(DISTINCT ratings.id) as ratings_count') // Ensure distinct count for ratings
+            ->selectRaw('COUNT(DISTINCT reviews.id) as reviews_count') 
+            ->selectRaw('COUNT(DISTINCT ratings.id) as ratings_count')
             ->selectRaw('(SELECT COUNT(*) FROM promotions WHERE promotions.game_master_id = game_masters.id AND promotions.end_time > ?) as has_future_promotion', [Carbon::now()])
             ->orderByDesc('has_future_promotion')
             ->orderBy('average_rating', 'desc');
@@ -38,7 +38,7 @@ class GameMasterController extends Controller
             $query->havingRaw('AVG(ratings.value) >= ?', [$request->min_average_rating]);
         }
 
-        // Filter by minimum number of reviews instead of ratings
+        // Filter by minimum number of reviews
         if ($request->has('min_reviews')) {
             $query->havingRaw('COUNT(DISTINCT reviews.id) >= ?', [$request->min_reviews]);
         }
