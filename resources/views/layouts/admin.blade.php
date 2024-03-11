@@ -109,12 +109,12 @@
                             </li>
                             @if (Auth::user() && Auth::user()->gameMaster && Auth::user()->gameMaster->is_active)
                                 <li class="nav-item">
-                                    <a class="nav-link text-center text-md-start" href="{{ route('dashboard') }}">
+                                    <a class="nav-link text-center text-md-start" href="{{ route('messages') }}">
                                         <i class="fa-solid fa-inbox fa-lg fa-fw"></i></i> Inbox
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-center text-md-start" href="{{ route('dashboard') }}">
+                                    <a class="nav-link text-center text-md-start" href="{{ route('reviews') }}">
                                         <i class="fa-solid fa-star fa-lg fa-fw"></i> My Reviews
                                     </a>
                                 </li>
