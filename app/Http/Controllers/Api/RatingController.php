@@ -14,7 +14,7 @@ class RatingController extends Controller
         $data = $request->validated();
         //take the actual game master to make the connection
         $game_master = GameMaster::find($data['game_master_id']);
-        $game_master->ratings()->sync($data['rating_id']);
+        $game_master->ratings()->attach($data['rating_id']);
     }
 }
 
