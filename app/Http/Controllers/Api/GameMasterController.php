@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 
 class GameMasterController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $query = GameMaster::query();
 
@@ -24,10 +24,21 @@ class GameMasterController extends Controller
             ->orderByDesc('has_future_promotion')
             ->orderBy('average_rating', 'desc');
 
-        if (request()->key) {
-            $query->whereHas('gameSystems', function ($subQuery) {
-                $subQuery->where('game_systems.id', request()->key);
+        // Filter by Game System
+        if ($request->has('key')) {
+            $query->whereHas('gameSystems', function ($subQuery) use ($request) {
+                $subQuery->where('game_systems.id', $request->key);
             })->where('is_active', true)->where('is_available', true);
+        }
+
+        // Filter by minimum average rating
+        if ($request->has('min_average_rating')) {
+            $query->havingRaw('AVG(ratings.value) >= ?', [$request->min_average_rating]);
+        }
+
+        // Filter by minimum number of reviews
+        if ($request->has('min_reviews')) {
+            $query->havingRaw('COUNT(ratings.id) >= ?', [$request->min_reviews]);
         }
 
         $game_masters = $query->paginate(10);
@@ -37,7 +48,6 @@ class GameMasterController extends Controller
             'results' => $game_masters,
         ]);
     }
-
 
     public function show(Request $request, string $slug)
     {
