@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Payments;
 
+use App\Rules\ValidPromotion;
 use Illuminate\Foundation\Http\FormRequest;
 
 class PaymentRequest extends FormRequest
@@ -23,7 +24,11 @@ class PaymentRequest extends FormRequest
     {
         return [
             'token'=>'required',
-            'amount'=>'required',
-        ];
+            'promotion'=>[
+                'required',
+                new ValidPromotion()
+
+            ]
+            ];
     }
 }

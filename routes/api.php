@@ -32,4 +32,4 @@ Route::get('payments/generate',[PaymentController::class, 'generate']);
 Route::post('messages', [MessageController::class, 'store']);
 Route::post('ratings', [RatingController::class, 'store']);
 Route::post('reviews', [ReviewController::class, 'store']);
-Route::post('payments/make/payment',[PaymentController::class, 'makePayment']);
+Route::post('payments/make/payment',[PaymentController::class, 'makePayment'])->name('makePayment');

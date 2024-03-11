@@ -50,12 +50,15 @@ class PromotionController extends Controller
         switch ($data['tier']) {
             case 'bronze':
                 $hoursToAdd = 24; // 1 day
+                $price = 2.99;
                 break;
             case 'silver':
                 $hoursToAdd = 72; // 3 days
+                $price = 5.99;
                 break;
             case 'gold':
                 $hoursToAdd = 144; // 6 days
+                $price = 9.99;
                 break;
             default:
                 $hoursToAdd = 0; // Default case, should never be used due to the validation
@@ -65,6 +68,7 @@ class PromotionController extends Controller
         $promotion = new Promotion();
         $promotion->game_master_id = $data['game_master_id'];
         $promotion->tier = $data['tier'];
+        $promotion->price = $price;
         $promotion->end_time = $baseTime->addHours($hoursToAdd);
         $promotion->save();
 
@@ -72,6 +76,5 @@ class PromotionController extends Controller
         //     'message' => 'Promotion added successfully',
         //     'promotion' => $promotion,
         // ]);
-        return redirect()->route('game_master.index')->with('success', 'Promotion successfully purchased');
-    }
+        return redirect()->route('game_masters.checkout')->with('success', 'Promotion successfully purchased', compact('promotion'));
 }
