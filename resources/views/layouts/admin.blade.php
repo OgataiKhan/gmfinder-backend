@@ -200,7 +200,7 @@
                         </div>
                         <!-- icons -->
                         <div class="mt-3 ">
-                            <ul class="d-flex gap-3 justify-content-end">
+                            <ul class="d-flex gap-4 justify-content-end">
                                 <li><a href="#"><i class="bi bi-instagram fs-3"></i></a></li>
                                 <li><a href="#"><i class="bi bi-twitter-x fs-3"></i></a></li>
                                 <li><a href="#"><i class="bi bi-facebook fs-3"></i></a></li>
