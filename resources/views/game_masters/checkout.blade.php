@@ -1,24 +1,24 @@
 @extends('layouts.admin')
 @section('content')
-    <form id="payment-form" name="payment-form" action="{{ route('api.makePayment') }}" method="POST">
+<form id="payment-form" name="payment-form" action="{{ route('makePayment') }}" method="POST">
 
-        @csrf
-
-
+  @csrf
 
 
-        <!-- includes the Braintree JS client SDK -->
-        <script src="https://js.braintreegateway.com/web/dropin/1.42.0/js/dropin.min.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <!-- includes the Braintree JS client SDK -->
+  <script src="https://js.braintreegateway.com/web/dropin/1.42.0/js/dropin.min.js"></script>
 
 
-        <div id="dropin-wrapper">
+  <div id="dropin-wrapper">
 
-            <div id="checkout-message"></div>
-            <div id="dropin-container"></div>
-            <button id="submit-button">Submit payment</button>
-        </div>
-        <script>
-            var button = document.querySelector('#submit-button');
+    <div id="checkout-message"></div>
+    <div id="dropin-container"></div>
+    <button id="submit-button">Submit payment</button>
+  </div>
+  <script>
+    var button = document.querySelector('#submit-button');
             var latestPromotion = {!! json_encode($latestPromotion) !!};
             var token = {!! json_encode($token) !!};
 
@@ -44,7 +44,7 @@
                                 "promotion": latestPromotion
                             }
                         }).done(function(result) {
-                            // Tear down the Drop-in UI
+                            
                             instance.teardown(function(teardownErr) {
                                 if (teardownErr) {
                                     console.error('Could not tear down Drop-in UI!');
@@ -56,9 +56,7 @@
                             });
 
                             if (result.success) {
-                                $('#checkout-message').html(
-                                    '<h1>Success</h1><p>Your Drop-in UI is working! Check your <a href="https://sandbox.braintreegateway.com/login">sandbox Control Panel</a> for your test transactions.</p><p>Refresh to try another transaction.</p>'
-                                    );
+                              window.location.href = 'http://127.0.0.1:8000/game_master';
                             } else {
                                 console.log(result);
                                 $('#checkout-message').html(
@@ -68,10 +66,10 @@
                     });
                 });
             });
-        </script>
+  </script>
 
 
 
 
-    </form>
+</form>
 @endsection

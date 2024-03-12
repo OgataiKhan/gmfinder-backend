@@ -24,6 +24,8 @@ class PaymentController extends Controller
 
     public function makePayment(PaymentRequest $request , Gateway $gateway){
 
+        dd('ciao');
+
         $latestPromotion = Promotion::orderBy('end_time', 'desc')->first();
 
         $result = $gateway->transaction()->sale([
@@ -36,7 +38,8 @@ class PaymentController extends Controller
 
 
         if ($result->success) {
-            return response()->json(['success' => true]);
+            return response()->json(['success' => true])->with(redirect()->route('game_master.index'));
+            
         } else {
             return response()->json(['success' => false, 'message' => $result->message], 400);
             $latestPromotion->delete();
