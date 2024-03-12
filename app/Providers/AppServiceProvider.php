@@ -3,7 +3,10 @@
 namespace App\Providers;
 
 use Braintree\Gateway;
+
+use Illuminate\Pagination\Paginator as Paginator;
 use Illuminate\Support\ServiceProvider;
+
 
 class AppServiceProvider extends ServiceProvider
 {
