@@ -1,26 +1,29 @@
 @extends('layouts.admin')
 @section('content')
-    <form id="payment-form" name="payment-form" action="{{ route('api.makePayment') }}" method="POST">
+<form id="payment-form" name="payment-form" action="{{ route('makePayment') }}" method="POST">
 
-        @csrf
-
-
+  @csrf
 
 
-        <!-- includes the Braintree JS client SDK -->
-        <script src="https://js.braintreegateway.com/web/dropin/1.42.0/js/dropin.min.js"></script>
 
 
-        <div id="dropin-wrapper">
+  <!-- includes the Braintree JS client SDK -->
+  <script src="https://js.braintreegateway.com/web/dropin/1.42.0/js/dropin.min.js"></script>
 
-            <div id="checkout-message"></div>
-            <div id="dropin-container"></div>
-            <button id="submit-button">Submit payment</button>
-        </div>
-        <script>
-            var button = document.querySelector('#submit-button');
+
+  <div id="dropin-wrapper">
+
+    <div id="checkout-message"></div>
+    <div id="dropin-container"></div>
+
+    <button id="submit-button">Submit payment</button>
+
+  </div>
+  <script>
+    var button = document.querySelector('#submit-button');
             var latestPromotion = {!! json_encode($latestPromotion) !!};
             var token = {!! json_encode($token) !!};
+            let loading = false;
 
             braintree.dropin.create({
                 // Insert your tokenization key here
@@ -31,6 +34,11 @@
                     instance.requestPaymentMethod(function(requestPaymentMethodErr, payload) {
                         // When the user clicks on the 'Submit payment' button this code will send the
                         // encrypted payment information in a variable called a payment method nonce
+                        loading = true;
+                        if(loading===true){
+                          $('#loader').removeClass('d-none');
+                          $('#dropin-wrapper').addClass('d-none');
+                        }
                         $.ajax({
                             type: 'POST',
                             url: 'http://127.0.0.1:8000/api/payments/make/payment',
@@ -44,7 +52,7 @@
                                 "promotion": latestPromotion
                             }
                         }).done(function(result) {
-                            // Tear down the Drop-in UI
+                            loading=false;
                             instance.teardown(function(teardownErr) {
                                 if (teardownErr) {
                                     console.error('Could not tear down Drop-in UI!');
@@ -68,10 +76,16 @@
                     });
                 });
             });
-        </script>
+  </script>
 
 
 
 
-    </form>
+</form>
+
+<div id="loader" class="d-none justify-content-center">
+  <div class="spinner-border text-primary" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>
 @endsection
