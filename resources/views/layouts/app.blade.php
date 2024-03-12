@@ -52,19 +52,19 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav ms-auto mb-2 mb-md-0 gap-3">
                                 <li class="nav-item">
-                                    <router-link :to="{ name: 'home' }" class="nav-link">Home</router-link>
+                                    <a class="nav-link">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <router-link :to="{ name: 'home' }" class="nav-link">Games</router-link>
+                                    <a class="nav-link">Games</a>
                                 </li>
                                 <li class="nav-item">
-                                    <router-link :to="{ name: 'home' }" class="nav-link">FAQ</router-link>
+                                    <a class="nav-link">FAQ</a>
                                 </li>
                                 <li class="nav-item">
-                                    <router-link :to="{ name: 'home' }" class="nav-link">Contact</router-link>
+                                    <a class="nav-link">Contact</a>
                                 </li>
                                 <li class="nav-item">
-                                    <router-link :to="{ name: 'advanced-search' }" class="nav-link">Search</router-link>
+                                    <a class="nav-link">Search</a>
                                 </li>
                                 @guest
                                     <li>
