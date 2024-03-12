@@ -33,50 +33,51 @@
 <body>
     <div id="app">
         <header class="header">
-            <div class="container d-flex justify-content-between align-items-center py-2">
-                <!-- logo -->
-                <div class="logo pt-2">
-                    <a class="text-decoration-none" href="{{ env('FRONTEND_URL') }}">
-                        <img src="/img/logo.png" alt="logo" /></a>
-                </div>
-                <!-- /logo -->
-                <button class="navbar-toggler position-absolute d-md-none collapsed text-white" type="button"
-                    data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+            <div class="container d-flex justify-content-between align-items-center">
                 <!-- navbar -->
-                <nav class="navbar-link">
-                    <ul class="d-flex align-items-center gap-3 mt-3">
-                        <!-- link navbar -->
-                        <li>
-                            <a class="link" href="{{ env('FRONTEND_URL') }}"><strong>Home</strong></a>
-                        </li>
-                        <li>
-                            <a class="link" href="#"><strong>Game
-                                    Master</strong></a>
-                        </li>
-                        <li>
-                            <a class="link" href="#"><strong>Message</strong></a>
-                        </li>
-                        <li>
-                            <a class="link" href="#"><strong>Error</strong></a>
-                        </li>
-                        <li>
-                            <a class="link"
-                                href="{{ env('FRONTEND_URL') }}/advanced-search"><strong>Search</strong></a>
-                        </li>
-                        <li>
-                            <a class="header-button btn" href="{{ route('logout') }}"
-                                onclick="event.preventDefault();
+                <nav class="navbar navbar-expand-md text-center flex-grow-1">
+                    <div class="container-fluid">
+                        <!-- logo -->
+                        <div class="logo pt-2">
+                            <a class="text-decoration-none" href="{{ env('FRONTEND_URL') }}">
+                                <img src="/img/logo.png" alt="logo" /></a>
+                        </div>
+                        <!-- /logo -->
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" id="header-button"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ms-auto mb-2 mb-md-0 gap-3">
+                                <li class="nav-item items">
+                                    <a class="nav-link link" href="{{ env('FRONTEND_URL') }}">Home</a>
+                                </li>
+                                <li class="nav-item items">
+                                    <a class="nav-link link">Games</a>
+                                </li>
+                                <li class="nav-item items">
+                                    <a class="nav-link link">FAQ</a>
+                                </li>
+                                <li class="nav-item items">
+                                    <a class="nav-link link">Contact</a>
+                                </li>
+                                <li class="nav-item items">
+                                    <a class="nav-link link" href="{{ env('FRONTEND_URL') }}/advanced-search">Search</a>
+                                </li>
+                                <li>
+                                    <a class="header-button btn" href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();">
-                                {{ __('Sign Out') }}</a>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                @csrf
-                            </form>
-                        </li>
-                        <!-- /link navbar -->
-                    </ul>
+                                        {{ __('Sign Out') }}</a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                        class="d-none">
+                                        @csrf
+                                    </form>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </nav>
                 <!-- /navbar -->
             </div>

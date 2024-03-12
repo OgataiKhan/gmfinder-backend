@@ -29,6 +29,7 @@ header {
 .nav-link {
     text-decoration: none;
     color: white !important;
+    cursor: pointer;
 }
 
 #header-button {
