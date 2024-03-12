@@ -76,5 +76,6 @@ class PromotionController extends Controller
         //     'message' => 'Promotion added successfully',
         //     'promotion' => $promotion,
         // ]);
-        return redirect()->route('game_masters.checkout')->with('success', 'Promotion successfully purchased', compact('promotion'));
+        return redirect()->route('payments.generate')->with('success', 'Promotion successfully purchased', compact('promotion'));
+   }
 }

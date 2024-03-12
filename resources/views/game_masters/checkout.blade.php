@@ -3,24 +3,28 @@
 
 
 
-<form id="payment-form" name="payment-form" action="{{ route('makePayment') }}" method="POST">
-    @csrf
+
+<form id="payment-form" name="payment-form" action="{{ route('api.makePayment') }}" method="POST">
+
+  @csrf
 
 
 
-    <!-- includes the Braintree JS client SDK -->
-    <script src="https://js.braintreegateway.com/web/dropin/1.42.0/js/dropin.min.js"></script>
 
-    <!-- includes jQuery -->
-    <script src="http://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+  <!-- includes the Braintree JS client SDK -->
+  <script src="https://js.braintreegateway.com/web/dropin/1.42.0/js/dropin.min.js"></script>
 
-    <div id="dropin-wrapper">
-        <div id="checkout-message"></div>
-        <div id="dropin-container"></div>
-        <button id="submit-button">Submit payment</button>
-    </div>
-    <script>
-        var button = document.querySelector('#submit-button');
+
+  <div id="dropin-wrapper">
+
+    <div id="checkout-message"></div>
+    <div id="dropin-container"></div>
+    <button id="submit-button">Submit payment</button>
+  </div>
+  <script>
+    var button = document.querySelector('#submit-button');
+        var latestPromotion = {!! json_encode($latestPromotion) !!};
+        var token = {!! json_encode($token) !!};
       
         braintree.dropin.create({
           // Insert your tokenization key here
@@ -33,8 +37,12 @@
               // encrypted payment information in a variable called a payment method nonce
               $.ajax({
                 type: 'POST',
-                url: '/checkout',
-                data: {'paymentMethodNonce': payload.nonce}
+                url: 'http://127.0.0.1:8000/api/payments/make/payment',
+                data: {
+                    "paymentMethodNonce":  payload.nonce,
+                    "token": token,
+                    "promotion": latestPromotion
+                 }
               }).done(function(result) {
                 // Tear down the Drop-in UI
                 instance.teardown(function (teardownErr) {
@@ -57,10 +65,14 @@
             });
           });
         });
-    </script>
+  </script>
+
+
 
 
 </form>
+
+
 
 
 @endsection

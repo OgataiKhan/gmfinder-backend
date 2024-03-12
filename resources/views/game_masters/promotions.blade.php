@@ -6,7 +6,7 @@
     </h2>
 
     <div class="text-center">
-        <form action="{{ route('promotions.store') }}" method="POST">
+        <form id="form1" action="{{ route('promotions.store') }}" method="POST">
             @csrf
             <div class="d-flex gap-4">
                 @foreach ($promotionTiers as $promotionTier)
@@ -37,10 +37,16 @@
                 </ul>
             </div>
             @endif
+
             <div class="d-flex mt-3">
                 <button id="create-button" type="submit" class="btn btn-void-orange">Purchase</button>
             </div>
         </form>
+
+
+
+
+
     </div>
     @if(session('success_message'))
     <div class="alert alert-success">
