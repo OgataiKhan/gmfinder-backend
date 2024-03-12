@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\GameSystemController;
 use App\Http\Controllers\Admin\MessageController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\PromotionController;
+use App\Http\Controllers\Api\Payments\PaymentController;
 use App\Http\Controllers\Admin\ReviewsController;
 use Illuminate\Support\Facades\Route;
 
@@ -41,13 +42,16 @@ Route::middleware(['auth', 'verified'])
         // Promotions
         Route::get('/promotions/new', [PromotionController::class, 'create'])->name('promotions.create');
         Route::post('/promotions', [PromotionController::class, 'store'])->name('promotions.store');
+        Route::post('/payment/make/payment',[PaymentController::class, 'makePayment'])->name('makePayment'); 
     });
 
 Route::middleware('auth')->group(function () {
     Route::get('/game_systems', [GameSystemController::class, 'index'])->name('game_systems.index');
+    Route::get('/generate', [PaymentController::class, 'generate'])->name('payments.generate');
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
 
 require __DIR__ . '/auth.php';

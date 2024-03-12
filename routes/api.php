@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\GameMasterController;
 use App\Http\Controllers\Api\GameSystemController;
 use App\Http\Controllers\Api\MessageController;
+use App\Http\Controllers\Api\Payments\PaymentController;
 use App\Http\Controllers\Api\RatingController;
 use App\Http\Controllers\Api\ReviewController;
 use Illuminate\Http\Request;
@@ -27,7 +28,9 @@ Route::get('game_masters', [GameMasterController::class, 'index']);
 Route::get('featured', [GameMasterController::class, 'featuredGameMasters']);
 Route::get('/game_masters/{slug}', [GameMasterController::class, 'show']);
 Route::get('game_systems', [GameSystemController::class, 'index']);
+Route::get('payments/generate',[PaymentController::class, 'generate']);
 
 Route::post('messages', [MessageController::class, 'store']);
 Route::post('ratings', [RatingController::class, 'store']);
 Route::post('reviews', [ReviewController::class, 'store']);
+Route::post('payments/make/payment',[PaymentController::class, 'makePayment'])->name('api.makePayment');
