@@ -87,8 +87,14 @@
         </header>
         <div class="container-fluid">
             <div class="row h-100">
+                <button id="show-sidebar-mobile-btn" class="navbar-toggler position-absolute d-md-none collapsed text-white" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon panel-title text-black w-100 d-flex justify-content-center align-items-center"></span>
+                </button>
+                {{-- Sidebar --}}
                 <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block navbar-dark sidebar collapse">
-                    <div class="position-sticky pt-3">
+                    <div class="position-sticky pt-3 sidebarMenuBox">
                         <ul class="nav flex-column">
                             @if (Auth::user() && Auth::user()->gameMaster && Auth::user()->gameMaster->is_active)
                                 <li class="nav-item">
@@ -137,7 +143,6 @@
                         </ul>
                     </div>
                 </nav>
-
                 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 section-main" id="main">
                     @yield('content')
                 </main>
