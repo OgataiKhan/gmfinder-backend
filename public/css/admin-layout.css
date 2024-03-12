@@ -15,6 +15,41 @@
     color: var(--contrast-color);
 }
 
+@media screen and (max-width: 768px) {
+    #show-sidebar-mobile-btn {
+        background-color: #fff3e2;
+        z-index: 3;
+        position: relative !important;
+        padding: 10px 0;
+        /* border-bottom: 1px solid lightgray; */
+    }
+
+    .panel-title::before {
+        content: "GM Menu";
+    }
+
+    button.collapsed .panel-title::after {
+        font-family: "FontAwesome";
+        content: "\f107";
+        margin-left: 5px;
+    }
+
+    .panel-title::after {
+        font-family: "FontAwesome";
+        content: "\f106";
+        margin-left: 5px;
+    }
+
+    #sidebarMenu .sidebarMenuBox {
+        padding-top: 0 !important;
+    }
+
+    main {
+        padding-top: 20px;
+        border-top: 1px solid lightgray;
+    }
+}
+
 /* HEADER */
 .header {
     background-color: var(--primary-color);
