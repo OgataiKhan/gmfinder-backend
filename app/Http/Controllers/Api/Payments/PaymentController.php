@@ -22,14 +22,7 @@ class PaymentController extends Controller
        return view('game_masters.checkout', ['token' => $token,'latestPromotion' => $latestPromotion]);
     }
 
-
-    
-
     public function makePayment(PaymentRequest $request , Gateway $gateway){
-
-    
-        
-        
 
         $latestPromotion = Promotion::orderBy('end_time', 'desc')->first();
 
@@ -48,13 +41,5 @@ class PaymentController extends Controller
             return response()->json(['success' => false, 'message' => $result->message], 400);
             $latestPromotion->delete();
         }
-
-       
     }
 }
-
-
-/* $request = Request::create('/api/payments/make/payment', 'POST', $data); // Replace 'POST' with your method and $data with your request body
-$response = Route::dispatch($request);
-
-$result = $response->getContent(); // Get the response content  */
