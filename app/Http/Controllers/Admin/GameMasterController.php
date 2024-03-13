@@ -11,6 +11,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Str;
 
 class GameMasterController extends Controller
@@ -24,7 +25,10 @@ class GameMasterController extends Controller
         $user = Auth::user();
         // $game_masters = GameMaster::all();
         $game_masters = GameMaster::with('promotions')->get();
-        return view('game_masters.index', compact('user', 'game_masters'));
+        //url to public profile
+        $base_url = env('FRONTEND_URL');
+        $url = $base_url . '/game-master?gameMaster=' . $user->gameMaster->slug;
+        return view('game_masters.index', compact('user', 'game_masters', 'url'));
     }
 
     /**
