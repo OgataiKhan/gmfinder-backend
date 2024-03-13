@@ -1,0 +1,18 @@
+/*JUMBO*/
+.container-jumbo {
+    background-image: url(../img/jumbotron-image.jpeg);
+    height: 100vh;
+    background-position: center;
+}
+
+/*LOGO*/
+.img {
+    width: 450px;
+    height: 350px;
+}
+
+/*TITLE*/
+.container-title {
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+}
