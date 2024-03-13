@@ -135,7 +135,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-center text-md-start" href="{{ route('dashboard') }}">
+                                    <a class="nav-link text-center text-md-start" href="{{ route('stats') }}">
                                         <i class="fa-solid fa-square-poll-vertical fa-lg fa-fw"></i> My Stats
                                     </a>
                                 </li>

@@ -8,6 +8,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\PromotionController;
 use App\Http\Controllers\Api\Payments\PaymentController;
 use App\Http\Controllers\Admin\ReviewsController;
+use App\Http\Controllers\Admin\StatsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -38,6 +39,8 @@ Route::middleware(['auth', 'verified'])
         Route::get('/messages', [MessageController::class, 'index'])->name('messages');
         //Reviews
         Route::get('/reviews', [ReviewsController::class, 'index'])->name('reviews');
+        //Stats
+        Route::get('/stats', [StatsController::class, 'index'])->name('stats');
 
         // Promotions
         Route::get('/promotions/new', [PromotionController::class, 'create'])->name('promotions.create');

@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('content')
     <div class="container py-5">
-        <h3 class="mb-4 ms-3">My messages:</h3>
+        <h3 class="mb-4 ms-3">Inbox</h3>
         @foreach ($messages as $message)
             <div class="card p-4 mb-4">
                 <div class="row d-flex justify-content-between">
