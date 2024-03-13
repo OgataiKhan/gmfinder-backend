@@ -1,10 +1,30 @@
 @extends('layouts.admin')
 @section('content')
-    <div class="container my-4">
+    <div class="container py-5">
         @if (Auth::user() && Auth::user()->gameMaster && Auth::user()->gameMaster->is_active)
-            <h2>
+            <h3>
                 See your stats
-            </h2>
+            </h3>
+
+            <!-- Month Selectors -->
+            <div>
+                <label for="start_month">Start Month:</label>
+                <input type="month" id="start_month" name="start_month">
+
+                <label for="end_month">End Month:</label>
+                <input type="month" id="end_month" name="end_month">
+            </div>
+
+            <!-- Placeholders for Data -->
+            <div class="py-5">
+                <p id="reviews_count">Reviews: 0</p>
+                <p id="messages_count">Messages: 0</p>
+            </div>
+
+            <!-- Chart for Ratings Distribution -->
+            <div>
+                <canvas id="ratingsChart"></canvas>
+            </div>
         @else
             <div class="alert p-3 d-flex flex-column align-items-center border border-2">
                 <p>Create a Game Master profile to begin your adventure!</p>
@@ -12,7 +32,6 @@
             </div>
         @endif
     </div>
-
 
     @if (session('success_message'))
         <div class="alert alert-success">
@@ -26,6 +45,7 @@
         </div>
     @endif
     </div>
+    @vite(['resources/js/dynamicStats.js'])
 @endsection
 
 @push('styles')
