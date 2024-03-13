@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\GameMaster;
+use App\Models\Promotion;
 use App\Models\Rating;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -101,11 +102,13 @@ class GameMasterController extends Controller
             ->where('is_active', true)
             ->where('is_available', true)
             ->select('game_masters.*')
-            ->leftJoin('game_master_rating', 'game_masters.id', '=', 'game_master_rating.game_master_id')
-            ->leftJoin('ratings', 'ratings.id', '=', 'game_master_rating.rating_id')
-            ->groupBy('game_masters.id')
-            ->selectRaw('COALESCE(AVG(ratings.value), 0) as average_rating')
-            ->orderBy('average_rating', 'desc')
+            ->orderByDesc(
+                Promotion::select('created_at')
+                    ->whereColumn('promotions.game_master_id', 'game_masters.id')
+                    ->where('end_time', '>', Carbon::now())
+                    ->orderBy('end_time', 'desc')
+                    ->limit(1)
+            )
             ->paginate(4);
 
         return response()->json([

@@ -12,9 +12,14 @@ class RatingController extends Controller
     public function store(StoreRatingRequest $request)
     {
         $data = $request->validated();
-        //take the actual game master to make the connection
+        // Take the actual game master to make the connection
         $game_master = GameMaster::find($data['game_master_id']);
-        $game_master->ratings()->attach($data['rating_id']);
+
+        // Prepare timestamps
+        $additionalData = ['created_at' => now(), 'updated_at' => now()];
+
+        // Attach rating with timestamps
+        $game_master->ratings()->attach($data['rating_id'], $additionalData);
     }
 }
 
