@@ -22,8 +22,8 @@
                     <div class="card-body" id="gm-card-body">
                         {{-- <h5>Your Lore:</h5> --}}
                         {{-- <hr> --}}
-                        <div class="d-flex justify-content-between">
-                            <div class="gm-info">
+                        <div class="d-flex flex-column justify-content-between flex-lg-row justify-content-lg-between">
+                            <div class="gm-info order-2 order-lg-1 pt-3 pt-lg-0">
                                 <p> <strong>Game Description: </strong> {{ $user->gameMaster->game_description }}</p>
 
                                 <p> <strong>Game Systems: </strong>
@@ -54,11 +54,6 @@
                                     <a href="{{ route('game_master.edit', $user) }}"
                                         class="btn btn-void-orange align-self-center me-2">Edit</a>
                                     {{-- delete profile --}}
-                                    {{-- <form action="{{ route('game_master.destroy', $user) }}" method="POST" class="d-flex">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-danger-custom">Delete</button>
-                                    </form> --}}
                                     <button type="button" class="btn btn-danger-custom" data-bs-toggle="modal"
                                         data-bs-target="#deleteConfirmationModal-{{ $user->id }}">
                                         Delete
@@ -66,7 +61,7 @@
                                 </div>
                             </div>
                             {{-- profile picture --}}
-                            <div id="gm-pic">
+                            <div id="gm-pic" class="order-1 mx-auto mx-lg-0">
                                 @if ($user->gameMaster->profile_img)
                                     {{-- show image --}}
                                     <img src="{{ asset('storage/' . $user->gameMaster->profile_img) }}"
