@@ -12,7 +12,7 @@
                             @endif
                         </h3>
                         <div>
-                            <a href="{{ route('game_master.show', $user) }}" class="btn btn-void-orange">Show Public
+                            <a href="{{ $url }}" class="btn btn-void-orange">Show Public
                                 Profile</a>
                         </div>
                     </div>

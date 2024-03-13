@@ -19,7 +19,7 @@ class GameMasterController extends Controller
             ->leftJoin('game_master_rating', 'game_masters.id', '=', 'game_master_rating.game_master_id')
             ->leftJoin('ratings', 'ratings.id', '=', 'game_master_rating.rating_id')
             ->leftJoin('reviews', 'game_masters.id', '=', 'reviews.game_master_id') // Join the reviews table
-            ->groupBy('game_masters.id')
+            ->groupBy('game_masters.id', 'ratings.id', 'game_master_rating.rating_id', 'game_masters.user_id', 'game_masters.location', 'game_masters.game_description', 'game_masters.max_players', 'game_masters.profile_img', 'game_masters.is_active', 'game_masters.is_available', 'game_masters.slug', 'game_masters.created_at', 'game_masters.updated_at')
             ->selectRaw('game_masters.*, COALESCE(AVG(ratings.value), 0) as average_rating')
             ->selectRaw('COUNT(DISTINCT reviews.id) as reviews_count') // Count reviews correctly
             ->selectRaw('COUNT(DISTINCT ratings.id) as ratings_count') // Ensure distinct count for ratings
