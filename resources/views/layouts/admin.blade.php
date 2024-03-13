@@ -38,7 +38,7 @@
         <header class="header">
             <div class="container d-flex justify-content-between align-items-center">
                 <!-- navbar -->
-                <nav class="navbar navbar-expand-md text-center flex-grow-1">
+                <nav class="navbar navbar-expand-lg text-center flex-grow-1">
                     <div class="container-fluid">
                         <!-- logo -->
                         <div class="logo pt-2">
