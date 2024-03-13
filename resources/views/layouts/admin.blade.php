@@ -87,10 +87,12 @@
         </header>
         <div class="container-fluid">
             <div class="row h-100">
-                <button id="show-sidebar-mobile-btn" class="navbar-toggler position-absolute d-md-none collapsed text-white" type="button"
+                <button id="show-sidebar-mobile-btn"
+                    class="navbar-toggler position-absolute d-md-none collapsed text-white" type="button"
                     data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu"
                     aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon panel-title text-black w-100 d-flex justify-content-center align-items-center"></span>
+                    <span
+                        class="navbar-toggler-icon panel-title text-black w-100 d-flex justify-content-center align-items-center"></span>
                 </button>
                 {{-- Sidebar --}}
                 <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block navbar-dark sidebar collapse">
@@ -222,9 +224,9 @@
                         <img src="/img/logo.png" alt="logo" />
                     </div>
                     <div>
-                        <button type="reset" class="btn btn-orange">
-                            <strong>Back to Top</strong>
-                        </button>
+                        <a href="#"><button type="reset" class="btn btn-orange">
+                                <strong>Back to Top</strong>
+                            </button></a>
                     </div>
                 </div>
             </div>

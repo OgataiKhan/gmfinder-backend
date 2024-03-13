@@ -185,9 +185,9 @@
                         <img src="/img/logo.png" alt="logo" />
                     </div>
                     <div>
-                        <button type="reset" class="btn btn-orange">
-                            <strong>Back to Top</strong>
-                        </button>
+                        <a href="#"><button type="reset" class="btn btn-orange">
+                                <strong>Back to Top</strong>
+                            </button></a>
                     </div>
                 </div>
             </div>
