@@ -47,6 +47,7 @@ Route::middleware(['auth', 'verified'])
         Route::get('/promotions/new', [PromotionController::class, 'create'])->name('promotions.create');
         Route::post('/promotions', [PromotionController::class, 'store'])->name('promotions.store');
         Route::post('/payment/make/payment',[PaymentController::class, 'makePayment'])->name('makePayment'); 
+        Route::get('/success',[PaymentController::class, 'success'])->name('success'); 
     });
 
 Route::middleware('auth')->group(function () {
