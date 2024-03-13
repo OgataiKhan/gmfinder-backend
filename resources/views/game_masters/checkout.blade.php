@@ -16,7 +16,7 @@
         <div id="checkout-message"></div>
         <div id="dropin-container"></div>
 
-        <button id="submit-button">Submit payment</button>
+        <button class="btn-void-orange" id="submit-button">Submit payment</button>
 
     </div>
     <script>
