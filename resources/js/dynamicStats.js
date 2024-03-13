@@ -29,11 +29,22 @@ document.addEventListener("DOMContentLoaded", function () {
         },
     });
 
-    // Function to update the min or max attributes
+    // Set the current month as default for both inputs
+    function setCurrentMonth() {
+        const currentDate = new Date();
+        const currentMonth = currentDate.toISOString().slice(0, 7); // Get current month in YYYY-MM format
+        startMonthInput.value = currentMonth;
+        endMonthInput.value = currentMonth;
+    }
+
+    // Update the min/max attributes
     function updateMonthInputConstraints() {
         if (startMonthInput.value) endMonthInput.min = startMonthInput.value;
         if (endMonthInput.value) startMonthInput.max = endMonthInput.value;
     }
+
+    setCurrentMonth();
+    updateMonthInputConstraints();
 
     function fetchStats() {
         if (startMonthInput.value && endMonthInput.value) {
@@ -73,4 +84,5 @@ document.addEventListener("DOMContentLoaded", function () {
         updateMonthInputConstraints();
         fetchStats();
     });
+    fetchStats();
 });
