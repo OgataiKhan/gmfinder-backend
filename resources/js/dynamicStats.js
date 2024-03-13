@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 {
                     label: "Ratings Distribution",
                     data: [],
-                    backgroundColor: ["rgba(128, 0, 32, 0.2)"],
+                    backgroundColor: ["rgba(128, 0, 32, 1)"],
                     borderColor: ["rgba(128, 0, 32, 1)"],
                     borderWidth: 1,
                 },
