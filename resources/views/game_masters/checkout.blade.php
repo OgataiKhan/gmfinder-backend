@@ -2,25 +2,25 @@
 @section('content')
 <form id="payment-form" name="payment-form" action="{{ route('makePayment') }}" method="POST">
 
-  @csrf
+    @csrf
 
 
 
 
-  <!-- includes the Braintree JS client SDK -->
-  <script src="https://js.braintreegateway.com/web/dropin/1.42.0/js/dropin.min.js"></script>
+    <!-- includes the Braintree JS client SDK -->
+    <script src="https://js.braintreegateway.com/web/dropin/1.42.0/js/dropin.min.js"></script>
 
 
-  <div id="dropin-wrapper">
+    <div id="dropin-wrapper">
 
-    <div id="checkout-message"></div>
-    <div id="dropin-container"></div>
+        <div id="checkout-message"></div>
+        <div id="dropin-container"></div>
 
-    <button id="submit-button">Submit payment</button>
+        <button id="submit-button">Submit payment</button>
 
-  </div>
-  <script>
-    var button = document.querySelector('#submit-button');
+    </div>
+    <script>
+        var button = document.querySelector('#submit-button');
             var latestPromotion = {!! json_encode($latestPromotion) !!};
             var token = {!! json_encode($token) !!};
             let loading = false;
@@ -53,6 +53,7 @@
                             }
                         }).done(function(result) {
                             loading=false;
+                            
                             instance.teardown(function(teardownErr) {
                                 if (teardownErr) {
                                     console.error('Could not tear down Drop-in UI!');
@@ -64,28 +65,28 @@
                             });
 
                             if (result.success) {
-                                $('#checkout-message').html(
-                                    '<h1>Success</h1><p>Your Drop-in UI is working! Check your <a href="https://sandbox.braintreegateway.com/login">sandbox Control Panel</a> for your test transactions.</p><p>Refresh to try another transaction.</p>'
-                                    );
+                                window.location.href = '/success';
                             } else {
-                                console.log(result);
-                                $('#checkout-message').html(
-                                    '<h1>Error</h1><p>Check your console.</p>');
+                                
                             }
                         });
                     });
                 });
             });
-  </script>
+    </script>
 
 
 
 
 </form>
 
-<div id="loader" class="d-none justify-content-center">
-  <div class="spinner-border text-primary" role="status">
-    <span class="sr-only">Loading...</span>
-  </div>
+<div class="container w-100 d-flex justify-content-center">
+    <div id="loader" class="d-none  m-5 p-5 d-flex justify-content-center">
+
+        <div class="spinner-border text-primary d-flex justify-content-center" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+        <h4 class="text-center">Loading...</h4>
+    </div>
 </div>
 @endsection

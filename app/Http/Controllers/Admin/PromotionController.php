@@ -6,7 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StorePromotionRequest;
 use App\Models\Promotion;
 use Carbon\Carbon;
+
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session as Session;
 
 class PromotionController extends Controller
 {
@@ -29,6 +31,8 @@ class PromotionController extends Controller
 
     public function store(StorePromotionRequest $request)
     {
+        $user = Auth::user();
+        $gameMasterId = $user->gameMaster->id;
         $data = $request->validated();
 
         // Find the latest promotion for this game master
@@ -64,6 +68,7 @@ class PromotionController extends Controller
                 $hoursToAdd = 0; // Default case, should never be used due to the validation
         }
 
+
         // Calculate new end_time from the baseTime
         $promotion = new Promotion();
         $promotion->game_master_id = $data['game_master_id'];
@@ -76,6 +81,6 @@ class PromotionController extends Controller
         //     'message' => 'Promotion added successfully',
         //     'promotion' => $promotion,
         // ]);
-        return redirect()->route('payments.generate')->with('success', 'Promotion successfully purchased', compact('promotion'));
+        return redirect()->route('payments.generate')->with('success', 'Promotion successfully purchased', compact('promotion','user', 'gameMasterId'));
    }
 }
