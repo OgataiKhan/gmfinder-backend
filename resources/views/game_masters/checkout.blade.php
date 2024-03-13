@@ -15,7 +15,7 @@
 
             <div id="checkout-message"></div>
             <div id="dropin-container"></div>
-            <button id="submit-button">Submit payment</button>
+            <button class="btn-void-orange" id="submit-button">Submit payment</button>
         </div>
         <script>
             var button = document.querySelector('#submit-button');
@@ -58,7 +58,7 @@
                             if (result.success) {
                                 $('#checkout-message').html(
                                     '<h1>Success</h1><p>Your Drop-in UI is working! Check your <a href="https://sandbox.braintreegateway.com/login">sandbox Control Panel</a> for your test transactions.</p><p>Refresh to try another transaction.</p>'
-                                    );
+                                );
                             } else {
                                 console.log(result);
                                 $('#checkout-message').html(
