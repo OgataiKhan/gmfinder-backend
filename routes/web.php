@@ -40,7 +40,8 @@ Route::middleware(['auth', 'verified'])
         //Reviews
         Route::get('/reviews', [ReviewsController::class, 'index'])->name('reviews');
         //Stats
-        Route::get('/stats', [StatsController::class, 'index'])->name('stats');
+        Route::get('/stats', [StatsController::class, 'show'])->name('stats');
+        Route::get('/stats/count-and-distribution', [StatsController::class, 'countAndDistribution'])->name('stats.count-and-distribution');
 
         // Promotions
         Route::get('/promotions/new', [PromotionController::class, 'create'])->name('promotions.create');
