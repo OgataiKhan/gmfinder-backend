@@ -1,8 +1,8 @@
 @extends('layouts.admin')
 @section('content')
     {{-- @dd($messages) --}}
-    <div class="container py-5">
-        <h3 class="mb-4 ms-3">Inbox ({{ count($messages) }})</h3>
+    <div class="container">
+        <h3 class="text-center py-4 mt-3">Inbox ({{ count($messages) }})</h3>
         @foreach ($messages as $message)
             <div class="card p-4 mb-4">
                 <div class="row d-flex justify-content-between">

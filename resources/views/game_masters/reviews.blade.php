@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('content')
-    <div class="container py-5">
-        <h3 class="mb-4 ms-3">Received Reviews ({{ count($reviews) }})</h3>
+    <div class="container">
+        <h3 class="text-center py-4 mt-3">Received Reviews ({{ count($reviews) }})</h3>
         @foreach ($reviews as $review)
             <div class="card p-4 mb-4 reviews">
                 <div class="row d-flex justify-content-between">
