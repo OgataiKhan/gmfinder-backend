@@ -1,0 +1,12 @@
+.tier-label {
+  text-transform: capitalize;
+  font-size: 1.2em;
+}
+
+.tier-msg {
+  /* font-size: 0.9em; */
+}
+
+.tier-price {
+  font-size: 1.2em;
+}

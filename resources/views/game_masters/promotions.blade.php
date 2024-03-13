@@ -15,14 +15,15 @@
                     <img src="/img/{{ $promotionTier['img'] }}" class="card-img-top" alt="{{ $promotionTier['tier'] }}">
                     <div class="card-body">
                         <div class="form-check">
-                            <h5>{{ $promotionTier['message'] }}</h5>
-                            <h5>{{ $promotionTier['price'] }}</h5>
+                            
                             <input class="form-check-input" type="radio" name="tier"
                                 value="{{ $promotionTier['tier'] }}" id="promotion_tier_{{ $promotionTier['tier'] }}"
                                 @checked($promotionTier['tier']==='silver' )>
-                            <label class="form-check-label" for="promotion_tier_{{ $promotionTier['tier'] }}">
+                            <label class="form-check-label tier-label" for="promotion_tier_{{ $promotionTier['tier'] }}">
                                 {{ $promotionTier['tier'] }}
                             </label>
+                            <p class="tier-msg">{{ $promotionTier['message'] }}</p>
+                            <p class="tier-price">{{ $promotionTier['price'] }} €</p>
                         </div>
                     </div>
                 </div>
