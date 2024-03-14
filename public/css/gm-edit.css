@@ -18,13 +18,20 @@
         width: 150px;
         height: 150px;
     }
-    .d-flex .justify-content-between{
+    .d-flex .justify-content-between {
         flex-direction: column;
-        
     }
-
 }
 
+@media (max-width: 350px) {
+    .edit-old-img-container {
+        width: 130px;
+        height: 130px;
+    }
+    .d-flex .justify-content-between {
+        flex-direction: column;
+    }
+}
 
 .edit-old-img {
     width: 100%;
