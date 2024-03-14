@@ -211,9 +211,11 @@
                     <img src="/img/logo.png" alt="logo" />
                 </div>
                 <div>
-                    <button class="btn-orange">
-                        <span class="arrow-up"><strong>Back To Top</strong></span>
-                    </button>
+                    <a href="#">
+                        <button class="btn-orange">
+                            <span class="arrow-up"><strong>Back To Top</strong></span>
+                        </button>
+                    </a>
                 </div>
             </div>
         </footer>
