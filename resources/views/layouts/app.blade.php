@@ -41,7 +41,8 @@
                         <!-- logo -->
                         <div class="logo pt-2">
                             <router-link :to="{ name: 'home' }" class="text-decoration-none">
-                                <img src="/img/logo.png" alt="logo" /></router-link>
+                                <img src="/img/logo.png" alt="logo" />
+                            </router-link>
                         </div>
                         <!-- /logo -->
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" id="header-button"
@@ -52,7 +53,7 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav ms-auto mb-2 mb-md-0 gap-3">
                                 <li class="nav-item">
-                                    <a class="nav-link">Home</a>
+                                    <a href="http://localhost:5173" class="nav-link">Home</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link">Games</a>
@@ -64,42 +65,39 @@
                                     <a class="nav-link">Contact</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link">Search</a>
+                                    <a href="http://localhost:5173/advanced-search" class="nav-link">Search</a>
                                 </li>
                                 @guest
-                                    <li>
-                                        <a class="header-button btn w-100"
-                                            href="{{ route('login') }}">{{ __('Sign In') }}</a>
-                                    </li>
-                                    @if (Route::has('register'))
-                                        <li>
-                                            <a class="btn header-button w-100"
-                                                href="{{ route('register') }}">{{ __('Sign Up') }}</a>
-                                        </li>
-                                    @endif
+                                <li>
+                                    <a class="header-button btn w-100" href="{{ route('login') }}">{{ __('Sign In')
+                                        }}</a>
+                                </li>
+                                @if (Route::has('register'))
+                                <li>
+                                    <a class="btn header-button w-100" href="{{ route('register') }}">{{ __('Sign Up')
+                                        }}</a>
+                                </li>
+                                @endif
                                 @else
-                                    <li class="nav-item dropdown">
-                                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#"
-                                            role="button" data-bs-toggle="dropdown" aria-haspopup="true"
-                                            aria-expanded="false" v-pre>
-                                            {{ Auth::user()->name }}
+                                <li class="nav-item dropdown">
+                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                        {{ Auth::user()->name }}
+                                    </a>
+
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="{{ url('dashboard') }}">{{ __('Dashboard') }}</a>
+                                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                 document.getElementById('logout-form').submit();">
+                                            {{ __('Sign Out') }}
                                         </a>
 
-                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                            <a class="dropdown-item"
-                                                href="{{ url('dashboard') }}">{{ __('Dashboard') }}</a>
-                                            <a class="dropdown-item" href="{{ route('logout') }}"
-                                                onclick="event.preventDefault();
-                                                 document.getElementById('logout-form').submit();">
-                                                {{ __('Sign Out') }}
-                                            </a>
-
-                                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                                class="d-none">
-                                                @csrf
-                                            </form>
-                                        </div>
-                                    </li>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                            class="d-none">
+                                            @csrf
+                                        </form>
+                                    </div>
+                                </li>
                                 @endguest
                             </ul>
                         </div>
