@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('content')
-<form id="payment-form" name="payment-form" action="http://127.0.0.1:8000/payment/make/payment" method="POST">
+<form id="payment-form" name="payment-form" action="{{ route('api.makePayment') }}" method="POST">
 
     @csrf
 
@@ -73,7 +73,7 @@
                         console.log('Sono arrivato alla chiamata');
                         $.ajax({
                             type: 'POST',
-                            url: 'http://127.0.0.1:8000/payment/make/payment',
+                            url: '{{ route('makePayment')}}',
                             headers: {
                                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr(
                                     'content')

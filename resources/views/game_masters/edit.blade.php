@@ -13,7 +13,7 @@
         <div class="d-flex justify-content-between">
 
             {{-- Location --}}
-            <div class="col-6 mb-3">
+            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 mb-3">
                 <label for="location" class="form-label required">Location</label>
                 <select class="input-focus-orange form-select {{ $errors->has('location') ? 'is-invalid' : '' }}"
                     name="location" id="location" required>
@@ -33,7 +33,7 @@
             </div>
 
             {{-- Max Players --}}
-            <div class="mb-3 col-6 ms-1">
+            <div class="mb-3 col-sm-12 col-md-6 col-lg-6 col-xl-6 ms-1">
                 <label for="max_players" class="form-label required">Max Players</label>
                 <input type="number"
                     class="input-focus-orange form-control {{ $errors->has('max_players') ? 'is-invalid' : '' }}"

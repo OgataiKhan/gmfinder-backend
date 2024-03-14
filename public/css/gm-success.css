@@ -1,0 +1,19 @@
+.thank-you-container {
+    margin-top: 50px;
+    text-align: center;
+  }
+  .thank-you-icon {
+    font-size: 100px;
+    color: #28a745;
+  }
+  .thank-you-heading {
+    margin-top: 20px;
+    font-family: 'Arial Black', sans-serif;
+    font-size: 36px;
+    color: #333;
+  }
+  .thank-you-message {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #666;
+  }

@@ -2,12 +2,12 @@
 @section('content')
 
 
-<div class="container my-5">
-
-    <h1 class="my-5">Your payment has been processed succesfully!</h1>
-
-
-    <h2 class="my-5">Enjoy your time as a Sponsored Game Master</h2>
+<div class="container">
+    <div class="thank-you-container">
+        <i class="fas fa-check-circle thank-you-icon"></i>
+        <h1 class="thank-you-heading">Thank You!</h1>
+        <p class="thank-you-message">Your payment has been successfully processed.</p>
+    </div>
 </div>
 
 
@@ -16,5 +16,5 @@
 @endsection
 
 @push('styles')
-<link href="{{ asset('css/gm-promotions.css') }}" rel="stylesheet">
+<link href="{{ asset('css/gm-success.css') }}" rel="stylesheet">
 @endpush

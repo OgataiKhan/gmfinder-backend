@@ -10,3 +10,20 @@
 .tier-price {
   font-size: 1.2em;
 }
+
+@media (max-width: 575px) {
+  .tier-msg {
+    font-size: 0.9em;
+  }
+
+  .tier-price {
+    font-size: 1em;
+  }
+
+  .d-flex.gap-4.justify-content-center{
+    flex-direction: column;
+    align-items: center;
+  }
+  
+
+}
