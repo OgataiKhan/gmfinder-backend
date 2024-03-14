@@ -127,10 +127,10 @@
 <div class="container w-100 d-flex justify-content-center">
     <div id="loader" class="d-none  m-5 p-5 d-flex justify-content-center">
 
-        <div class="spinner-border text-primary d-flex justify-content-center" role="status">
+        <div class="spinner-border d-flex justify-content-center loading" role="status">
             <span class="sr-only">Loading...</span>
         </div>
-        <h4 class="text-center">Loading...</h4>
+        <h4 class="text-center ms-2">Loading...</h4>
     </div>
 </div>
 @endsection

@@ -59,7 +59,7 @@
                                     <a class="nav-link">FAQ</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link">Contact US</a>
+                                    <a class="nav-link">Contact Us</a>
                                 </li>
                                 @guest
                                     <li>

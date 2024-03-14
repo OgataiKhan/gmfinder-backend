@@ -60,7 +60,7 @@
                                     <a class="nav-link link">FAQ</a>
                                 </li>
                                 <li class="nav-item items">
-                                    <a class="nav-link link">Contact US</a>
+                                    <a class="nav-link link">Contact Us</a>
                                 </li>
                                 <li>
                                     <a class="header-button btn" href="{{ route('logout') }}"
