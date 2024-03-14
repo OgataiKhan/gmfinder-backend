@@ -11,15 +11,15 @@
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   display: flex;
-  flex-direction: row; /* Changed to row to align items in a line */
-  align-items: center; /* Align items vertically */
-  justify-content: space-between; /* Distribute space between elements */
-  flex-wrap: wrap; /* Allows items to wrap in smaller screens */
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .month-picker-container label {
   font-weight: 600;
-  margin-right: 10px; /* Added margin to the right of labels */
+  margin-right: 10px;
   color: #555;
 }
 
@@ -32,13 +32,12 @@
   background-color: #ffffff;
   outline: none;
   transition: border-color 0.3s, box-shadow 0.3s;
-  margin-right: 20px; /* Adds space between the inputs and the next elements */
+  margin-right: 20px;
   flex-grow: 1;
 }
 
 .month-picker-container input[type="month"]:focus {
   border-color: var(--contrast-color);
-  /* box-shadow: 0 0 0 2px rgba(0,86,179,0.2); */
 }
 
 @media (max-width: 768px) {
