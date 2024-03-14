@@ -70,17 +70,28 @@ class PromotionController extends Controller
 
 
         // Calculate new end_time from the baseTime
-        $promotion = new Promotion();
-        $promotion->game_master_id = $data['game_master_id'];
-        $promotion->tier = $data['tier'];
-        $promotion->price = $price;
-        $promotion->end_time = $baseTime->addHours($hoursToAdd);
-        $promotion->save();
+        // $promotion = new Promotion();
+        // $promotion->game_master_id = $data['game_master_id'];
+        // $promotion->tier = $data['tier'];
+        // $promotion->price = $price;
+        // $promotion->end_time = $baseTime->addHours($hoursToAdd);
+        // $promotion->save();
+
+        $endTime = $baseTime->addHours($hoursToAdd);
+
+        // Store promotion details in session
+        Session::put('promotionData', [
+            'game_master_id' => $gameMasterId,
+            'tier' => $data['tier'],
+            'price' => $price,
+            'end_time' => $endTime->toDateTimeString(),
+        ]);
 
         // return response()->json([
         //     'message' => 'Promotion added successfully',
         //     'promotion' => $promotion,
         // ]);
-        return redirect()->route('payments.generate')->with('success', 'Promotion successfully purchased', compact('promotion','user', 'gameMasterId'));
-   }
+        // return redirect()->route('payments.generate')->with('success', 'Promotion successfully purchased', compact('user', 'gameMasterId'));
+        return redirect()->route('payments.generate')->with('success', 'Promotion selected successfully. Proceed to payment.');
+    }
 }

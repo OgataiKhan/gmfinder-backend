@@ -22,8 +22,8 @@
             </div>
 
             <!-- Chart for Ratings Distribution -->
-            <div>
-                <canvas id="ratingsChart"></canvas>
+            <div class="graph-box">
+                <canvas id="ratingsChart" width="200" height="100"></canvas>
             </div>
         @else
             <div class="alert p-3 d-flex flex-column align-items-center border border-2">
