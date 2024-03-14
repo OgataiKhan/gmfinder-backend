@@ -57,24 +57,17 @@
                                     <a class="nav-link link" href="{{ env('FRONTEND_URL') }}">Home</a>
                                 </li>
                                 <li class="nav-item items">
-                                    <a class="nav-link link">Games</a>
-                                </li>
-                                <li class="nav-item items">
                                     <a class="nav-link link">FAQ</a>
                                 </li>
                                 <li class="nav-item items">
-                                    <a class="nav-link link">Contact</a>
-                                </li>
-                                <li class="nav-item items">
-                                    <a class="nav-link link" href="{{ env('FRONTEND_URL') }}/advanced-search">Search</a>
+                                    <a class="nav-link link">Contact US</a>
                                 </li>
                                 <li>
                                     <a class="header-button btn" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();">
                                         {{ __('Sign Out') }}</a>
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                        class="d-none">
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
                                 </li>
