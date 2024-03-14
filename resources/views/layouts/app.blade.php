@@ -107,84 +107,103 @@
             @yield('content')
         </main>
         <footer id="footer">
-            <div class="container py-2">
-                <div class="row align-items-center">
-                    <!-- col di sinistra -->
-                    <div class="col-6 d-flex">
+            <div class="container">
+                <div class="row d-flex">
+                    <!-- left col -->
+                    <div class="col col-md-6 d-flex justify-content-between order-2 order-md-1 d-none d-md-flex">
                         <!-- link -->
-                        <div class="col-4">
-                            <h4 class="text-uppercase mb-3">About</h4>
+                        <div class="col col-md-4 p-3">
+                            <h5 class="text-uppercase mb-3">About</h5>
                             <ul>
-                                <li><a href="#">About Us</a></li>
-                                <li><a href="#">Contact Us</a></li>
-                                <li><a href="#">FAQs</a></li>
+                                <li>
+                                    <a href="#">About Us</a>
+                                </li>
+                                <li>
+                                    <a href="#">Contact Us</a>
+                                </li>
+                                <li>
+                                    <a href="#">FAQs</a>
+                                </li>
                             </ul>
                         </div>
-                        <div class="col-4">
-                            <h4 class="text-uppercase mb-3">Community</h4>
+                        <div class="col p-3 col-md-4">
+                            <h5 class="text-uppercase mb-3">Community
+                            </h5>
                             <ul>
-                                <li><a href="#">Events</a></li>
-                                <li><a href="#">Forums</a></li>
-                                <li><a href="#">Guides</a></li>
+                                <li>
+                                    <a href="#">Events</a>
+                                </li>
+                                <li>
+                                    <a href="#">Forums</a>
+                                </li>
+                                <a href="#">Guides</a>
+                                </li>
                             </ul>
                         </div>
-                        <div class="col-4">
-                            <h4 class="text-uppercase mb-3">Legal</h4>
+                        <div class="col p-3 col-md-4">
+                            <h5 class="text-uppercase mb-3">Legal
+                            </h5>
                             <ul>
-                                <li><a href="#">Terme of Service</a></li>
-                                <li><a href="#">Privacy Policy</a></li>
-                                <li><a href="#">Accessibility</a></li>
+                                <li>
+                                    <a href="#">Service</a>
+                                </li>
+                                <li>
+                                    <a href="#">Privacy</a>
+                                </li>
+                                <li>
+                                    <a href="#">Accessibility</a>
+                                </li>
                             </ul>
                         </div>
                         <!-- /link -->
                     </div>
-                    <!-- /col di sinistra -->
-
-                    <!-- col di destra -->
-                    <div class="col-6 ps-5">
-                        <div class="d-flex align-items-center justify-content-end">
-                            <!-- newsletter & button -->
-                            <form class="row g-3">
-                                <div class="col-auto">
+                    <!-- /left col -->
+                    <!-- right col -->
+                    <div class="d-flex flex-column col order-1">
+                        <div>
+                            <!-- newsletter e button -->
+                            <form>
+                                <div class="text-center text-lg-start">
                                     <h3>Newsletter</h3>
                                 </div>
-                                <div class="col-auto">
-                                    <label for="inputEmail" class="visually-hidden">Password</label>
-                                    <input type="email" class="form-control" id="inputEmail"
-                                        placeholder="Your Email Address">
-                                </div>
-                                <div class="col-auto">
-                                    <button type="submit"
-                                        class="btn btn-orange mb-3"><strong>Subscribe</strong></button>
+                                <div class="d-lg-flex">
+                                    <div
+                                        class="py-2 d-flex justify-content-center justify-content-lg-start  flex-grow-1">
+                                        <input type="email" class="form-control news-email input-focus-orange me-lg-3"
+                                            id="inputEmail" placeholder="Your Email Address" />
+                                    </div>
+                                    <div
+                                        class="d-flex justify-content-center justify-content-lg-start align-items-center">
+                                        <button type="submit" class="btn-sm btn-orange mb-3 mb-lg-0">
+                                            <strong>Subscribe</strong>
+                                        </button>
+                                    </div>
                                 </div>
                             </form>
-                            {{-- </form> --}}
-                            <!-- /newsletter & button -->
+                            <!-- /newsletter e button -->
                         </div>
                         <!-- icons -->
-                        <div class="mt-3">
-                            <ul class="d-flex gap-4 justify-content-end">
-                                <li><a href="#"><i class="bi bi-instagram fs-3"></i></a></li>
-                                <li><a href="#"><i class="bi bi-twitter-x fs-3"></i></a></li>
-                                <li><a href="#"><i class="bi bi-facebook fs-3"></i></a></li>
-                                <li><a href="#"><i class="bi bi-tiktok fs-3"></i></a></li>
+                        <div class="mt-3 d-flex justify-content-center justify-content-lg-start">
+                            <ul class="d-flex gap-4">
+                                <li>
+                                    <a href="#" class="link"><i class="bi bi-instagram fs-3"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="link"><i class="bi bi-twitter-x fs-3"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="link"><i class="bi bi-facebook fs-3"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="link"><i class="bi bi-tiktok fs-3"></i></a>
+                                </li>
                             </ul>
                         </div>
                         <!-- /icons -->
                     </div>
-                    <!-- /col di destra -->
+                    <!-- /right col -->
                 </div>
                 <hr />
-                <div class="container d-flex justify-content-between align-items-center px-0 pt-2">
-                    <div class="logo">
-                        <img src="/img/logo.png" alt="logo" />
-                    </div>
-                    <div>
-                        <a href="#"><button type="reset" class="btn btn-orange">
-                                <strong>Back to Top</strong>
-                            </button></a>
-                    </div>
-                </div>
             </div>
         </footer>
     </div>
