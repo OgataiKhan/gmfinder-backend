@@ -97,7 +97,7 @@ class GameMasterController extends Controller
 
         // Paginate reviews
         $perPage = $request->get('per_page', 5); // Default to 5 items per page if not specified
-        $reviews = $game_master->reviews()->paginate($perPage);
+        $reviews = $game_master->reviews()->orderBy('created_at', 'desc')->paginate($perPage);
 
         return response()->json([
             'status' => true,
