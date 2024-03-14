@@ -13,17 +13,30 @@ class GameMasterController extends Controller
 {
     public function index(Request $request)
     {
-        $query = GameMaster::query();
-
-        $query->with('user', 'gameSystems', 'promotions')
-            ->leftJoin('game_master_rating', 'game_masters.id', '=', 'game_master_rating.game_master_id')
-            ->leftJoin('ratings', 'ratings.id', '=', 'game_master_rating.rating_id')
-            ->leftJoin('reviews', 'game_masters.id', '=', 'reviews.game_master_id') // Join the reviews table
-            ->groupBy('game_masters.id')
-            ->selectRaw('game_masters.*, COALESCE(AVG(ratings.value), 0) as average_rating')
-            ->selectRaw('COUNT(DISTINCT reviews.id) as reviews_count') // Count reviews correctly
-            ->selectRaw('COUNT(DISTINCT ratings.id) as ratings_count') // Ensure distinct count for ratings
-            ->selectRaw('(SELECT COUNT(*) FROM promotions WHERE promotions.game_master_id = game_masters.id AND promotions.end_time > ?) as has_future_promotion', [Carbon::now()])
+        $query = GameMaster::with('user', 'gameSystems', 'promotions')
+            ->select('game_masters.*')
+            ->selectSub(function ($query) {
+                $query->from('game_master_rating')
+                    ->selectRaw('COALESCE(AVG(ratings.value), 0)')
+                    ->join('ratings', 'ratings.id', '=', 'game_master_rating.rating_id')
+                    ->whereColumn('game_master_rating.game_master_id', 'game_masters.id');
+            }, 'average_rating')
+            ->selectSub(function ($query) {
+                $query->from('reviews')
+                    ->selectRaw('COUNT(DISTINCT reviews.id)')
+                    ->whereColumn('reviews.game_master_id', 'game_masters.id');
+            }, 'reviews_count')
+            ->selectSub(function ($query) {
+                $query->from('game_master_rating')
+                    ->selectRaw('COUNT(*)')
+                    ->whereColumn('game_master_rating.game_master_id', 'game_masters.id');
+            }, 'ratings_count')
+            ->selectSub(function ($query) {
+                $query->from('promotions')
+                    ->selectRaw('COUNT(*)')
+                    ->where('promotions.end_time', '>', Carbon::now())
+                    ->whereColumn('promotions.game_master_id', 'game_masters.id');
+            }, 'has_future_promotion')
             ->orderByDesc('has_future_promotion')
             ->orderBy('average_rating', 'desc');
 
