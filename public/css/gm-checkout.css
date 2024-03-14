@@ -1,3 +1,7 @@
 .tier-name {
-  text-transform: capitalize;
+    text-transform: capitalize;
+}
+
+.loading {
+    color: #e67a00;
 }

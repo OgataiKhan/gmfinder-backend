@@ -1,50 +1,50 @@
 @extends('layouts.admin')
 @section('content')
-<form id="payment-form" name="payment-form" action="http://127.0.0.1:8000/payment/make/payment" method="POST">
+    <form id="payment-form" name="payment-form" action="http://127.0.0.1:8000/payment/make/payment" method="POST">
 
-    @csrf
+        @csrf
 
-    {{-- @dd($promotionData); --}}
-
-
-
-    <!-- includes the Braintree JS client SDK -->
-    <script src="https://js.braintreegateway.com/web/dropin/1.42.0/js/dropin.min.js"></script>
+        {{-- @dd($promotionData); --}}
 
 
-    <div class="pt-5">
-        <p><strong>Selected promotion:</strong> <span class="tier-name">{{ $promotionData['tier'] }}</span></p>
-        <p> <strong>Duration:</strong>
-            @switch($promotionData['tier'])
-            @case('bronze')
-            <span>1 Day</span>
-            @break
 
-            @case('silver')
-            <span>3 Days</span>
-            @break
+        <!-- includes the Braintree JS client SDK -->
+        <script src="https://js.braintreegateway.com/web/dropin/1.42.0/js/dropin.min.js"></script>
 
-            @case('gold')
-            <span>6 Days</span>
-            @break
 
-            @default
-            <span>None</span>
-            @endswitch
-        </p>
-        <p> <strong>Price:</strong> {{ $promotionData['price'] }} €</p>
-    </div>
+        <div class="pt-5">
+            <p><strong>Selected promotion:</strong> <span class="tier-name">{{ $promotionData['tier'] }}</span></p>
+            <p> <strong>Duration:</strong>
+                @switch($promotionData['tier'])
+                    @case('bronze')
+                        <span>1 Day</span>
+                    @break
 
-    <div id="dropin-wrapper">
+                    @case('silver')
+                        <span>3 Days</span>
+                    @break
 
-        <div id="checkout-message"></div>
-        <div id="dropin-container"></div>
+                    @case('gold')
+                        <span>6 Days</span>
+                    @break
 
-        <button class="btn-void-orange" id="submit-button">Submit payment</button>
+                    @default
+                        <span>None</span>
+                @endswitch
+            </p>
+            <p> <strong>Price:</strong> {{ $promotionData['price'] }} €</p>
+        </div>
 
-    </div>
-    <script>
-        var button = document.querySelector('#submit-button');
+        <div id="dropin-wrapper">
+
+            <div id="checkout-message"></div>
+            <div id="dropin-container"></div>
+
+            <button class="btn-void-orange" id="submit-button">Submit payment</button>
+
+        </div>
+        <script>
+            var button = document.querySelector('#submit-button');
             var promotionData = {!! json_encode($promotionData) !!};
             var token = {!! json_encode($token) !!};
             let loading = false;
@@ -117,24 +117,24 @@
                     });
                 });
             });
-    </script>
+        </script>
 
 
 
 
-</form>
+    </form>
 
-<div class="container w-100 d-flex justify-content-center">
-    <div id="loader" class="d-none  m-5 p-5 d-flex justify-content-center">
+    <div class="container w-100 d-flex justify-content-center">
+        <div id="loader" class="d-none  m-5 p-5 d-flex justify-content-center">
 
-        <div class="spinner-border text-primary d-flex justify-content-center" role="status">
-            <span class="sr-only">Loading...</span>
+            <div class="spinner-border d-flex justify-content-center loading" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+            <h4 class="text-center ms-2">Loading...</h4>
         </div>
-        <h4 class="text-center">Loading...</h4>
     </div>
-</div>
 @endsection
 
 @push('styles')
-<link href="{{ asset('css/gm-checkout.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/gm-checkout.css') }}" rel="stylesheet">
 @endpush
