@@ -1,21 +1,19 @@
 @extends('layouts.admin')
 @section('content')
-<div class="container py-5">
-    @if (Auth::user() && Auth::user()->gameMaster && Auth::user()->gameMaster->is_active)
-    <h3>
-        See your stats
-    </h3>
+    <div class="container py-5">
+        @if (Auth::user() && Auth::user()->gameMaster && Auth::user()->gameMaster->is_active)
+            <h3>
+                See your stats
+            </h3>
 
             <!-- Month Selectors -->
             <div class="month-picker-container mb-5">
                 <label for="start_month">Start Month:</label>
                 <input type="month" id="start_month" name="start_month">
 
-        <div>
-            <label for="end_month">End Month:</label>
-            <input type="month" id="end_month" name="end_month">
-        </div>
-    </div>
+                <label for="end_month">End Month:</label>
+                <input type="month" id="end_month" name="end_month">
+            </div>
 
             <!-- Chart for Messages Distribution -->
             <h4>Messages you received in the selected time period</h4>
@@ -42,21 +40,21 @@
         @endif
     </div>
 
-@if (session('success_message'))
-<div class="alert alert-success">
-    {{ session('success_message') }}
-</div>
-@endif
+    @if (session('success_message'))
+        <div class="alert alert-success">
+            {{ session('success_message') }}
+        </div>
+    @endif
 
-@if (session('error_message'))
-<div class="alert alert-danger">
-    {{ session('error_message') }}
-</div>
-@endif
-</div>
-@vite(['resources/js/dynamicStats.js'])
+    @if (session('error_message'))
+        <div class="alert alert-danger">
+            {{ session('error_message') }}
+        </div>
+    @endif
+    </div>
+    @vite(['resources/js/dynamicStats.js'])
 @endsection
 
 @push('styles')
-<link href="{{ asset('css/gm-stats.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/gm-stats.css') }}" rel="stylesheet">
 @endpush
