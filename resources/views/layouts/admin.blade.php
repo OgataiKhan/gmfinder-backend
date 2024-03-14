@@ -245,6 +245,16 @@
                 </div>
                 <hr />
             </div>
+            <div class="container d-flex justify-content-between align-items-center">
+                <div>
+                    <img src="/img/logo.png" alt="logo" class="logo" />
+                </div>
+                <div>
+                    <button class="btn-orange">
+                        <span class="arrow-up"><strong>Back To Top</strong></span>
+                    </button>
+                </div>
+            </div>
         </footer>
     </div>
 </body>
