@@ -40,9 +40,9 @@
                     <div class="container-fluid">
                         <!-- logo -->
                         <div class="logo pt-2">
-                            <router-link :to="{ name: 'home' }" class="text-decoration-none">
+                            <a class="text-decoration-none">
                                 <img src="/img/logo.png" alt="logo" />
-                            </router-link>
+                            </a>
                         </div>
                         <!-- /logo -->
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" id="header-button"
@@ -207,8 +207,8 @@
             </div>
             {{-- footer bottom --}}
             <div class="container d-flex justify-content-between align-items-center">
-                <div>
-                    <img src="/img/logo.png" alt="logo" class="logo" />
+                <div class="logo">
+                    <img src="/img/logo.png" alt="logo" />
                 </div>
                 <div>
                     <button class="btn-orange">

@@ -246,8 +246,8 @@
                 <hr />
             </div>
             <div class="container d-flex justify-content-between align-items-center">
-                <div>
-                    <img src="/img/logo.png" alt="logo" class="logo" />
+                <div class="logo">
+                    <img src="/img/logo.png" alt="logo" />
                 </div>
                 <div>
                     <button class="btn-orange">
