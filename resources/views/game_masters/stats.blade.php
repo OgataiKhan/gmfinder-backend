@@ -7,7 +7,7 @@
             </h3>
 
             <!-- Month Selectors -->
-            <div>
+            <div class="pb-5">
                 <label for="start_month">Start Month:</label>
                 <input type="month" id="start_month" name="start_month">
 
@@ -15,14 +15,20 @@
                 <input type="month" id="end_month" name="end_month">
             </div>
 
-            <!-- Placeholders for Data -->
-            <div class="py-5">
-                <p id="reviews_count">Reviews: 0</p>
-                <p id="messages_count">Messages: 0</p>
+            <!-- Chart for Messages Distribution -->
+            <h4>Messages you received in the selected time period</h4>
+            <div class="graph-box pb-4">
+                <canvas id="messagesChart" width="200" height="100"></canvas>
+            </div>
+
+            <!-- Chart for Reviews Distribution -->
+            <h4>Reviews you received in the selected time period</h4>
+            <div class="graph-box pb-4">
+                <canvas id="reviewsChart" width="200" height="100"></canvas>
             </div>
 
             <!-- Chart for Ratings Distribution -->
-            <div class="graph-box">
+            <div class="graph-box pb-4">
                 <canvas id="ratingsChart" width="200" height="100"></canvas>
             </div>
         @else

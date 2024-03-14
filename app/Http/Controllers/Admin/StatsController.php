@@ -14,23 +14,30 @@ class StatsController extends Controller
         return view('game_masters.stats');
     }
 
+    // Modify the queries in the countAndDistribution method to format dates
+
     public function countAndDistribution(Request $request)
     {
         $user = Auth::user();
         $startMonth = $request->start_month;
         $endMonth = $request->end_month;
 
-        // Count reviews
-        $reviewsCount = $user->gameMaster->reviews()
+        // Reviews and Messages aggregation adjusted to include year and format to match frontend
+        $reviewsByMonth = $user->gameMaster->reviews()
             ->whereBetween('created_at', ["{$startMonth}-01", "{$endMonth}-31"])
-            ->count();
+            ->select(DB::raw("DATE_FORMAT(created_at, '%b %Y') as month_year"), DB::raw('count(*) as count'))
+            ->groupBy('month_year')
+            ->get()
+            ->pluck('count', 'month_year');
 
-        // Count messages
-        $messagesCount = $user->gameMaster->messages()
+        $messagesByMonth = $user->gameMaster->messages()
             ->whereBetween('created_at', ["{$startMonth}-01", "{$endMonth}-31"])
-            ->count();
+            ->select(DB::raw("DATE_FORMAT(created_at, '%b %Y') as month_year"), DB::raw('count(*) as count'))
+            ->groupBy('month_year')
+            ->get()
+            ->pluck('count', 'month_year');
 
-        // Distribution of ratings
+        // Distribution of ratings (no change needed here)
         $ratingsDistribution = $user->gameMaster->ratings()
             ->wherePivotBetween('created_at', ["{$startMonth}-01", "{$endMonth}-31"])
             ->get()
@@ -40,8 +47,8 @@ class StatsController extends Controller
             });
 
         return response()->json([
-            'reviewsCount' => $reviewsCount,
-            'messagesCount' => $messagesCount,
+            'reviewsByMonth' => $reviewsByMonth,
+            'messagesByMonth' => $messagesByMonth,
             'ratingsDistribution' => $ratingsDistribution,
         ]);
     }
