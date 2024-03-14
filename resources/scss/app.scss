@@ -86,9 +86,21 @@
     background-color: var(--light-color);
 }
 
-footer hr {
+#footer hr {
     border: 1px solid white;
     margin-top: 0;
+}
+
+#footer h5 {
+    font-size: 16px;
+}
+
+#footer ul {
+    list-style: none;
+}
+
+#footer li {
+    font-size: 14px;
 }
 
 /* FOOTER BOTTOM */
@@ -178,13 +190,12 @@ footer hr {
     border-color: var(--contrast-color);
 }
 
-
 .form-check-input {
     &:checked {
         background-color: var(--contrast-color);
         border-color: var(--contrast-color);
 
-        +.form-check-label::before {
+        + .form-check-label::before {
             background-color: var(--contrast-color);
             border-color: var(--contrast-color);
             opacity: 1;
