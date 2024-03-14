@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", function () {
     updateMonthInputConstraints();
 
     function generateMonthLabels(startMonth, endMonth) {
-        let start = new Date(startMonth + "-01"); 
+        let start = new Date(startMonth + "-01");
         let end = new Date(endMonth + "-01");
         let labels = [];
 
@@ -120,13 +120,26 @@ document.addEventListener("DOMContentLoaded", function () {
                 .then(function (response) {
                     const data = response.data;
 
-                    // Update Ratings Chart
-                    ratingsChart.data.labels = Object.keys(
-                        data.ratingsDistribution
-                    );
-                    ratingsChart.data.datasets.forEach((dataset) => {
-                        dataset.data = Object.values(data.ratingsDistribution);
+                    // Prepare Ratings Chart Data
+                    // Initialize an object to hold the rating counts, defaulting to 0
+                    const ratingsCounts = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 };
+
+                    // Fill the object with actual data from the server, if available
+                    Object.keys(data.ratingsDistribution).forEach((key) => {
+                        const rating = parseInt(key); // Ensure the key is treated as an integer
+                        if (rating >= 1 && rating <= 5) {
+                            // Only consider valid rating values
+                            ratingsCounts[rating] =
+                                data.ratingsDistribution[key];
+                        }
                     });
+
+                    // Update the ratings chart
+                    ratingsChart.data.labels = Object.keys(ratingsCounts).map(
+                        (rating) => `Rating ${rating}`
+                    );
+                    ratingsChart.data.datasets[0].data =
+                        Object.values(ratingsCounts);
 
                     // Generate month labels for messages and reviews charts
                     const monthLabels = generateMonthLabels(
@@ -136,19 +149,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     // Update Messages Chart
                     messagesChart.data.labels = monthLabels;
-                    messagesChart.data.datasets.forEach((dataset) => {
-                        dataset.data = monthLabels.map(
-                            (label) => data.messagesByMonth[label] || 0
-                        );
-                    });
+                    messagesChart.data.datasets[0].data = monthLabels.map(
+                        (label) => data.messagesByMonth[label] || 0
+                    );
 
                     // Update Reviews Chart
                     reviewsChart.data.labels = monthLabels;
-                    reviewsChart.data.datasets.forEach((dataset) => {
-                        dataset.data = monthLabels.map(
-                            (label) => data.reviewsByMonth[label] || 0
-                        );
-                    });
+                    reviewsChart.data.datasets[0].data = monthLabels.map(
+                        (label) => data.reviewsByMonth[label] || 0
+                    );
 
                     // Update all charts
                     ratingsChart.update();
