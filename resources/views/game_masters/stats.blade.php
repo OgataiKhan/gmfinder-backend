@@ -7,7 +7,7 @@
             </h3>
 
             <!-- Month Selectors -->
-            <div class="pb-5">
+            <div class="month-picker-container mb-5">
                 <label for="start_month">Start Month:</label>
                 <input type="month" id="start_month" name="start_month">
 
@@ -28,6 +28,7 @@
             </div>
 
             <!-- Chart for Ratings Distribution -->
+            <h4>Ratings distribution in the selected time period</h4>
             <div class="graph-box pb-4">
                 <canvas id="ratingsChart" width="200" height="100"></canvas>
             </div>

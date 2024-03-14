@@ -68,12 +68,15 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Set the current month as default for both inputs
-    function setCurrentMonth() {
+    function setCurrentYear() {
         const currentDate = new Date();
-        const currentMonth = currentDate.toISOString().slice(0, 7); // Get current month in YYYY-MM format
-        startMonthInput.value = currentMonth;
-        endMonthInput.value = currentMonth;
+        const currentYear = currentDate.getFullYear(); // Get current year
+        const startOfYear = `${currentYear}-01`; // January of the current year
+        const endOfYear = `${currentYear}-12`; // December of the current year
+        startMonthInput.value = startOfYear;
+        endMonthInput.value = endOfYear;
     }
+    
 
     // Update the end month minimum
     function updateMonthInputConstraints() {
@@ -87,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    setCurrentMonth();
+    setCurrentYear();
     updateMonthInputConstraints();
 
     function generateMonthLabels(startMonth, endMonth) {
@@ -136,8 +139,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     // Update the ratings chart
                     ratingsChart.data.labels = Object.keys(ratingsCounts).map(
-                        (rating) => `Rating ${rating}`
+                        (rating) => `${rating}`
                     );
+                    
                     ratingsChart.data.datasets[0].data =
                         Object.values(ratingsCounts);
 
