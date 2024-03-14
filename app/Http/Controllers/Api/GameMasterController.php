@@ -49,12 +49,12 @@ class GameMasterController extends Controller
 
         // Filter by minimum average rating
         if ($request->has('min_average_rating')) {
-            $query->havingRaw('AVG(ratings.value) >= ?', [$request->min_average_rating]);
+            $query->having('average_rating', '>=', (float) $request->min_average_rating);
         }
 
-        // Filter by minimum number of reviews instead of ratings
+        // Filter by minimum number of reviews
         if ($request->has('min_reviews')) {
-            $query->havingRaw('COUNT(DISTINCT reviews.id) >= ?', [$request->min_reviews]);
+            $query->having('reviews_count', '>=', (int) $request->min_reviews);
         }
 
         $game_masters = $query->paginate(10);
@@ -64,6 +64,7 @@ class GameMasterController extends Controller
             'results' => $game_masters,
         ]);
     }
+
 
 
     public function show(Request $request, string $slug)
