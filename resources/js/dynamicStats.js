@@ -139,7 +139,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     // Update the ratings chart
                     ratingsChart.data.labels = Object.keys(ratingsCounts).map(
-                        (rating) => `${rating}`
+                        (rating) => `${rating} shield${rating === '1' ? '' : 's'}`
                     );
                     
                     ratingsChart.data.datasets[0].data =
