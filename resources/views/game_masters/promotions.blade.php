@@ -42,7 +42,7 @@
                         </div>
                     @endif
                     <div class="d-flex mt-4 justify-content-center">
-                        <button id="create-button" type="submit" class="btn btn-void-orange">Purchase</button>
+                        <button id="create-button" type="submit" class="btn btn-void-orange">Go to checkout</button>
                     </div>
                 </form>
             </div>
