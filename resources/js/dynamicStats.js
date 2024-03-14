@@ -37,10 +37,16 @@ document.addEventListener("DOMContentLoaded", function () {
         endMonthInput.value = currentMonth;
     }
 
-    // Update the min/max attributes
+    // Update the end month minimum
     function updateMonthInputConstraints() {
         if (startMonthInput.value) endMonthInput.min = startMonthInput.value;
-        if (endMonthInput.value) startMonthInput.max = endMonthInput.value;
+    }
+
+    // Adjust end point based on start month
+    function adjustEndDateIfNeeded() {
+        if (startMonthInput.value > endMonthInput.value) {
+            endMonthInput.value = startMonthInput.value;
+        }
     }
 
     setCurrentMonth();
@@ -77,6 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Event listeners for the month selectors and constraints update
     startMonthInput.addEventListener("change", () => {
+        adjustEndDateIfNeeded()
         updateMonthInputConstraints();
         fetchStats();
     });
