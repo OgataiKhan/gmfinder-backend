@@ -40,7 +40,7 @@
                     <div class="container-fluid">
                         <!-- logo -->
                         <div class="logo pt-2">
-                            <a class="text-decoration-none">
+                            <a href="{{ env('FRONTEND_URL') }}" class="text-decoration-none">
                                 <img src="/img/logo.png" alt="logo" />
                             </a>
                         </div>
@@ -53,7 +53,7 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav ms-auto mb-2 mb-md-0 gap-3">
                                 <li class="nav-item">
-                                    <a href="http://localhost:5173" class="nav-link">Home</a>
+                                    <a href="{{ env('FRONTEND_URL') }}" class="nav-link">Home</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link">FAQ</a>

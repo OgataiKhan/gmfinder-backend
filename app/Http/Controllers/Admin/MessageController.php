@@ -16,7 +16,9 @@ class MessageController extends Controller
         $messages = $user->gameMaster->messages()->orderBy('created_at', 'desc')->paginate(5);
         //format date
         foreach ($messages as $message) {
-            $message->createdAt = Carbon::createFromFormat('Y-m-d H:i:s', $message->created_at)->format('d/m/Y');
+            $message->createdAt = Carbon::createFromFormat('Y-m-d H:i:s', $message->created_at, 'UTC')
+                ->setTimezone('Europe/Rome')
+                ->format('d/m/Y H:i');
         }
         return view('game_masters.messages', compact('messages'));
     }
