@@ -18,7 +18,7 @@ class MessageController extends Controller
         foreach ($messages as $message) {
             $message->createdAt = Carbon::createFromFormat('Y-m-d H:i:s', $message->created_at, 'UTC')
                 ->setTimezone('Europe/Rome')
-                ->format('d/m/Y H:i');
+                ->format('H:i, d M Y');
         }
         return view('game_masters.messages', compact('messages'));
     }
