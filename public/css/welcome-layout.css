@@ -3,6 +3,7 @@
     background-image: url(../img/jumbotron-image.jpeg);
     height: 100vh;
     background-position: center;
+    background-size: cover;
 }
 
 /*LOGO*/
