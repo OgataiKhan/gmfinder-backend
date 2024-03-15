@@ -15,7 +15,9 @@ class ReviewsController extends Controller
         $reviews = $user->gameMaster->reviews()->orderBy('created_at', 'desc')->paginate(5);
         //format date
         foreach ($reviews as $review) {
-            $review->createdAt = Carbon::createFromFormat('Y-m-d H:i:s', $review->created_at)->format('d/m/Y');
+            $review->createdAt = Carbon::createFromFormat('Y-m-d H:i:s', $review->created_at, 'UTC')
+                ->setTimezone('Europe/Rome')
+                ->format('d/m/Y H:i');
         }
         return view('game_masters.reviews', compact('reviews'));
     }
