@@ -7,7 +7,7 @@
                 <div class="row d-flex justify-content-between">
                     <div class="w-50">
                         <h5 class="col-auto">Review by: {{ $review->name }}</h5>
-                        <p class="col-auto sender-email">Email: {{ $review->email }}</p>
+                        <p class="col-auto sender-email"><span class="fw-bold">Email:</span> {{ $review->email }}</p>
                     </div>
                     <div class="d-flex justify-content-end w-50">{{ $review->createdAt }}</div>
                 </div>

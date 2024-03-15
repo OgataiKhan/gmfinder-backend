@@ -8,7 +8,7 @@
                 <div class="row d-flex justify-content-between">
                     <div class="w-50">
                         <h5 class="col-auto">Message from: {{ $message->name }}</h5>
-                        <p class="col-auto sender-email">Email: {{ $message->email }}</p>
+                        <p class="col-auto sender-email"><span class="fw-bold">Email:</span> {{ $message->email }}</p>
                     </div>
                     <div class="d-flex justify-content-end w-50">{{ $message->createdAt }}</div>
                 </div>

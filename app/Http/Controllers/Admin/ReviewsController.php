@@ -17,7 +17,7 @@ class ReviewsController extends Controller
         foreach ($reviews as $review) {
             $review->createdAt = Carbon::createFromFormat('Y-m-d H:i:s', $review->created_at, 'UTC')
                 ->setTimezone('Europe/Rome')
-                ->format('d/m/Y H:i');
+                ->format('H:i, d M Y');
         }
         return view('game_masters.reviews', compact('reviews'));
     }
