@@ -50,3 +50,9 @@
       margin-bottom: 10px;
   }
 }
+
+@media (max-width: 576) {
+ .graph-box{
+  width: 100px;
+ }
+}

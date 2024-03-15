@@ -52,7 +52,7 @@ Route::middleware(['auth', 'verified'])
 
 Route::middleware('auth')->group(function () {
     Route::get('/game_systems', [GameSystemController::class, 'index'])->name('game_systems.index');
-    Route::get('/generate', [PaymentController::class, 'generate'])->name('payments.generate');
+    Route::get('/promotion/checkout', [PaymentController::class, 'generate'])->name('payments.generate');
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');

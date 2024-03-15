@@ -1,19 +1,32 @@
 .thank-you-container {
-    margin-top: 50px;
-    text-align: center;
+  margin-top: 50px;
+  padding-top: 50px;
+  text-align: center;
+  opacity: 0;
+  animation: fadeInUp 1.5s forwards;
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-  .thank-you-icon {
-    font-size: 100px;
-    color: #28a745;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  .thank-you-heading {
-    margin-top: 20px;
-    font-family: 'Arial Black', sans-serif;
-    font-size: 36px;
-    color: #333;
-  }
-  .thank-you-message {
-    margin-top: 20px;
-    font-size: 18px;
-    color: #666;
-  }
+}
+.thank-you-icon {
+  font-size: 100px;
+  color: #28a745;
+}
+.thank-you-heading {
+  margin-top: 20px;
+  font-family: 'Arial Black', sans-serif;
+  font-size: 36px;
+  color: #333;
+}
+.thank-you-message {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #666;
+}
