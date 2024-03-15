@@ -2,7 +2,7 @@
 @section('content')
     <div class="container py-5">
         @if (Auth::user() && Auth::user()->gameMaster && Auth::user()->gameMaster->is_active)
-            <h3>
+            <h3 class="text-center">
                 See your stats
             </h3>
 
