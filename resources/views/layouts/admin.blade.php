@@ -42,7 +42,7 @@
                 <nav class="navbar navbar-expand-lg text-center flex-grow-1">
                     <div class="container-fluid">
                         <!-- logo -->
-                        <div class="logo pt-2">
+                        <div class="logo">
                             <a class="text-decoration-none" href="{{ env('FRONTEND_URL') }}">
                                 <img src="/img/logo.png" alt="logo" /></a>
                         </div>
@@ -53,7 +53,7 @@
                             <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul class="navbar-nav ms-auto mb-2 mb-md-0 gap-3">
+                            <ul class="navbar-nav ms-auto mb-2 mb-md-0 gap-3 d-flex align-items-center">
                                 <li class="nav-item items">
                                     <a class="nav-link link" href="{{ env('FRONTEND_URL') }}">Home</a>
                                 </li>
