@@ -2,6 +2,10 @@
 
 #sidebarMenu {
     background-color: #fff3e2;
+    background-image: url(../img/wind-rose-2.png);
+    background-position: center bottom 40px;
+    background-repeat: no-repeat;
+    background-size: 80% auto;
     border-right: 1px solid #ccc;
 }
 
