@@ -1,7 +1,6 @@
 @extends('layouts.admin')
 @section('content')
     <div class="container py-4">
-        {{-- <h1>My Character</h1> --}}
         @if ($user && $user->gameMaster && $user->gameMaster->is_active)
             <div class="card" id="gm-card">
                 {{-- show user info --}}
@@ -20,18 +19,14 @@
                 {{-- show game master info --}}
                 @if ($user->gameMaster)
                     <div class="card-body" id="gm-card-body">
-                        {{-- <h5>Your Lore:</h5> --}}
-                        {{-- <hr> --}}
                         <div class="d-flex flex-column justify-content-between flex-lg-row justify-content-lg-between">
-                            <div class="gm-info order-2 order-lg-1 pt-3 pt-lg-0">
+                            <div class="gm-info order-2 order-lg-1 pt-3 pt-lg-0 col-lg-6">
                                 <p> <strong>Game Description: </strong> {{ $user->gameMaster->game_description }}</p>
-
                                 <p> <strong>Game Systems: </strong>
                                     @foreach ($user->gameMaster->gameSystems as $game_system)
                                         <li>{{ $game_system->name }}</li>
                                     @endforeach
                                 </p>
-                                {{-- <p> <strong>Game Length: </strong> {{ $user->gameMaster->game_length }}</p> --}}
                                 <p> <strong>Max Players: </strong> {{ $user->gameMaster->max_players }}</p>
                                 <p> <strong>Email: </strong> {{ $user->email }}</p>
                                 <p>
@@ -47,7 +42,6 @@
                                         </strong>{{ \Carbon\Carbon::parse($user->gameMaster->latest_promotion_end_time)->format('d M Y') }}
                                     </p>
                                 @endif
-
                                 {{-- button to show profile, edit and delete --}}
                                 <div class="d-flex">
                                     {{-- edit profile --}}
