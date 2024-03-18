@@ -45,6 +45,13 @@ header .logo {
     border-color: var(--contrast-color);
 }
 
+/*MAIN*/
+
+.section-main {
+    background-image: url(../img/cozy1.jpeg);
+    background-size: cover;
+}
+
 /* FOOTER */
 
 #email .email {
