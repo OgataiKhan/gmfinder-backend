@@ -2,8 +2,6 @@
 @section('content')
     <div class="container">
 
-        {{-- <h2 class="text-center">Edit Your Info</h2> --}}
-
         <form id="gm-create-form" action={{ route('game_master.update', 'game_master') }} method="POST"
             class="d-flex row p-4 my-5 col-8 mx-auto" enctype="multipart/form-data">
             <p class="required-field "><span class="text-danger">*</span> Required field</p>
