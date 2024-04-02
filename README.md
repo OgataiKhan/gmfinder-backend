@@ -7,3 +7,5 @@
 - Gaetano Panico  
 - Giacomo Rebussi  
 - Diego Romeo
+
+## Start here: https://github.com/OgataiKhan/gmfinder-frontend
