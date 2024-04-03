@@ -22,27 +22,3 @@ class RatingController extends Controller
         $game_master->ratings()->attach($data['rating_id'], $additionalData);
     }
 }
-
-/*
-data taken from form trough v-model
-
-formData={
-    rating: null; // selected rating id
-}
-
-axios call
-
-function sendRating(){
-    data={
-        rating_id: formData.rating,
-        game_master_id : game_master.id
-    }
-
-    axios.post('/ratings', data).then(response=>{
-        return success message
-    }).catch(error=>{
-        return error message
-    })
-}
-
-*/

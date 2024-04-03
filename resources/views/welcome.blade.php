@@ -33,11 +33,6 @@
             <div>
                 <div class="container flex-column d-flex align-items-center my-5">
                     <a href="{{ env('FRONTEND_URL') }}"><img class="img" src="./img/logo.png" alt="welcome-logo"></a>
-                    {{-- <div class="container-title py-3 px-4 mt-3">
-                        <h2 class="fw-bold text-center text-black">
-                            Welcome to GM Finder
-                        </h2>
-                    </div> --}}
                 </div>
             </div>
         </div>

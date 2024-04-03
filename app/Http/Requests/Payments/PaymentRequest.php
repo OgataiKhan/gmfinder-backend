@@ -24,15 +24,6 @@ class PaymentRequest extends FormRequest
     {
         return [
             'token'=>'required',
-            // 'promotionPrice'=>'required',
-            // 'promotionTier'=>'required',
-            // 'promotionGameMasterId'=>'required',
-            // 'promotionEndTime'=>'required',
-            // 'promotion'=>[
-            //     'required',
-            //     new ValidPromotion()
-
-            // ]
             ];
     }
 }

@@ -81,19 +81,8 @@
                             // contentType: 'application/json',
                             data: {
                                 "amount": promotionDataPrice.toString(),
-                                // "amount": "2.33",
                                 "token": "fake-valid-nonce",
                                 "paymentMethodNonce": payload.nonce,
-                                // "paymentMethodNonce": "fake-valid-nonce",
-                                // "token": token,
-                                // "promotionPrice": 8.99,
-                                // "promotionTier": "diamond",
-                                // "promotionGameMasterId": 42,
-                                // "promotionEndTime": "time-sample",
-                                // "promotionPrice": promotionData.price,
-                                // "promotionTier": promotionData.tier,
-                                // "promotionGameMasterId": promotionData.game_master_id,
-                                // "promotionEndTime": promotionData.end_time,
                             }
                         }).done(function(result) {
                             loading = false;

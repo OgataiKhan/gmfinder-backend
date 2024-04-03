@@ -23,7 +23,6 @@ class GameMasterController extends Controller
     {
         //give the current user
         $user = Auth::user();
-        // $game_masters = GameMaster::all();
         $game_masters = GameMaster::with('promotions')->get();
         //url to public profile
         $base_url = env('FRONTEND_URL');
@@ -112,7 +111,6 @@ class GameMasterController extends Controller
             $game_master->profile_img = $request->file('profile_img')->store('uploads', 'public');
         }
 
-        // $game_master->slug = Str::slug($user->name);
         $game_master->save();
 
         if ($request->has('game_systems')) {
@@ -122,11 +120,6 @@ class GameMasterController extends Controller
         }
 
         return redirect()->route('game_master.index')->with('success', 'Profile successfully updated');
-
-
-
-        /*  $game_master->max_players = $data['max_players'];
-        $game_master->update($data); */
     }
 
     /**
@@ -159,7 +152,6 @@ class GameMasterController extends Controller
         // Log user out after soft-deleting
         Auth::logout();
 
-        // return redirect()->route('game_master.index')->with('delete', 'Profile deleted successfully');
         return redirect()->to(env('FRONTEND_URL'))->with('status', 'Profile deleted successfully');
     }
 }
